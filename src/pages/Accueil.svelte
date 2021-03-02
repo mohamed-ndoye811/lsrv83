@@ -84,7 +84,7 @@
           <p>LSR LA CIOTAT</p>
         </td>
         <td class="collegues__liste__item">
-          <p>LSR PTT VAR</p> 
+          <p>LSR PTT VAR</p>
         </td>
       </tr>
     </table>
@@ -139,13 +139,6 @@
 </div>
 
 <style>
-  
-  /*=============================================
-  =            PHONE STYLES            =
-  =============================================*/
-  
-  
-  /* PHONE: ACCUEIL CONTAINER */
   .accueilContainer {
     height: fit-content;
     display: flex;
@@ -153,8 +146,6 @@
     width: 100%;
   }
 
-
-  /* PHONE: HOME INFO */
   .homeInfo {
     display: flex;
     flex-direction: column;
@@ -190,8 +181,6 @@
     top: -20px;
   }
 
-
-  /* PHONE: COLLÈGUES */
   .collegues {
     position: relative;
     width: 100%;
@@ -235,8 +224,6 @@
     color: #ffd700;
   }
 
-
-  /* PHONE: PARTENAIRES */
   .partenaires {
     display: flex;
     list-style: none;
@@ -251,20 +238,17 @@
     max-height: 3.7vw;
   }
 
-
-  /* PHONE: ACTUALITÉ */
   .actu {
     background-color: #ffd700;
     color: #06c;
     width: 80%;
   }
   .actu__image {
-    background-image: url("../../public/img/actu/images/image_1.jpg");
+    background-image: url("./img/actu/images/image_1.jpg");
     border-radius: 10px 10px 0 0;
     width: 100%;
     height: 45%;
     overflow: hidden;
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -333,18 +317,8 @@
     display: flex;
     flex-direction: column;
   }
-  
-  /*=====  End of PHONE STYLES  ======*/
-  
-  
-  
-  /*=============================================
-  =            ORDINATEUR STYLES            =
-  =============================================*/
 
-  @media (min-width: 768px) {
-
-    /* COMPUTER: ACCUEIL CONTAINER */
+  @media only screen and (min-width: 768px) {
     .accueilContainer {
       position: relative;
       top: 15px;
@@ -354,8 +328,6 @@
       flex-wrap: wrap;
     }
 
-
-    /* COMPUTER: HOME INFO */
     .homeInfo {
       width: 55%;
     }
@@ -373,8 +345,6 @@
       font-weight: 500;
     }
 
-
-    /* COMPUTER: COLLÈGUES */
     .collegues {
       width: 55%;
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
@@ -406,8 +376,6 @@
       font-size: 1.3vw;
     }
 
-
-    /* COMPUTER: PARTENAIRES */
     .partenaires {
       display: flex;
       list-style: none;
@@ -423,8 +391,6 @@
       max-height: 4vw;
     }
 
-
-    /* COMPUTER: ACTUALITÉ */
     .actu {
       background-color: #ffd700;
       color: #06c;
@@ -436,12 +402,11 @@
       align-self: flex-end;
     }
     .actu__image {
-      background-image: url("../../public/img/actu/images/image_1.jpg");
       border-radius: 10px 10px 0 0;
       width: 100%;
       height: 45%;
       overflow: hidden;
-      /* Center and scale the image nicely */
+
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -518,6 +483,4 @@
       flex-direction: column;
     }
   }
-
-  /*=====  End of ORDINATEUR STYLES  ======*/
 </style>

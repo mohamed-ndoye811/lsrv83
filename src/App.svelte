@@ -3,13 +3,16 @@
 
   //---[ IMPORT DES PAGES ]---
   import Equipe from "./pages/Equipe.svelte";
-  import InfoImportante from "./components/InfoImportante.svelte";
   import Accueil from "./pages/Accueil.svelte";
   import PlanningsSelection from "./pages/PlanningsSelection.svelte";
   import Bsv from "./pages/Bsv.svelte";
   import Administration from "./pages/Administration.svelte";
   import Activites from "./pages/Activites.svelte";
+
+  //---[ IMPORT DES COMPONENTS ]---
   import CompteurVisite from "./components/CompteurVisite.svelte";
+  import InfoImportante from "./components/InfoImportante.svelte";
+  import Loader from "./components/Loader.svelte";
 
   // Definission variable de page selectionnée
   let pageSelected = "/";
@@ -51,6 +54,8 @@
     pannelVisible = false;
   }
 </script>
+
+
 
 <header>
   <img
