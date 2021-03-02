@@ -73,7 +73,7 @@ button:focus {
 	font-size: 1.2vw;
 	background-color: #ffd700;
 	border-radius: 23px;
-	padding: 7px;
+	padding: 10px;
 	text-shadow: none;
 	cursor: pointer;
   }
