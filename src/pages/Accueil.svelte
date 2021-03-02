@@ -106,7 +106,8 @@
   </ul>
 
   <div class="actu" bind:this={actu}>
-    <div class="actu__image" />
+    <!-- svelte-ignore a11y-img-redundant-alt -->
+    <img class="actu__image" src="./img/actu/images/image_1.jpg" alt="image Manifestation LSR">
     <div class="actu__selector">
       <span
         class="actu__selector__circle"
@@ -244,7 +245,6 @@
     width: 80%;
   }
   .actu__image {
-    background-image: url("./img/actu/images/image_1.jpg");
     border-radius: 10px 10px 0 0;
     width: 100%;
     height: 45%;
