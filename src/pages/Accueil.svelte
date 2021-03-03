@@ -1,30 +1,9 @@
 <script>
-  import { onMount } from "svelte";
-  import { gsap, Expo } from "gsap";
-  // Définition des variables pour la récupération des éléments
-  let homeInfo, collegue, partenaires, actu;
-
-  onMount(() => {
-    gsap.from([homeInfo, collegue, partenaires], {
-      x: -200,
-      opacity: 0,
-      duration: 0.8,
-      ease: Expo.easeOut,
-    });
-
-    gsap.from(actu, {
-      x: 200,
-      opacity: 0,
-      duration: 0.8,
-      ease: Expo.easeOut,
-    });
-  });
-
   let actuSelected = 1;
 </script>
 
 <div class="accueilContainer">
-  <div class="homeInfo" bind:this={homeInfo}>
+  <div class="homeInfo">
     <h3 class="homeInfo__titre">QUI SOMMES NOUS?</h3>
     <span class="homeInfo__separateur" />
     <p class="homeInfo__texte">
@@ -42,7 +21,7 @@
     <div class="homeInfo__bouton bouton">NOUS REJOINDRE</div>
   </div>
 
-  <div class="collegues" bind:this={collegue}>
+  <div class="collegues">
     <h3 class="collegues__titre">VISITEZ NOS COLLÈGUES</h3>
     <span class="collegues__separateur" />
 
@@ -90,7 +69,7 @@
     </table>
   </div>
 
-  <ul class="partenaires" bind:this={partenaires}>
+  <ul class="partenaires">
     <li class="partenaires__image">
       <img src="./img/Partenaires/PACA.png" alt="blabla" srcset="" />
     </li>
@@ -105,26 +84,13 @@
     </li>
   </ul>
 
-  <div class="actu" bind:this={actu}>
+  <div class="actu">
     <!-- svelte-ignore a11y-img-redundant-alt -->
-    <img class="actu__image" src="./img/actu/images/image_1.jpg" alt="image Manifestation LSR">
-    <div class="actu__selector">
-      <span
-        class="actu__selector__circle"
-        class:actu__selector__circle--active={actuSelected === 1}
-        on:click={() => (actuSelected = 1)}
-      />
-      <span
-        class="actu__selector__circle"
-        class:actu__selector__circle--active={actuSelected === 2}
-        on:click={() => (actuSelected = 2)}
-      />
-      <span
-        class="actu__selector__circle"
-        class:actu__selector__circle--active={actuSelected === 3}
-        on:click={() => (actuSelected = 3)}
-      />
-    </div>
+    <img
+      class="actu__image"
+      src="./img/actu/images/image_1.jpg"
+      alt="image Manifestation LSR"
+    />
     <div class="actu__articleContainer">
       <h3 class="actu__titre">TITRE ACTUALITÉ</h3>
       <span class="actu__separateur" />
@@ -135,6 +101,23 @@
         lectus, efficitur a tempor in, porttitor at lacus….
       </p>
       <p class="actu__boutonPlus">EN SAVOIR +</p>
+      <div class="actu__selector">
+        <span
+          class="actu__selector__circle"
+          class:actu__selector__circle--active={actuSelected === 1}
+          on:click={() => (actuSelected = 1)}
+        />
+        <span
+          class="actu__selector__circle"
+          class:actu__selector__circle--active={actuSelected === 2}
+          on:click={() => (actuSelected = 2)}
+        />
+        <span
+          class="actu__selector__circle"
+          class:actu__selector__circle--active={actuSelected === 3}
+          on:click={() => (actuSelected = 3)}
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -414,9 +397,9 @@
     .actu__selector {
       width: 30%;
       height: 30px;
-      position: absolute;
-      bottom: 10px;
+      position: relative;
       left: 50%;
+      top: 1.5vh;
       transform: translateX(-50%);
       display: flex;
       justify-content: space-evenly;
@@ -467,7 +450,7 @@
     }
     .actu__boutonPlus {
       font-size: 1.5vw;
-      margin-top: -20px;
+      margin-top: -35px;
       font-style: italic;
       position: relative;
       align-self: flex-end;

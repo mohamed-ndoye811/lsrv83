@@ -14,11 +14,10 @@
   import InfoImportante from "./components/InfoImportante.svelte";
   import Loader from "./components/Loader.svelte";
 
-  // Definission variable de page selectionnée
-  let pageSelected = "/";
-
-  // Variable de la page actuelle affichée
-  let actualPage;
+  //---[ DEFINITION DES VARIABLES ]---
+  let pageSelected = ""; // Selecteur de page
+  let actualPage; // Variable de la page actuelle affichée
+  let loadingEnded = false;
 
   // Fonction de changement de page, qui fait disparaitre celle présente pour laisser apparaitre la nouvelle
   function pageSwitch(nextPage) {
@@ -53,74 +52,77 @@
 
     pannelVisible = false;
   }
+
+  setTimeout(() => {
+    loadingEnded = true;
+    pageSelected = "/";
+  }, 1500);
 </script>
 
+<Loader />
 
+{#if loadingEnded}
+  <header>
+    <img
+      src="./img/LSR_LOGO/LSR83_logo.png"
+      alt=""
+      id="headerLogo"
+      on:click={() => pageSwitch("/")}
+    />
+    <ul class="nav">
+      <li class="nav__link" on:click={() => pageSwitch("/Equipe")}>ÉQUIPE</li>
+      <li class="nav__link" on:click={() => pageSwitch("/Activites")}>
+        ACTIVITÉS
+      </li>
+      <li class="nav__link" on:click={() => pageSwitch("/BSV")}>BSV</li>
+      <li class="nav__link" on:click={() => pageSwitch("/Planning")}>
+        PLANNINGS
+      </li>
+      <li
+        class="nav__link"
+        on:click={() => {
+          pannelVisible = !pannelVisible;
+        }}
+      >
+        ADMINISTRATION
+      </li>
+      <li
+        class="nav__link"
+        on:click={() => {
+          pannelVisible = !pannelVisible;
+        }}
+      >
+        DIVERS
+      </li>
+    </ul>
 
-<header>
-  <img
-    src="./img/LSR_LOGO/LSR83_logo.png"
-    alt=""
-    id="headerLogo"
-    on:click={() => pageSwitch("/")}
-  />
-  <ul class="nav">
-    <li class="nav__link" on:click={() => pageSwitch("/Equipe")}>ÉQUIPE</li>
-    <li class="nav__link" on:click={() => pageSwitch("/Activites")}>
-      ACTIVITÉS
-    </li>
-    <li class="nav__link" on:click={() => pageSwitch("/BSV")}>BSV</li>
-    <li class="nav__link" on:click={() => pageSwitch("/Planning")}>
-      PLANNINGS
-    </li>
-    <li
-      class="nav__link"
-      on:click={() => {
-        pannelVisible = !pannelVisible;
-      }}
-    >
-      ADMINISTRATION
-    </li>
-    <li
-      class="nav__link"
-      on:click={() => {
-        pannelVisible = !pannelVisible;
-      }}
-    >
-      DIVERS
-    </li>
-  </ul>
+    <div class="adminPannel" class:pannelVisible>
+      <p on:click={() => redirectionAdmin("Statuts")}>STATUTS</p>
+      <p on:click={() => redirectionAdmin("Reglement")}>REGLEMENT</p>
+    </div>
+  </header>
 
-  <div class="adminPannel" class:pannelVisible>
-    <p on:click={() => redirectionAdmin("Statuts")}>STATUTS</p>
-    <p on:click={() => redirectionAdmin("Reglement")}>REGLEMENT</p>
+  <InfoImportante />
+
+  <div class="container" bind:this={actualPage}>
+    {#if pageSelected === "/"}
+      <Accueil />
+    {:else if pageSelected === "/Equipe"}
+      <Equipe />
+    {:else if pageSelected === "/Activites"}
+      <Activites />
+    {:else if pageSelected === "/BSV"}
+      <Bsv />
+    {:else if pageSelected === "/Planning"}
+      <PlanningsSelection />
+    {:else if pageSelected === "/Administration"}
+      <Administration textToShow={adminChoix} />
+    {/if}
+    <div class:hidden={pageSelected != "/"}>
+      <CompteurVisite />
+    </div>
   </div>
-</header>
-
-<InfoImportante />
-
-
-<div class="container" bind:this={actualPage}>
-  {#if pageSelected === "/"}
-    <Accueil />
-  {:else if pageSelected === "/Equipe"}
-    <Equipe />
-  {:else if pageSelected === "/Activites"}
-    <Activites />
-  {:else if pageSelected === "/BSV"}
-    <Bsv />
-  {:else if pageSelected === "/Planning"}
-    <PlanningsSelection />
-  {:else if pageSelected === "/Administration"}
-    <Administration textToShow={adminChoix} />
-  {/if}
-  <div class:hidden={pageSelected != "/"}>
-    <CompteurVisite />
-  </div>
-</div>
-
-
-
+{/if}
 
 <style>
   .container {
