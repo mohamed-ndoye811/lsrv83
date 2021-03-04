@@ -332,7 +332,7 @@
       width: 55%;
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
       position: relative;
-      top: 5%;
+      top: 2.5%;
     }
     .collegues__titre {
       font-size: 2.5vw;
@@ -367,7 +367,7 @@
       padding: 0;
       width: 55%;
       position: relative;
-      top: 9%;
+      top: 7.5%;
     }
     .partenaires__image img {
       max-width: 150px;

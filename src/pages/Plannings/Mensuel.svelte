@@ -1,8 +1,8 @@
 <script>
-	import { onMount } from 'svelte';
+  import { onMount } from "svelte";
   // Import des éléments + de la db
   import DetailsActivites from "./../../components/DetailsActivites.svelte";
-  import {gsap, Expo} from "gsap";
+  import { gsap, Expo } from "gsap";
 
   let dates = []; //Tableau des dates
   export let db;
@@ -31,13 +31,14 @@
   };
 
   onMount(() => {
-    gsap.from("monthContainer", {
+    gsap.from(".monthContainer", {
       y: 50,
       opacity: 0,
-      duration: 1.2,
-      stagger: 0.2
-    })
-  })
+      duration: 1,
+      ease: Expo.easeOut,
+      stagger: 0.1,
+    });
+  });
 
   let showDetails = false;
 </script>
@@ -78,35 +79,38 @@
 {/if}
 
 <style>
-  .monthContainer {
-	 padding: 35px;
-	 border-radius: 15px;
-	 height: fit-content;
-}
- .monthContainer h1 {
-	 margin-bottom: 50px;
-	 text-align: center;
-}
- .monthContainer p {
-	 margin-top: 40px;
-	 font-weight: 600;
-	 font-size: 5vw;
-	 text-transform: uppercase;
-	 text-align: center;
-}
- .monthContainer p:hover {
-	 text-decoration: underline;
-	 cursor: pointer;
-}
- .monthContainer:nth-child(even) {
-	 background-color: #ffd700;
-	 color: #06c;
-}
- @media (min-width: 1280) {
-	 .container {
-		 display: flex;
-		 justify-content: space-between;
-		 margin-top: 15px;
-	}
-}
+  @media (min-width: 768px) {
+    .container {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      top: -50px;
+    }
+    .monthContainer {
+      padding: 5px;
+      border-radius: 15px;
+      height: 75vh;
+      width: 35%;
+    }
+    .monthContainer h1 {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    .monthContainer p {
+      margin-top: 6vh;
+      font-weight: 600;
+      font-size: 1.3vw;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .monthContainer p:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .monthContainer:nth-child(even) {
+      background-color: #ffd700;
+      color: #06c;
+    }
+  }
 </style>

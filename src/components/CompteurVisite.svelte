@@ -1,5 +1,4 @@
 <script>
-  import { gsap, Expo } from "gsap";
   import { onMount } from "svelte";
 
   let compteur;
@@ -7,24 +6,12 @@
   function updateVisitCount() {}
 
   onMount(() => {
-    let animation = gsap
-      .from(compteur, {
-        y: 500,
-        duration: 1,
-        ease: Expo.easeOut,
-        stagger: 0.1,
-      })
-      .pause();
-
     fetch(
       "https://api.countapi.xyz/update/LSR83000VisitCount/nombreVisites?amount=1"
     )
       .then((res) => res.json())
       .then((res) => {
         compteurVisites = res.value;
-      })
-      .then(() => {
-        animation.play();
       });
   });
 

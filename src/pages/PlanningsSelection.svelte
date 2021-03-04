@@ -23,7 +23,7 @@
 </ul>
 
 {#if planningSelected != ""}
-  <div class="container">
+  <div class="planningContainer">
     {#if planningSelected === "Annuel"}
       <Annuel />
     {:else if planningSelected === "Mensuel"}
@@ -35,40 +35,43 @@
 
 <style>
   ul {
-	 visibility: visible;
-	 position: absolute;
-	 top: 38%;
-	 left: 50%;
-	 transform: translate(-50%, -50%);
-	 list-style-type: none;
-	 display: flex;
-	 justify-content: space-between;
-	 align-items: center;
-	 width: 70%;
-}
- ul li {
-	 font-size: 4vw;
-	 font-weight: 700;
-	 text-transform: uppercase;
-}
- ul li:hover {
-	 cursor: pointer;
-	 text-decoration: underline;
-}
- .container {
-	 display: flex;
-	 flex-direction: column;
-}
- .hideSelection {
-	 visibility: hidden;
-}
- .bouton {
-	 width: 150px;
-	 font-size: 1vw;
-	 font-weight: 700;
-	 text-align: center;
-	 align-self: flex-end;
-	 margin-top: 15px;
-}
- 
+    visibility: visible;
+    margin: auto;
+    width: 70%;
+    position: relative;
+    top: 35%;
+    height: fit-content;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul li {
+    font-size: 4vw;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .planningContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .hideSelection {
+    visibility: hidden;
+  }
+  .bouton {
+    width: 150px;
+    font-size: 1vw;
+    font-weight: 700;
+    text-align: center;
+    align-self: flex-end;
+    position: fixed;
+    bottom: 25px;
+  }
 </style>

@@ -41,40 +41,41 @@
 
 <style>
   .activites {
-	 display: flex;
-	 flex-direction: column;
-}
- .activites li {
-	 padding: 15px 20px 15px 20px;
-	 display: flex;
-	 flex-direction: row;
-	 flex-wrap: nowrap;
-	 justify-content: space-between;
-}
- .container {
-	 display: flex;
-	 justify-content: space-between;
-	 margin-top: 15px;
-}
- .activitesAnnee {
-	 overflow-y: scroll;
-	 overflow-x: hidden;
-	 width: 55%;
-	 height: 75vh;
-	 font-size: 1.15vw;
-	 font-weight: 600;
-	 text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
-}
- .infoPlanningAnnuel {
-	 background-color: #ffd700;
-	 width: 40%;
-	 height: 70vh;
-	 border-radius: 20px;
-	 color: #06c;
-	 padding: 20px 30px 30px 30px;
-	 font-size: 1.12vw;
-	 font-weight: 600;
-	 text-align: justify;
-}
- 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  li {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -50px;
+  }
+  .activitesAnnee {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 55%;
+    height: 75vh;
+    font-size: 1.5vw;
+    font-weight: 600;
+    padding-right: 20px;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  }
+  .infoPlanningAnnuel {
+    background-color: #ffd700;
+    width: 40%;
+    height: 70vh;
+    border-radius: 20px;
+    color: #06c;
+    padding: 20px 30px 30px 30px;
+    font-size: 1.3vw;
+    font-weight: 600;
+    text-align: justify;
+  }
 </style>

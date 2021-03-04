@@ -27,4 +27,8 @@ export default [
     nom: "Yoga",
     imageSrc: "./img/activites/yoga.jpg",
   },
+  {
+    nom: "Aquagym",
+    imageSrc: "./img/activites/aquagym.jpg",
+  },
 ];
