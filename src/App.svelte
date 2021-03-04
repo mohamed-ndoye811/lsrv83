@@ -15,7 +15,7 @@
   import Loader from "./components/Loader.svelte";
 
   //---[ DEFINITION DES VARIABLES ]---
-  let pageSelected = "/Planning"; // Selecteur de page
+  let pageSelected = ""; // Selecteur de page
   let actualPage; // Variable de la page actuelle affichée
   let loadingEnded = false;
 
@@ -40,7 +40,8 @@
   }
 
   // Définition des variables pour la recherche des statuts et du réglement
-  let pannelVisible = false;
+  let adminPannelVisible = false;
+  let diversPannelVisible = false;
   let adminChoix = "";
 
   // Gestion du changement de page pour l'administration
@@ -55,77 +56,92 @@
 
   setTimeout(() => {
     loadingEnded = true;
-    //pageSelected = "/";
-  }, 1500);
+    pageSelected = "/";
+  }, 2500);
 </script>
 
-<!-- <Loader /> -->
+<Loader />
 
-<!--{#if loadingEnded}-->
-<header>
-  <img
-    src="./img/LSR_LOGO/LSR83_logo.png"
-    alt=""
-    id="headerLogo"
-    on:click={() => pageSwitch("/")}
-  />
-  <ul class="nav">
-    <li class="nav__link" on:click={() => pageSwitch("/Voyage")}>VOYAGE</li>
-    <li class="nav__link" on:click={() => pageSwitch("/Equipe")}>ÉQUIPE</li>
-    <li class="nav__link" on:click={() => pageSwitch("/Activites")}>
-      ACTIVITÉS
-    </li>
-    <li class="nav__link" on:click={() => pageSwitch("/BSV")}>BSV</li>
-    <li class="nav__link" on:click={() => pageSwitch("/Planning")}>
-      PLANNINGS
-    </li>
-    <li
-      class="nav__link"
-      on:click={() => {
-        pannelVisible = !pannelVisible;
-      }}
+{#if loadingEnded}
+  <header>
+    <img
+      src="./img/LSR_LOGO/LSR83_logo.png"
+      alt=""
+      id="headerLogo"
+      on:click={() => pageSwitch("/")}
+    />
+    <ul class="nav">
+      <li class="nav__link" on:click={() => pageSwitch("/Voyage")}>VOYAGE</li>
+      <li class="nav__link" on:click={() => pageSwitch("/Equipe")}>ÉQUIPE</li>
+      <li class="nav__link" on:click={() => pageSwitch("/Activites")}>
+        ACTIVITÉS
+      </li>
+      <li class="nav__link" on:click={() => pageSwitch("/BSV")}>BSV</li>
+      <li class="nav__link" on:click={() => pageSwitch("/Planning")}>
+        PLANNINGS
+      </li>
+      <li
+        class="nav__link"
+        on:click={() => {
+          adminPannelVisible = !adminPannelVisible;
+        }}
+      >
+        ADMINISTRATION
+      </li>
+      <li
+        class="nav__link"
+        on:click={() => {
+          diversPannelVisible = !diversPannelVisible;
+        }}
+      >
+        DIVERS
+      </li>
+    </ul>
+
+    <div
+      class={adminPannelVisible === true
+        ? "adminPannel pannelVisible"
+        : "adminPannel"}
     >
-      ADMINISTRATION
-    </li>
-    <li
-      class="nav__link"
-      on:click={() => {
-        pannelVisible = !pannelVisible;
-      }}
+      <p on:click={() => redirectionAdmin("Statuts")}>STATUTS</p>
+      <p on:click={() => redirectionAdmin("Reglement")}>REGLEMENT</p>
+      <p on:click={() => redirectionAdmin("Reglement")}>
+        ATTESTATION ASSURANCE
+      </p>
+    </div>
+    <div
+      class="adminPannel {diversPannelVisible === true
+        ? 'adminPannel pannelVisible '
+        : 'adminPannel'}"
+      id="diversPannel"
     >
-      DIVERS
-    </li>
-  </ul>
+      <p on:click={() => redirectionAdmin("Statuts")}>PHOTOS</p>
+      <p on:click={() => redirectionAdmin("Reglement")}>ANNIVERSAIRES</p>
+    </div>
+  </header>
 
-  <div class="adminPannel" class:pannelVisible>
-    <p on:click={() => redirectionAdmin("Statuts")}>STATUTS</p>
-    <p on:click={() => redirectionAdmin("Reglement")}>REGLEMENT</p>
-    <p on:click={() => redirectionAdmin("Reglement")}>ATTESTATION ASSURANCE</p>
+  <InfoImportante />
+
+  <div class="container" bind:this={actualPage}>
+    {#if pageSelected === "/"}
+      <Accueil />
+    {:else if pageSelected === "/Equipe"}
+      <Equipe />
+    {:else if pageSelected === "/Activites"}
+      <Activites />
+    {:else if pageSelected === "/BSV"}
+      <Bsv />
+    {:else if pageSelected === "/Planning"}
+      <PlanningsSelection />
+    {:else if pageSelected === "/Administration"}
+      <Administration textToShow={adminChoix} />
+    {/if}
+    <div class:hidden={pageSelected != "/"}>
+      <CompteurVisite />
+    </div>
   </div>
-</header>
+{/if}
 
-<InfoImportante />
-
-<div class="container" bind:this={actualPage}>
-  {#if pageSelected === "/"}
-    <Accueil />
-  {:else if pageSelected === "/Equipe"}
-    <Equipe />
-  {:else if pageSelected === "/Activites"}
-    <Activites />
-  {:else if pageSelected === "/BSV"}
-    <Bsv />
-  {:else if pageSelected === "/Planning"}
-    <PlanningsSelection />
-  {:else if pageSelected === "/Administration"}
-    <Administration textToShow={adminChoix} />
-  {/if}
-  <div class:hidden={pageSelected != "/"}>
-    <CompteurVisite />
-  </div>
-</div>
-
-<!--{/if}-->
 <style>
   .container {
     max-width: 75%;
@@ -208,6 +224,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
+
+    #diversPannel {
+      width: 200px;
+      height: 100px;
     }
 
     header .adminPannel p {
