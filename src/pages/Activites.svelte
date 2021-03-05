@@ -77,14 +77,14 @@
   .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     height: 75%;
     width: 100%;
   }
   .activityItem {
     aspect-ratio: 9/16;
     height: 24vh;
-    width: 24.5vw;
+    width: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -67,8 +67,8 @@
 
 <style>
   #titrePage {
-    margin: 1.5% auto;
-    font-size: 2.5vw;
+    margin: 1% auto;
+    font-size: 3.5vh;
   }
   .bsvContainer {
     display: flex;
@@ -84,8 +84,8 @@
     overflow-y: scroll;
     overflow-x: hidden;
     width: 47%;
-    height: 70vh;
-    font-size: 1.4vw;
+    height: 75vh;
+    font-size: 2.5vh;
     padding-right: 10px;
     font-weight: 600;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
@@ -93,11 +93,11 @@
   .inscriptionInfo {
     background-color: #ffd700;
     width: 45%;
-    height: 65vh;
+    height: 70vh;
     border-radius: 20px;
     color: #06c;
-    padding: 20px 30px 30px 30px;
-    font-size: 1.4vw;
+    padding: 22.5px;
+    font-size: 2.5vh;
     font-weight: 600;
     text-align: justify;
   }

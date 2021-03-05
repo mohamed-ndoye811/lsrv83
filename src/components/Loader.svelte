@@ -31,7 +31,7 @@
             y: -200,
             ease: Expo.easeIn,
             stagger: 0.04,
-            delay: 1.5,
+            delay: 0.8,
           });
 
           gsap.to(["#layer1", "#layer2", "#layer3"], {
@@ -39,7 +39,7 @@
             ease: Expo.easeInOut,
             stagger: 0.15,
             duration: 0.8,
-            delay: 2.2,
+            delay: 1.5,
             onComplete: () => {
               gsap.to(".loaderContainer", {
                 duration: 0.1,

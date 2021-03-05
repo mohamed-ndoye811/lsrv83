@@ -74,13 +74,29 @@
       <img src="./img/Partenaires/PACA.png" alt="blabla" srcset="" />
     </li>
     <li class="partenaires__image">
-      <img src="./img/Partenaires/Cadierenne.png" alt="blabla" srcset="" />
+      <img
+        src="./img/Partenaires/Cadierenne.png"
+        alt="logo La Cadierrenne"
+        id="logoLaCadierenne"
+        srcset=""
+      />
     </li>
     <li class="partenaires__image">
       <img src="./img/Partenaires/Seyne-sur-mer.png" alt="blabla" srcset="" />
     </li>
     <li class="partenaires__image">
       <img src="./img/Partenaires/Solies.png" alt="blabla" srcset="" />
+    </li>
+    <li class="partenaires__image">
+      <img
+        src="./img/Partenaires/var.png"
+        alt="blabla"
+        id="logoVar"
+        srcset=""
+      />
+    </li>
+    <li class="partenaires__image">
+      <img src="./img/Partenaires/la-valette.png" alt="blabla" srcset="" />
     </li>
   </ul>
 
@@ -214,10 +230,9 @@
     display: flex;
     list-style: none;
     position: fixed;
+    justify-content: space-between;
     top: 73%;
-  }
-  .partenaires__image {
-    margin-right: 45px;
+    width: 60%;
   }
   .partenaires__image img {
     max-width: 300px;
@@ -314,7 +329,7 @@
     }
 
     .homeInfo {
-      width: 55%;
+      width: 60%;
     }
     .homeInfo__titre {
       font-size: 2vw;
@@ -366,18 +381,20 @@
     }
 
     .partenaires {
-      display: flex;
       list-style: none;
-      align-items: center;
-      justify-content: space-between;
       padding: 0;
-      width: 50%;
-      position: relative;
-      top: 2.5%;
+      max-width: 60%;
+      flex-wrap: wrap;
+      position: absolute;
+      bottom: 0;
+      height: fit-content;
     }
     .partenaires__image img {
-      max-width: 150px;
-      max-height: 4vw;
+      max-width: 200px;
+      max-height: 6vh;
+    }
+    #logoLaCadierenne {
+      max-width: 30vh;
     }
 
     .actu {
@@ -386,7 +403,7 @@
       right: 0;
       top: 0px;
       border-radius: 2%;
-      max-width: 42.5%;
+      max-width: 35%;
       height: 100%;
       align-self: flex-end;
     }
@@ -405,48 +422,31 @@
       height: 30px;
       position: relative;
       left: 50%;
-      top: 1.5vh;
+      top: 3vh;
       transform: translateX(-50%);
       display: flex;
       justify-content: space-evenly;
     }
     .actu__selector__circle::before {
-      content: "";
-      display: inline-block;
-      background-color: #9da895;
-      width: 1vw;
-      height: 1vw;
-      border-radius: 50%;
-      position: relative;
-      top: -20px;
+      width: 1.5vh;
+      height: 1.5vh;
     }
     .actu__selector__circle:hover {
       cursor: pointer;
     }
     .actu__selector__circle--active::before {
-      background-color: #06c;
-      content: "";
-      display: inline-block;
-      width: 1vw;
-      height: 1vw;
-      border-radius: 50%;
-      position: relative;
-      top: -20px;
+      width: 1.5vh;
+      height: 1.5vh;
     }
     .actu__separateur::before {
-      content: "";
-      display: inline-block;
-      background-color: #06c;
-      width: 25%;
-      height: 5px;
-      position: relative;
-      top: -25px;
+      top: -5px;
     }
     .actu__titre {
-      font-size: 2.5vw;
+      font-size: 3.5vh;
+      margin: 0;
     }
     .actu__texte {
-      font-size: 1.2vw;
+      font-size: 1.3vw;
       font-weight: 600;
       text-align: justify;
       position: relative;
@@ -455,8 +455,8 @@
       text-overflow: ellipsis;
     }
     .actu__boutonPlus {
-      font-size: 1.5vw;
-      margin-top: -35px;
+      font-size: 2.5vh;
+      margin-top: -45px;
       font-style: italic;
       position: relative;
       align-self: flex-end;
@@ -470,104 +470,6 @@
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
-    }
-  }
-
-  @media (height: 1080px) {
-    .accueilContainer {
-      position: relative;
-      top: 15px;
-      height: 80%;
-      margin: auto 0;
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .actu {
-      background-color: #ffd700;
-      color: #06c;
-      right: 0;
-      top: 0px;
-      border-radius: 2%;
-      max-width: 42.5%;
-      height: 100%;
-      align-self: flex-end;
-      justify-content: space-between;
-    }
-    .actu__image {
-      border-radius: 10px 10px 0 0;
-      width: 100%;
-      height: 45%;
-      overflow: hidden;
-
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    .actu__selector {
-      width: 30%;
-      height: 30px;
-      display: flex;
-      justify-content: space-evenly;
-    }
-    .actu__selector__circle::before {
-      content: "";
-      display: inline-block;
-      background-color: #9da895;
-      width: 1vw;
-      height: 1vw;
-      border-radius: 50%;
-      position: relative;
-      top: -20px;
-    }
-    .actu__selector__circle:hover {
-      cursor: pointer;
-    }
-    .actu__selector__circle--active::before {
-      background-color: #06c;
-      content: "";
-      display: inline-block;
-      width: 1vw;
-      height: 1vw;
-      border-radius: 50%;
-      position: relative;
-      top: -20px;
-    }
-    .actu__separateur::before {
-      content: "";
-      display: inline-block;
-      background-color: #06c;
-      width: 25%;
-      height: 5px;
-      position: relative;
-      top: -5px;
-    }
-    .actu__titre {
-      font-size: 2vw;
-      margin: 0;
-    }
-    .actu__texte {
-      font-size: 1.2vw;
-      font-weight: 600;
-      text-align: justify;
-      position: relative;
-      top: -25px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .actu__boutonPlus {
-      font-size: 1.5vw;
-      margin-top: -40px;
-      font-style: italic;
-      position: relative;
-      align-self: flex-end;
-      cursor: pointer;
-    }
-    .actu__articleContainer {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 50%;
     }
   }
 </style>

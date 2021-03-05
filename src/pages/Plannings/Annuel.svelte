@@ -74,7 +74,7 @@
     border-radius: 20px;
     color: #06c;
     padding: 20px 30px 30px 30px;
-    font-size: 1.3vw;
+    font-size: 2.1vh;
     font-weight: 600;
     text-align: justify;
   }

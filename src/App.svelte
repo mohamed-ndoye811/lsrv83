@@ -49,9 +49,9 @@
     pageSwitch("/Administration");
     setTimeout(function () {
       adminChoix = choix.toLowerCase();
-    }, 200);
+    }, 100);
 
-    pannelVisible = false;
+    adminPannelVisible = false;
   }
 
   setTimeout(() => {
@@ -105,7 +105,7 @@
     >
       <p on:click={() => redirectionAdmin("Statuts")}>STATUTS</p>
       <p on:click={() => redirectionAdmin("Reglement")}>REGLEMENT</p>
-      <p on:click={() => redirectionAdmin("Reglement")}>
+      <p on:click={() => redirectionAdmin("Attestation")}>
         ATTESTATION ASSURANCE
       </p>
     </div>
@@ -171,7 +171,7 @@
     color: #ffd700;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.9vw;
+    font-size: 2vh;
     cursor: pointer;
   }
 
