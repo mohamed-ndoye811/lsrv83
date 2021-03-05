@@ -2,103 +2,107 @@
   let actuSelected = 1;
 </script>
 
-<div class="accueilContainer">
-  <div class="homeInfo">
-    <h3 class="homeInfo__titre">QUI SOMMES NOUS?</h3>
-    <span class="homeInfo__separateur" />
-    <p class="homeInfo__texte">
-      <b><i>Loisir et Solidarité des Retraités de TOULON et du VAR</i></b>
-      est une association loi 1901 dont le but est de permettre aux personnes en
-      pré-retraite ou en retraite de réaliser leurs aspirations de loisirs culturels,
-      sportifs. Pour cela nous vous proposons des activités très diversifiées afin
-      d'intéresser le plus grand nombre de nos adhérents. Nous nous promettons, également,
-      d'agir, aussi souvent que cela se peut, par solidarité dans le cadre de la
-      cité et de la nation et de nous opposer à tout ce qui induit inégalités et
-      exclusion, il ne faut pas oublier que notre LSR, toutes les LSR, sont une émanation
-      de la CGT . Pour ces raisons nous soutenons toutes les actions qui contribuent
-      à améliorer le pouvoir d'achat, la santé, et la protection sociale.
-    </p>
-    <div class="homeInfo__bouton bouton">NOUS REJOINDRE</div>
+<div class="wrapper">
+  <div class="accueilContainer">
+    <div class="homeInfo">
+      <h3 class="homeInfo__titre">QUI SOMMES NOUS?</h3>
+      <span class="homeInfo__separateur" />
+      <p class="homeInfo__texte">
+        <b><i>Loisir et Solidarité des Retraités de TOULON et du VAR</i></b>
+        est une association loi 1901 dont le but est de permettre aux personnes en
+        pré-retraite ou en retraite de réaliser leurs aspirations de loisirs culturels,
+        sportifs. Pour cela nous vous proposons des activités très diversifiées afin
+        d'intéresser le plus grand nombre de nos adhérents. Nous nous promettons,
+        également, d'agir, aussi souvent que cela se peut, par solidarité dans le
+        cadre de la cité et de la nation et de nous opposer à tout ce qui induit
+        inégalités et exclusion, il ne faut pas oublier que notre LSR, toutes les
+        LSR, sont une émanation de la CGT . Pour ces raisons nous soutenons toutes
+        les actions qui contribuent à améliorer le pouvoir d'achat, la santé, et
+        la protection sociale.
+      </p>
+      <div class="homeInfo__bouton bouton">NOUS REJOINDRE</div>
+    </div>
+
+    <div class="collegues">
+      <h3 class="collegues__titre">VISITEZ NOS COLLÈGUES</h3>
+      <span class="collegues__separateur" />
+
+      <table class="collegues__liste">
+        <tr>
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://www.lsrfede.fr">LA FÉDÉRATION</a>
+          </td>
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://www.cda-blog-asso.com/lsr"
+              >LSR DU MORBIHAN</a
+            >
+          </td>
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://ambro649.free.fr">LSR AIR FRANCE</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://lsr21dijon.org">LSR DIJON</a>
+          </td>
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://www.lsr-ratp.org">LSR RATP</a>
+          </td>
+          <td class="collegues__liste__item">
+            <a
+              target="_blank"
+              href="http://lsrmarseille.fr/spip.php/accueil/index.html"
+              >LSR MARSEILLE</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td class="collegues__liste__item">
+            <p>LSR AUBAGNE</p>
+          </td>
+          <td class="collegues__liste__item">
+            <p>LSR LA CIOTAT</p>
+          </td>
+          <td class="collegues__liste__item">
+            <p>LSR PTT VAR</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <ul class="partenaires">
+      <li class="partenaires__image">
+        <img
+          src="./img/Partenaires/var.png"
+          alt="blabla"
+          id="logoVar"
+          srcset=""
+        />
+      </li>
+      <li class="partenaires__image">
+        <img src="./img/Partenaires/PACA.png" alt="blabla" srcset="" />
+      </li>
+      <li class="partenaires__image">
+        <img
+          src="./img/Partenaires/Cadierenne.png"
+          alt="logo La Cadierrenne"
+          id="logoLaCadierenne"
+          srcset=""
+        />
+      </li>
+      <li class="partenaires__image">
+        <img src="./img/Partenaires/Seyne-sur-mer.png" alt="blabla" srcset="" />
+      </li>
+      <li class="partenaires__image">
+        <img src="./img/Partenaires/Solies.png" alt="blabla" srcset="" />
+      </li>
+
+      <li class="partenaires__image">
+        <img src="./img/Partenaires/la-valette.png" alt="blabla" srcset="" />
+      </li>
+    </ul>
   </div>
-
-  <div class="collegues">
-    <h3 class="collegues__titre">VISITEZ NOS COLLÈGUES</h3>
-    <span class="collegues__separateur" />
-
-    <table class="collegues__liste">
-      <tr>
-        <td class="collegues__liste__item">
-          <a target="_blank" href="http://www.lsrfede.fr">LA FÉDÉRATION</a>
-        </td>
-        <td class="collegues__liste__item">
-          <a target="_blank" href="http://www.cda-blog-asso.com/lsr"
-            >LSR DU MORBIHAN</a
-          >
-        </td>
-        <td class="collegues__liste__item">
-          <a target="_blank" href="http://ambro649.free.fr">LSR AIR FRANCE</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="collegues__liste__item">
-          <a target="_blank" href="http://lsr21dijon.org">LSR DIJON</a>
-        </td>
-        <td class="collegues__liste__item">
-          <a target="_blank" href="http://www.lsr-ratp.org">LSR RATP</a>
-        </td>
-        <td class="collegues__liste__item">
-          <a
-            target="_blank"
-            href="http://lsrmarseille.fr/spip.php/accueil/index.html"
-            >LSR MARSEILLE</a
-          >
-        </td>
-      </tr>
-      <tr>
-        <td class="collegues__liste__item">
-          <p>LSR AUBAGNE</p>
-        </td>
-        <td class="collegues__liste__item">
-          <p>LSR LA CIOTAT</p>
-        </td>
-        <td class="collegues__liste__item">
-          <p>LSR PTT VAR</p>
-        </td>
-      </tr>
-    </table>
-  </div>
-
-  <ul class="partenaires">
-    <li class="partenaires__image">
-      <img src="./img/Partenaires/PACA.png" alt="blabla" srcset="" />
-    </li>
-    <li class="partenaires__image">
-      <img
-        src="./img/Partenaires/Cadierenne.png"
-        alt="logo La Cadierrenne"
-        id="logoLaCadierenne"
-        srcset=""
-      />
-    </li>
-    <li class="partenaires__image">
-      <img src="./img/Partenaires/Seyne-sur-mer.png" alt="blabla" srcset="" />
-    </li>
-    <li class="partenaires__image">
-      <img src="./img/Partenaires/Solies.png" alt="blabla" srcset="" />
-    </li>
-    <li class="partenaires__image">
-      <img
-        src="./img/Partenaires/var.png"
-        alt="blabla"
-        id="logoVar"
-        srcset=""
-      />
-    </li>
-    <li class="partenaires__image">
-      <img src="./img/Partenaires/la-valette.png" alt="blabla" srcset="" />
-    </li>
-  </ul>
 
   <div class="actu">
     <!-- svelte-ignore a11y-img-redundant-alt -->
@@ -226,19 +230,6 @@
     color: #ffd700;
   }
 
-  .partenaires {
-    display: flex;
-    list-style: none;
-    position: fixed;
-    justify-content: space-between;
-    top: 73%;
-    width: 60%;
-  }
-  .partenaires__image img {
-    max-width: 300px;
-    max-height: 3.7vw;
-  }
-
   .actu {
     background-color: #ffd700;
     color: #06c;
@@ -319,17 +310,26 @@
   }
 
   @media only screen and (min-width: 768px) {
-    .accueilContainer {
-      position: relative;
-      top: 15px;
-      height: 80%;
-      margin: auto 0;
+    .wrapper {
       display: flex;
-      flex-wrap: wrap;
+      width: 100%;
+      height: 80%;
+      margin-top: 1%;
+      justify-content: space-between;
+    }
+
+    .accueilContainer {
+      height: 100%;
+      width: 60%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .homeInfo {
-      width: 60%;
+      width: 100%;
     }
     .homeInfo__titre {
       font-size: 2vw;
@@ -350,10 +350,9 @@
     }
 
     .collegues {
-      width: 55%;
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
       position: relative;
-      top: 1%;
+      top: -2.5%;
     }
     .collegues__titre {
       font-size: 2vw;
@@ -382,16 +381,16 @@
 
     .partenaires {
       list-style: none;
+      width: 100%;
       padding: 0;
-      max-width: 60%;
-      flex-wrap: wrap;
-      position: absolute;
-      bottom: 0;
-      height: fit-content;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .partenaires__image img {
-      max-width: 200px;
-      max-height: 6vh;
+      max-width: 7vw;
+      max-height: 7vh;
     }
     #logoLaCadierenne {
       max-width: 30vh;
@@ -446,7 +445,7 @@
       margin: 0;
     }
     .actu__texte {
-      font-size: 1.3vw;
+      font-size: 2.4vh;
       font-weight: 600;
       text-align: justify;
       position: relative;

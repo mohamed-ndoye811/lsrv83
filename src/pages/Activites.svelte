@@ -70,7 +70,7 @@
 
 <style>
   #activityTitle {
-    margin: 1.5% auto;
+    margin: 1% auto;
     width: fit-content;
     font-size: 30px;
   }
