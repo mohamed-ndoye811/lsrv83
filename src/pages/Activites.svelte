@@ -99,6 +99,7 @@
     font-weight: 600;
     opacity: 0;
     transition-duration: 0.4s;
+    text-align: center;
   }
   .activityItem img {
     height: 100%;

@@ -31,4 +31,8 @@ export default [
     nom: "Aquagym",
     imageSrc: "./img/activites/aquagym.jpg",
   },
+  {
+    nom: "Sortie Culturelle",
+    imageSrc: "./img/activites/sortie_culturelle.jpg",
+  },
 ];
