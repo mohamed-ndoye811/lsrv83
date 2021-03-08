@@ -31,25 +31,25 @@
 
 <style>
   #titrePage {
-	 font-size: 1.5em;
-	 transform: translateX(45%);
-}
- .container {
-	 width: 100%;
-	 height: 400px;
-	 display: flex;
-	 flex-direction: column;
-	 justify-content: space-between;
-	 overflow: hidden;
-}
- .option {
-	 display: flex;
-	 justify-content: space-between;
-	 align-items: center;
-	 text-transform: uppercase;
-	 font-weight: 600;
-	 font-size: 2em;
-	 cursor: pointer;
-}
- 
+    margin: 1% auto;
+    width: fit-content;
+    font-size: 30px;
+  }
+  .container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2em;
+    cursor: pointer;
+  }
 </style>
