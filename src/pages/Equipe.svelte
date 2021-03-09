@@ -22,10 +22,10 @@
 
   let sectionAffichee = -1;
 
-  function choixSection(index) {
+  function choixSection(nomSection, index) {
     equipe[index].ouvert = !equipe[index].ouvert;
     if (sectionAffichee == -1) {
-      sectionAffichee = index;
+      sectionAffichee = nomSection;
     } else {
       sectionAffichee = -1;
     }
@@ -42,10 +42,10 @@
   <h1 id="titrePage">ÉQUIPE</h1>
   {#each equipe as pannel, i}
     <div
-      class={sectionAffichee == i || sectionAffichee == -1
+      class={sectionAffichee === pannel.titre || sectionAffichee == -1
         ? "option affichee"
         : "option hidden"}
-      on:click={() => choixSection(i)}
+      on:click={() => choixSection(pannel.titre, i)}
     >
       <p class="option__titre">
         {pannel.titre}
@@ -53,25 +53,37 @@
       <div class="option__ouverture">{pannel.ouvert ? "-" : "+"}</div>
     </div>
   {/each}
+
   {#if sectionAffichee != -1}
-    {#each listeEquipe as membreEquipe}
-      <div class="membreEquipe">
-        <div class="firstSlot">
-          <div class="nomPrenom">
-            <p class="nom">{membreEquipe.data().Nom}</p>
-            <p class="prenom">{membreEquipe.data().Prenom}</p>
+    <div class="equipeContainer">
+      {#each listeEquipe as membreEquipe}
+        {#if membreEquipe
+          .data()
+          .Categorie.toLowerCase() == sectionAffichee.toLowerCase()}
+          <div class="membreEquipe">
+            <div class="firstSlot">
+              <div class="nomPrenom">
+                <p class="nom">{membreEquipe.data().Nom}</p>
+                <p class="prenom">{membreEquipe.data().Prenom}</p>
+              </div>
+              {#if membreEquipe.data().Fonction != ""}
+                <span class="fonction">{membreEquipe.data().Fonction}</span>
+              {/if}
+            </div>
+
+            <div class="responsabilite">
+              {membreEquipe.data().Responsabilite}
+            </div>
+
+            <div class="telephones">
+              <div class="fixe">{membreEquipe.data().Fixe}</div>
+              <div class="portable">{membreEquipe.data().Portable}</div>
+            </div>
+            <div class="mail">{membreEquipe.data().Mail}</div>
           </div>
-
-          <span class="fonction">{membreEquipe.data().Fonction}</span>
-        </div>
-
-        <div class="telephones">
-          <div class="fixe">{membreEquipe.data().Fixe}</div>
-          <div class="portable">{membreEquipe.data().Portable}</div>
-        </div>
-        <div class="mail">{membreEquipe.data().Mail}</div>
-      </div>
-    {/each}
+        {/if}
+      {/each}
+    </div>
   {/if}
 </div>
 
@@ -87,7 +99,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    overflow: hidden;
+    overflow-y: hidden;
   }
   .option {
     display: flex;
@@ -115,8 +127,9 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    font-size: 1.7em;
+    font-size: 1.2em;
     font-weight: 600;
+    margin-bottom: 20px;
   }
 
   .nomPrenom {
@@ -126,6 +139,7 @@
 
   .nomPrenom p {
     margin: 0;
+    font-size: 1.5em;
   }
 
   .nomPrenom .prenom {
@@ -140,6 +154,7 @@
     display: flex;
     flex-direction: column;
     margin: 0;
+    font-size: 1em;
   }
 
   .fonction {
@@ -150,5 +165,17 @@
     text-transform: uppercase;
     padding: 5px 20px;
     border-radius: 30px;
+  }
+
+  .responsabilite {
+    line-break: normal;
+    width: 300px;
+  }
+
+  .equipeContainer {
+    overflow-y: scroll;
+    width: 100%;
+    padding: 0 10px 0 0;
+    height: 65%;
   }
 </style>
