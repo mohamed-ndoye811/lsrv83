@@ -3,6 +3,7 @@
   import { gsap, Expo } from "gsap";
   import ActivityPage from "./activites/ActivityPage.svelte";
   import activites from "../utils/activites.js";
+  export let db;
 
   onMount(() => {
     function preloadImages(array) {
@@ -69,7 +70,7 @@
     {/each}
   </div>
 {:else}
-  <ActivityPage activite={pageActivite} activiteImage={imageActivite} />
+  <ActivityPage activite={pageActivite} activiteImage={imageActivite} {db} />
   <div class="bouton" on:click={() => choixActivité("")}>RETOUR</div>
 {/if}
 

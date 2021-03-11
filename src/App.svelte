@@ -179,17 +179,17 @@
     {#if pageSelected === "/"}
       <Accueil />
     {:else if pageSelected === "/Equipe"}
-      <Equipe />
+      <Equipe {db} />
     {:else if pageSelected === "/Activites"}
-      <Activites />
+      <Activites {db} />
     {:else if pageSelected === "/BSV"}
       <Bsv />
     {:else if pageSelected === "/PlanningAnnuel"}
-      <PlanningAnnuel />
+      <PlanningAnnuel {db} />
     {:else if pageSelected === "/PlanningMensuel"}
       <PlanningMensuel {db} />
     {:else if pageSelected === "/Administration"}
-      <Administration textToShow={adminChoix} />
+      <Administration textToShow={adminChoix} {db} />
     {/if}
     <div class:hidden={pageSelected != "/"}>
       <CompteurVisite />

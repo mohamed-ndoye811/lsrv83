@@ -1,7 +1,5 @@
 <script>
-  export let textToShow;
-
-  import { db } from "../utils/firestore.js";
+  export let textToShow, db;
 
   let textes = [];
 

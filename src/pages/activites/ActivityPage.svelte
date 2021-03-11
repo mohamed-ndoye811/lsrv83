@@ -1,7 +1,5 @@
 <script>
-  export let activite;
-  export let activiteImage;
-  import { db } from "../../utils/firestore.js";
+  export let activite, activiteImage, db;
   import { onMount } from "svelte";
 
   let dates = [];

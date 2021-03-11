@@ -1,5 +1,4 @@
 <script>
-  import { db } from "../utils/firestore";
   import { gsap, Expo } from "gsap";
   import { onMount } from "svelte";
 
@@ -21,6 +20,8 @@
       ouvert: false,
     },
   ];
+
+  export let db;
 
   let sectionAffichee = -1;
 
