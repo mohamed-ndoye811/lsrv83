@@ -141,18 +141,26 @@
     </div>
   </div>
 
-  <div class="background" />
+  <div class="background backgroundColor" />
+  <div class="background backgroundImage" />
 {/if}
 
 <style>
   .background {
     position: absolute;
-    background-color: #0066cc;
-    z-index: -2;
+    z-index: -3;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
+  }
+  .backgroundImage {
+    opacity: 0.2;
+    background-image: url("./img/Toulon-2.jpg");
+    filter: blur(2px);
+  }
+  .backgroundColor {
+    background-color: #0066cc;
   }
   .container {
     max-width: 75%;

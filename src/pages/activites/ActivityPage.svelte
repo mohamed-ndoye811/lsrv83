@@ -38,6 +38,7 @@
 </script>
 
 <img src={activiteImage} id="background" alt="activité" />
+<div class="backgroundColor" />
 <h1>{activite}</h1>
 <div class="container">
   <div class="pageContent">
@@ -60,6 +61,16 @@
     width: 100%;
     height: 65%;
     overflow: hidden;
+  }
+
+  .backgroundColor {
+    background-color: #0066cc;
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
 
   #background {
