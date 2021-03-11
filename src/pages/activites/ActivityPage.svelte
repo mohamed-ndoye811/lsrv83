@@ -1,5 +1,115 @@
 <script>
   export let activite;
+  export let activiteImage;
+  import { db } from "../../utils/firestore.js";
+  import { onMount } from "svelte";
+
+  let dates = [];
+
+  onMount(() => {
+    db.collection("activites").onSnapshot((data) => {
+      dates = data.docs;
+    });
+  });
+
+  // Fonction pour ajuster l'affichage de la date
+  let xx = new Date(); //On crée un nouvel Élément Date
+  const jour = (timestamp) => {
+    // Celui-ci va nous permettre de passer la date qui est initialement en millisecondes, en vrai date afin de récupérer le jour, le mois etc...
+    xx.setTime(timestamp * 1000); // javascript timestamps are in milliseconds
+
+    let mois = [
+      "Janvier",
+      "Février",
+      "Mars",
+      "Avril",
+      "Mai",
+      "Juin",
+      "Juillet",
+      "Août",
+      "Septembre",
+      "Octobre",
+      "Novembre",
+      "Décembre",
+    ];
+
+    return xx.getDate().toString() + " " + mois[xx.getMonth()]; // the Day
+  };
 </script>
 
+<img src={activiteImage} id="background" alt="activité" />
 <h1>{activite}</h1>
+<div class="container">
+  <div class="pageContent">
+    <div class="images">blabla</div>
+    <div class="rightPane">
+      <div class="dates">
+        {#each dates as date}
+          {#if date.data().nom.toLowerCase() == activite.toLowerCase()}
+            <p>{jour(date.data().date)}</p>
+          {/if}
+        {/each}
+      </div>
+      <div class="contact">test</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+  }
+
+  #background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+  }
+
+  h1 {
+    position: relative;
+    width: fit-content;
+    margin: 10px auto;
+    font-size: 3em;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .images {
+    background-color: #ffd700;
+    color: #0066cc;
+    width: 22.5vw;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  .pageContent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .rightPane {
+    width: 66%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .contact {
+    height: 15%;
+    background-color: #ffd700;
+    color: #0066cc;
+    border-radius: 15px;
+  }
+</style>

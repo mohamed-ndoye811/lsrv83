@@ -47,10 +47,11 @@
   });
 
   let pageActivite = "";
+  let imageActivite;
 
-  function choixActivité(nomActivite) {
-    console.log(nomActivite);
+  function choixActivité(nomActivite, imageSrc = "") {
     pageActivite = nomActivite;
+    imageActivite = imageSrc;
   }
 </script>
 
@@ -58,17 +59,28 @@
   <h1 id="activityTitle">ACTIVITÉS</h1>
   <div class="container">
     {#each activites as activity}
-      <div class="activityItem" on:click={() => choixActivité(activity.nom)}>
+      <div
+        class="activityItem"
+        on:click={() => choixActivité(activity.nom, activity.imageSrc)}
+      >
         <img src={activity.imageSrc} alt={"image " + activity.nom} />
         <p>{activity.nom}</p>
       </div>
     {/each}
   </div>
-{:else if pageActivite != ""}
-  <ActivityPage activite={pageActivite} />
+{:else}
+  <ActivityPage activite={pageActivite} activiteImage={imageActivite} />
+  <div class="bouton" on:click={() => choixActivité("")}>RETOUR</div>
 {/if}
 
 <style>
+  .bouton {
+    width: 100px;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 25px;
+    margin: 20px 0 20px auto;
+  }
   #activityTitle {
     margin: 1% auto;
     width: fit-content;

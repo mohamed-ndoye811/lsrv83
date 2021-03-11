@@ -104,7 +104,7 @@
               {/if}
 
               <td class="telephones">
-                <div class="fixe">{membreEquipe.data().Fixe}</div>
+                <div class="fixe">{membreEquipe.Fixe}</div>
                 <div class="portable">{membreEquipe.data().Portable}</div>
               </td>
 
@@ -129,13 +129,14 @@
 
 <style>
   .lieuAntenne {
-    width: 400px;
+    width: 300px;
     font-size: 0.8em;
   }
 
   .dateAntenne {
-    width: 400px;
+    width: 300px;
 
+    line-break: normal;
     font-size: 0.8em;
   }
 
@@ -174,6 +175,7 @@
   }
 
   .membreEquipe {
+    opacity: 0;
     width: 100%;
     font-size: 1em;
     font-weight: 600;
@@ -236,8 +238,12 @@
   }
 
   td {
-    padding: 0.5rem;
+    padding: 0.5em;
     text-align: left;
+  }
+
+  tr {
+    margin-bottom: 100px;
   }
 
   @media (min-width: 1750px) {

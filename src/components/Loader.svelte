@@ -13,7 +13,13 @@
         ease: Expo.easeInOut,
         stagger: 0.15,
         duration: 0.8,
-        delay: 0.8,
+        delay: 1,
+        onComplete: () => {
+          gsap.to([".backgroundImg", ".loaderLogo"], {
+            duration: 0.1,
+            autoAlpha: 0,
+          });
+        },
       });
 
       gsap
@@ -23,7 +29,7 @@
           rotateZ: 20,
           ease: Expo.easeOut,
           stagger: 0.04,
-          delay: 1.2,
+          delay: 1.4,
         })
         .then(() => {
           gsap.to(".loader_Mot", {
@@ -63,9 +69,27 @@
   <div class="loaderBackground" id="layer1" />
   <div class="loaderBackground" id="layer2" />
   <div class="loaderBackground" id="layer3" />
+
+  <img src="./img/LSR_LOGO/LSR83_logo.png" alt="" class="loaderLogo" />
+  <img src="./img/Loader/Loaderimg.jpg" class="backgroundImg" alt="la Verne" />
 </div>
 
 <style>
+  .loaderLogo {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .backgroundImg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
   .loaderContainer {
     height: 100%;
     width: 100%;
