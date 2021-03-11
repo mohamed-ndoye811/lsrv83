@@ -18,6 +18,11 @@
   let pageSelected = ""; // Selecteur de page
   let actualPage; // Variable de la page actuelle affichée
   let loadingEnded = false;
+  // Définition des variables pour la recherche des statuts et du réglement
+  let adminPannelVisible = false;
+  let diversPannelVisible = false;
+  let adminChoix = "";
+  let equipeAffichee;
 
   // Fonction de changement de page, qui fait disparaitre celle présente pour laisser apparaitre la nouvelle
   function pageSwitch(nextPage) {
@@ -27,6 +32,11 @@
       duration: 0.6,
       ease: Power4.easeOut,
     });
+
+    if (nextPage == "/Equipe") {
+      equipeAffichee = -1;
+      console.log("Hey");
+    }
 
     // Réapparition après un délai
     setTimeout(function () {
@@ -38,11 +48,6 @@
       pageSelected = nextPage;
     }, 200);
   }
-
-  // Définition des variables pour la recherche des statuts et du réglement
-  let adminPannelVisible = false;
-  let diversPannelVisible = false;
-  let adminChoix = "";
 
   // Gestion du changement de page pour l'administration
   function redirectionAdmin(choix) {
@@ -126,7 +131,7 @@
     {#if pageSelected === "/"}
       <Accueil />
     {:else if pageSelected === "/Equipe"}
-      <Equipe sectionAffichee="-1" />
+      <Equipe sectionAffichee={equipeAffichee} />
     {:else if pageSelected === "/Activites"}
       <Activites />
     {:else if pageSelected === "/BSV"}
@@ -142,7 +147,11 @@
   </div>
 
   <div class="background backgroundColor" />
-  <div class="background backgroundImage" />
+  <img
+    src="./img/Toulon-2.jpg"
+    class="background backgroundImage"
+    alt="fond de toulon"
+  />
 {/if}
 
 <style>
@@ -156,7 +165,6 @@
   }
   .backgroundImage {
     opacity: 0.2;
-    background-image: url("../public/img/Toulon-2.jpg");
     filter: blur(2px);
   }
   .backgroundColor {
