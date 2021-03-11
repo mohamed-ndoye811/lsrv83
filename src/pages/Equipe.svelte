@@ -22,7 +22,7 @@
     },
   ];
 
-  let sectionAffichee = -1;
+  export let sectionAffichee = -1;
 
   function choixSection(nomSection, index) {
     equipe[index].ouvert = !equipe[index].ouvert;

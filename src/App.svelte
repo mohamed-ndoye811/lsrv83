@@ -126,7 +126,7 @@
     {#if pageSelected === "/"}
       <Accueil />
     {:else if pageSelected === "/Equipe"}
-      <Equipe />
+      <Equipe sectionAffichee="-1" />
     {:else if pageSelected === "/Activites"}
       <Activites />
     {:else if pageSelected === "/BSV"}
@@ -156,7 +156,7 @@
   }
   .backgroundImage {
     opacity: 0.2;
-    background-image: url("./img/Toulon-2.jpg");
+    background-image: url("../public/img/Toulon-2.jpg");
     filter: blur(2px);
   }
   .backgroundColor {
