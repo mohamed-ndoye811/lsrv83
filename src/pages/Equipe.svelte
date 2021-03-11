@@ -22,7 +22,7 @@
     },
   ];
 
-  let sectionAffichee;
+  let sectionAffichee = -1;
 
   function choixSection(nomSection, index) {
     equipe[index].ouvert = !equipe[index].ouvert;
@@ -104,7 +104,7 @@
               {/if}
 
               <td class="telephones">
-                <div class="fixe">{membreEquipe.Fixe}</div>
+                <div class="fixe">{membreEquipe.data().Fixe}</div>
                 <div class="portable">{membreEquipe.data().Portable}</div>
               </td>
 

@@ -19,8 +19,7 @@
   let actualPage; // Variable de la page actuelle affichée
   let loadingEnded = false;
   // Définition des variables pour la recherche des statuts et du réglement
-  let adminPannelVisible = false;
-  let diversPannelVisible = false;
+  let PannelVisible = "";
   let adminChoix = "";
 
   // Fonction de changement de page, qui fait disparaitre celle présente pour laisser apparaitre la nouvelle
@@ -45,6 +44,7 @@
 
   // Gestion du changement de page pour l'administration
   function redirectionAdmin(choix) {
+    PannelVisible = "";
     pageSwitch("/Administration");
     setTimeout(function () {
       adminChoix = choix.toLowerCase();
@@ -52,6 +52,39 @@
 
     adminPannelVisible = false;
   }
+
+  // Gestion des click pour l'apparition disparition du pannel de selection
+  var nbClick = 0;
+
+  document.addEventListener("click", (evt) => {
+    var pannel;
+    if (PannelVisible == "admin") {
+      pannel = document.getElementById("adminPannel");
+    } else if (PannelVisible == "divers") {
+      pannel = document.getElementById("diversPannel");
+    }
+    let targetElement = evt.target; // clicked element
+
+    if (PannelVisible != "") {
+      do {
+        if (targetElement == pannel) {
+          // This is a click inside. Do nothing, just return.
+          return;
+        }
+        // Go up the DOM
+        targetElement = targetElement.parentNode;
+      } while (targetElement);
+
+      // This is a click outside.
+      if (nbClick == 1) {
+        PannelVisible = "";
+        nbClick = 0;
+        return;
+      }
+
+      nbClick++;
+    }
+  });
 
   setTimeout(() => {
     loadingEnded = true;
@@ -82,7 +115,7 @@
       <li
         class="nav__link"
         on:click={() => {
-          adminPannelVisible = !adminPannelVisible;
+          PannelVisible = "admin";
         }}
       >
         ADMINISTRATION
@@ -90,7 +123,7 @@
       <li
         class="nav__link"
         on:click={() => {
-          diversPannelVisible = !diversPannelVisible;
+          PannelVisible = "divers";
         }}
       >
         DIVERS
@@ -98,9 +131,10 @@
     </ul>
 
     <div
-      class={adminPannelVisible === true
+      class={PannelVisible === "admin"
         ? "adminPannel pannelVisible"
-        : "adminPannel"}
+        : "adminPannel hidden"}
+      id="adminPannel"
     >
       <p on:click={() => redirectionAdmin("Statuts")}>STATUTS</p>
       <p on:click={() => redirectionAdmin("Reglement")}>REGLEMENT</p>
@@ -109,9 +143,9 @@
       </p>
     </div>
     <div
-      class="adminPannel {diversPannelVisible === true
-        ? 'adminPannel pannelVisible '
-        : 'adminPannel'}"
+      class={PannelVisible === "divers"
+        ? "adminPannel pannelVisible "
+        : "adminPannel hidden"}
       id="diversPannel"
     >
       <p on:click={() => redirectionAdmin("Statuts")}>PHOTOS</p>
