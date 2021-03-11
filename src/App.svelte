@@ -22,31 +22,25 @@
   let adminPannelVisible = false;
   let diversPannelVisible = false;
   let adminChoix = "";
-  let equipeAffichee;
 
   // Fonction de changement de page, qui fait disparaitre celle présente pour laisser apparaitre la nouvelle
   function pageSwitch(nextPage) {
     // Animation de disparition
     gsap.to(actualPage, {
-      autoAlpha: 0,
+      opacity: 0,
       duration: 0.6,
       ease: Power4.easeOut,
+      onComplete: () => {
+        pageSelected = nextPage;
+      },
     });
 
-    if (nextPage == "/Equipe") {
-      equipeAffichee = -1;
-      console.log("Hey");
-    }
-
-    // Réapparition après un délai
-    setTimeout(function () {
-      gsap.to(actualPage, {
-        autoAlpha: 1,
-        duration: 0.6,
-        ease: Power4.easeOut,
-      });
-      pageSelected = nextPage;
-    }, 200);
+    gsap.to(actualPage, {
+      opacity: 1,
+      duration: 0.6,
+      delay: 0.6,
+      ease: Power4.easeOut,
+    });
   }
 
   // Gestion du changement de page pour l'administration
@@ -131,7 +125,7 @@
     {#if pageSelected === "/"}
       <Accueil />
     {:else if pageSelected === "/Equipe"}
-      <Equipe sectionAffichee={equipeAffichee} />
+      <Equipe />
     {:else if pageSelected === "/Activites"}
       <Activites />
     {:else if pageSelected === "/BSV"}
