@@ -78,6 +78,8 @@
       do {
         if (targetElement == pannel) {
           // This is a click inside. Do nothing, just return.
+          PannelVisible = "";
+          nbClick = 0;
           return;
         }
         // Go up the DOM
