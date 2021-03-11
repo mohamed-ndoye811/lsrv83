@@ -55,7 +55,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: -50px;
+    top: 50px;
   }
   .activitesAnnee {
     overflow-y: scroll;

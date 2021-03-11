@@ -85,7 +85,7 @@
       display: flex;
       justify-content: space-between;
       position: relative;
-      top: -50px;
+      top: 50px;
     }
     .monthContainer {
       padding: 5px;

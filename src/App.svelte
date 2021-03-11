@@ -4,15 +4,19 @@
   //---[ IMPORT DES PAGES ]---
   import Equipe from "./pages/Equipe.svelte";
   import Accueil from "./pages/Accueil.svelte";
-  import PlanningsSelection from "./pages/PlanningsSelection.svelte";
   import Bsv from "./pages/Bsv.svelte";
   import Administration from "./pages/Administration.svelte";
   import Activites from "./pages/Activites.svelte";
+  import PlanningAnnuel from "./pages/Plannings/PlanningAnnuel.svelte";
+  import PlanningMensuel from "./pages/Plannings/PlanningMensuel.svelte";
 
   //---[ IMPORT DES COMPONENTS ]---
   import CompteurVisite from "./components/CompteurVisite.svelte";
   import InfoImportante from "./components/InfoImportante.svelte";
   import Loader from "./components/Loader.svelte";
+
+  //---[ IMPORT DE LA BASE DE DONNEES ]---
+  import { db } from "./utils/firestore.js";
 
   //---[ DEFINITION DES VARIABLES ]---
   let pageSelected = ""; // Selecteur de page
@@ -58,11 +62,16 @@
 
   document.addEventListener("click", (evt) => {
     var pannel;
+
+    // Pannel récupérera le pannel affiché
     if (PannelVisible == "admin") {
       pannel = document.getElementById("adminPannel");
     } else if (PannelVisible == "divers") {
       pannel = document.getElementById("diversPannel");
+    } else if (PannelVisible == "planning") {
+      pannel = document.getElementById("planningPannel");
     }
+
     let targetElement = evt.target; // clicked element
 
     if (PannelVisible != "") {
@@ -109,7 +118,7 @@
         ACTIVITÉS
       </li>
       <li class="nav__link" on:click={() => pageSwitch("/BSV")}>BSV</li>
-      <li class="nav__link" on:click={() => pageSwitch("/Planning")}>
+      <li class="nav__link" on:click={() => (PannelVisible = "planning")}>
         PLANNINGS
       </li>
       <li
@@ -151,6 +160,15 @@
       <p on:click={() => redirectionAdmin("Statuts")}>PHOTOS</p>
       <p on:click={() => redirectionAdmin("Reglement")}>ANNIVERSAIRES</p>
     </div>
+    <div
+      class={PannelVisible === "planning"
+        ? "adminPannel pannelVisible "
+        : "adminPannel hidden"}
+      id="planningPannel"
+    >
+      <p on:click={() => pageSwitch("/PlanningAnnuel")}>ANNUEL</p>
+      <p on:click={() => pageSwitch("/PlanningMensuel")}>MENSUEL</p>
+    </div>
   </header>
 
   <InfoImportante />
@@ -164,8 +182,10 @@
       <Activites />
     {:else if pageSelected === "/BSV"}
       <Bsv />
-    {:else if pageSelected === "/Planning"}
-      <PlanningsSelection />
+    {:else if pageSelected === "/PlanningAnnuel"}
+      <PlanningAnnuel />
+    {:else if pageSelected === "/PlanningMensuel"}
+      <PlanningMensuel {db} />
     {:else if pageSelected === "/Administration"}
       <Administration textToShow={adminChoix} />
     {/if}
