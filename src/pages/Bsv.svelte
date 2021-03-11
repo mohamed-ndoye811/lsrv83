@@ -14,7 +14,7 @@
 </script>
 
 <div class="bsvContainer">
-  <h1 id="titrePage">BSV</h1>
+  <h1 id="titrePage">BSV (Bourse Solidarité Vacances)</h1>
   <div class="bsvTexte">
     <div class="bsvInfo">
       Droit aux vacances pour tous avec LSR et BSV et SENIORS EN VACANCES c'est
@@ -68,7 +68,7 @@
 <style>
   #titrePage {
     margin: 1% auto;
-    font-size: 3.5vh;
+    font-size: 4vh;
   }
   .bsvContainer {
     display: flex;

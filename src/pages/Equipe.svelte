@@ -1,5 +1,7 @@
 <script>
   import { db } from "../utils/firestore";
+  import { gsap, Expo } from "gsap";
+  import { onMount } from "svelte";
 
   let equipe = [
     {
@@ -11,7 +13,7 @@
       ouvert: false,
     },
     {
-      titre: "Responsables d'Actvité",
+      titre: "Responsables d'Activité",
       ouvert: false,
     },
     {
@@ -26,6 +28,22 @@
     equipe[index].ouvert = !equipe[index].ouvert;
     if (sectionAffichee == -1) {
       sectionAffichee = nomSection;
+      setTimeout(() => {
+        gsap.fromTo(
+          ".membreEquipe",
+          {
+            opacity: 0,
+            y: "100px",
+          },
+          {
+            duration: 0.8,
+            opacity: 1,
+            ease: Expo.easeOut,
+            y: 0,
+            stagger: 0.05,
+          }
+        );
+      }, 0);
     } else {
       sectionAffichee = -1;
     }
@@ -33,8 +51,10 @@
 
   var listeEquipe = [];
 
-  db.collection("equipe").onSnapshot((data) => {
-    listeEquipe = data.docs;
+  onMount(() => {
+    db.collection("equipe").onSnapshot((data) => {
+      listeEquipe = data.docs;
+    });
   });
 </script>
 
@@ -56,38 +76,69 @@
 
   {#if sectionAffichee != -1}
     <div class="equipeContainer">
-      {#each listeEquipe as membreEquipe}
-        {#if membreEquipe
-          .data()
-          .Categorie.toLowerCase() == sectionAffichee.toLowerCase()}
-          <div class="membreEquipe">
-            <div class="firstSlot">
-              <div class="nomPrenom">
-                <p class="nom">{membreEquipe.data().Nom}</p>
-                <p class="prenom">{membreEquipe.data().Prenom}</p>
-              </div>
-              {#if membreEquipe.data().Fonction != ""}
-                <span class="fonction">{membreEquipe.data().Fonction}</span>
+      <table align="center">
+        {#each listeEquipe as membreEquipe}
+          {#if membreEquipe
+            .data()
+            .Categorie.toLowerCase() == sectionAffichee.toLowerCase()}
+            <tr class="membreEquipe">
+              <td class="firstSlot">
+                <div class="nomPrenom">
+                  <p class="nom">{membreEquipe.data().Nom}</p>
+                  <p class="prenom">{membreEquipe.data().Prenom}</p>
+                </div>
+                {#if !!membreEquipe.data().Fonction || !!membreEquipe.data().Ville}
+                  <span class="fonction"
+                    >{sectionAffichee == "Conseil d'administration"
+                      ? membreEquipe.data().Fonction
+                      : membreEquipe.data().Ville}</span
+                  >
+                {/if}
+              </td>
+
+              {#if // On vérifie si on a sélectionné le conseil d'administration ou les responsables d'activité
+              sectionAffichee == "Conseil d'administration" || sectionAffichee == "Responsables d'Activité"}
+                <td class="responsabilite">
+                  {membreEquipe.data().Responsabilite}
+                </td>
               {/if}
-            </div>
 
-            <div class="responsabilite">
-              {membreEquipe.data().Responsabilite}
-            </div>
+              <td class="telephones">
+                <div class="fixe">{membreEquipe.data().Fixe}</div>
+                <div class="portable">{membreEquipe.data().Portable}</div>
+              </td>
 
-            <div class="telephones">
-              <div class="fixe">{membreEquipe.data().Fixe}</div>
-              <div class="portable">{membreEquipe.data().Portable}</div>
-            </div>
-            <div class="mail">{membreEquipe.data().Mail}</div>
-          </div>
-        {/if}
-      {/each}
+              <td class="mail">{membreEquipe.data().Mail}</td>
+
+              {#if // On vérifie si on a sélectionné le conseil d'administration ou les responsables d'activité
+              sectionAffichee == "Les antennes"}
+                <td class="lieuAntenne">
+                  {membreEquipe.data().Lieu}
+                </td>
+                <td class="dateAntenne">
+                  {membreEquipe.data().Dates}
+                </td>
+              {/if}
+            </tr>
+          {/if}
+        {/each}
+      </table>
     </div>
   {/if}
 </div>
 
 <style>
+  .lieuAntenne {
+    width: 400px;
+    font-size: 0.8em;
+  }
+
+  .dateAntenne {
+    width: 400px;
+
+    font-size: 0.8em;
+  }
+
   #titrePage {
     margin: 1% auto;
     width: fit-content;
@@ -123,18 +174,14 @@
   }
 
   .membreEquipe {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 600;
     margin-bottom: 20px;
   }
 
   .nomPrenom {
     display: flex;
-    justify-content: space-between;
   }
 
   .nomPrenom p {
@@ -151,16 +198,15 @@
   }
 
   .telephones {
-    display: flex;
-    flex-direction: column;
     margin: 0;
-    font-size: 1em;
+    text-align: center;
+    width: 500px;
   }
 
   .fonction {
     background-color: #ffd700;
     color: #0066cc;
-    font-size: 0.6em;
+    font-size: 0.7em;
     font-weight: 700;
     text-transform: uppercase;
     padding: 5px 20px;
@@ -169,13 +215,38 @@
 
   .responsabilite {
     line-break: normal;
-    width: 300px;
+    width: 450px;
+  }
+
+  .mail {
+    text-align: center;
   }
 
   .equipeContainer {
-    overflow-y: scroll;
+    overflow-y: auto;
     width: 100%;
-    padding: 0 10px 0 0;
     height: 65%;
+  }
+
+  table {
+    height: fit-content;
+    width: 100%;
+    vertical-align: middle;
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  @media (min-width: 1750px) {
+    .membreEquipe {
+      font-size: 1.4em;
+    }
+
+    .responsabilite {
+      width: 450px;
+    }
   }
 </style>
