@@ -1,11 +1,11 @@
 <script>
   import { onMount } from "svelte";
   // Import des éléments + de la db
-  import DetailsActivites from "./../../components/DetailsActivites.svelte";
+  import DetailsActivites from "../../components/DetailsActivites.svelte";
   import { gsap, Expo } from "gsap";
+  import { db } from "../../utils/firestore";
 
   let dates = []; //Tableau des dates
-  export let db;
 
   // Remplissage du tableau des dates à partir de la base de données
   db.collection("activites").onSnapshot((data) => {
@@ -30,6 +30,15 @@
     return days[xx.getDay()] + " " + xx.getDate().toString(); // the Day
   };
 
+  // Fonction affichage des détails d'une activité
+  let typeActivite = "";
+  let affichageDetails = false;
+
+  function afficherDetails(nom) {
+    affichageDetails = true;
+    typeActivite = nom;
+  }
+
   onMount(() => {
     gsap.from(".monthContainer", {
       y: 50,
@@ -39,8 +48,6 @@
       stagger: 0.1,
     });
   });
-
-  let showDetails = false;
 </script>
 
 <div class="container">
@@ -48,7 +55,7 @@
     <h1>FÉVRIER</h1>
 
     {#each dates as date}
-      <p on:click={() => (showDetails = true)}>
+      <p on:click={() => afficherDetails(date.data().nom)}>
         {jour(date.data().date)} - {date.data().nom}
       </p>
     {/each}
@@ -71,10 +78,10 @@
   </div>
 </div>
 
-{#if showDetails == true}
+{#if affichageDetails == true}
   <DetailsActivites
-    typeActivite="Randonnée"
-    on:click={() => (showDetails = false)}
+    {typeActivite}
+    on:click={() => (affichageDetails = false)}
   />
 {/if}
 

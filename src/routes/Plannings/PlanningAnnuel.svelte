@@ -1,5 +1,4 @@
 <script>
-  import { each } from "svelte/internal";
 </script>
 
 <div class="container">

@@ -1,29 +1,61 @@
 <script>
   import { gsap, Expo } from "gsap";
   import { onMount } from "svelte";
+  import { link } from "svelte-spa-router";
+  import { fade } from "svelte/transition";
+  import { db } from "../utils/firestore";
+
+  // Récupère les paramètres passées dans le lien
+  export let params = {};
 
   let equipe = [
     {
       titre: "Conseil d'administration",
+      lien: "conseil_administration",
       ouvert: false,
     },
     {
       titre: "Commission de contrôle",
+      lien: "commission_controle",
       ouvert: false,
     },
     {
       titre: "Responsables d'Activité",
+      lien: "responsables_activite",
       ouvert: false,
     },
     {
       titre: "Les antennes",
+      lien: "antennes",
       ouvert: false,
     },
   ];
 
-  export let db;
+  var sectionAffichee = "";
+  let membreEquipe = [];
 
-  let sectionAffichee = -1;
+  $: if (params.categorie != "menu") {
+    sectionAffichee = equipe.find(
+      (categorie) => categorie.lien == params.categorie
+    ).titre;
+
+    setTimeout(() => {
+      gsap.fromTo(
+        ".membreEquipe",
+        {
+          opacity: 0,
+          y: "100px",
+        },
+        {
+          duration: 0.8,
+          opacity: 1,
+          ease: Expo.easeOut,
+          y: 0,
+          stagger: 0.05,
+        }
+      );
+    }, 0);
+  }
 
   function choixSection(nomSection, index) {
     equipe[index].ouvert = !equipe[index].ouvert;
@@ -50,7 +82,7 @@
     }
   }
 
-  var listeEquipe = [];
+  let listeEquipe = [];
 
   onMount(() => {
     db.collection("equipe").onSnapshot((data) => {
@@ -59,30 +91,46 @@
   });
 </script>
 
-<div class="container">
+<div class="container" in:fade={{ duration: 200 }}>
   <h1 id="titrePage">ÉQUIPE</h1>
   {#each equipe as pannel, i}
-    <div
-      class={sectionAffichee === pannel.titre || sectionAffichee == -1
-        ? "option affichee"
-        : "option hidden"}
-      on:click={() => choixSection(pannel.titre, i)}
-    >
-      <p class="option__titre">
-        {pannel.titre}
-      </p>
-      <div class="option__ouverture">{pannel.ouvert ? "-" : "+"}</div>
-    </div>
+    {#if params.categorie != pannel.lien}
+      <a
+        href={"/equipe/" + pannel.lien}
+        class={params.categorie === pannel.lien || params.categorie == "menu"
+          ? "option affichee"
+          : "option hidden"}
+        use:link
+      >
+        <p class="option__titre">
+          {pannel.titre}
+        </p>
+        <div class="option__ouverture">+</div>
+      </a>
+    {:else}
+      <a
+        href={"/equipe/menu"}
+        class={params.categorie === pannel.lien || params.categorie == "menu"
+          ? "option affichee"
+          : "option hidden"}
+        use:link
+      >
+        <p class="option__titre">
+          {pannel.titre}
+        </p>
+        <div class="option__ouverture">-</div>
+      </a>
+    {/if}
   {/each}
 
-  {#if sectionAffichee != -1}
+  {#if params.categorie != "menu"}
     <div class="equipeContainer">
       <table align="center">
-        {#each listeEquipe as membreEquipe}
+        {#each listeEquipe as membreEquipe, i}
           {#if membreEquipe
             .data()
             .Categorie.toLowerCase() == sectionAffichee.toLowerCase()}
-            <tr class="membreEquipe">
+            <tr class="membreEquipe" bind:this={membreEquipe[i]}>
               <td class="firstSlot">
                 <div class="nomPrenom">
                   <p class="nom">{membreEquipe.data().Nom}</p>
@@ -162,8 +210,10 @@
     font-weight: 600;
     font-size: 2.5em;
     cursor: pointer;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     user-select: none;
+    text-decoration: none;
+    color: #ffd700;
   }
 
   .option__titre {
@@ -176,7 +226,7 @@
   }
 
   .membreEquipe {
-    opacity: 0;
+    opacity: 1;
     width: 100%;
     font-size: 1em;
     font-weight: 600;

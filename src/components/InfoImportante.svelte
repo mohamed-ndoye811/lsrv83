@@ -3,8 +3,8 @@
   let barreAnnonce;
 
   let texteInformationImportante = (
-      informationImportante.toUpperCase() + " - "
-    ).repeat(3);
+    informationImportante.toUpperCase() + " - "
+  ).repeat(3);
 </script>
 
 <div class="infoImportante" bind:this={barreAnnonce}>
@@ -16,24 +16,24 @@
 </div>
 
 <style>
-
   .infoImportante {
-	 height: 40px;
-	 width: 100%;
-	 background-color: #ffd700;
-	 color: #06c;
-	 white-space: nowrap;
-	 overflow: hidden;
-	 display: flex;
-	 align-items: center;
-	 z-index: 1;
-}
- .infoImportante__texte {
-	 font-size: 1.25vw;
-	 font-weight: 600;
-	 animation: scrollTxtInfoImportante 40s linear infinite;
-	 z-index: 1;
-}
+    height: 40px;
+    width: 100%;
+    background-color: #ffd700;
+    color: #06c;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  .infoImportante__texte {
+    cursor: default;
+    font-size: 1.25vw;
+    font-weight: 600;
+    animation: scrollTxtInfoImportante 40s linear infinite;
+    z-index: 1;
+  }
 
   @keyframes scrollTxtInfoImportante {
     0% {

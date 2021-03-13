@@ -1,8 +1,10 @@
 <script>
+  import { fade } from "svelte/transition";
+  import { link } from "svelte-spa-router";
   let actuSelected = 1;
 </script>
 
-<div class="wrapper">
+<div class="wrapper" in:fade={{ duration: 200 }}>
   <div class="accueilContainer">
     <div class="homeInfo">
       <h3 class="homeInfo__titre">QUI SOMMES NOUS?</h3>
@@ -20,7 +22,9 @@
         les actions qui contribuent à améliorer le pouvoir d'achat, la santé, et
         la protection sociale.
       </p>
-      <div class="homeInfo__bouton bouton">NOUS REJOINDRE</div>
+      <a href="/equipe/antennes" class="homeInfo__bouton bouton" use:link>
+        NOUS REJOINDRE
+      </a>
     </div>
 
     <div class="collegues">

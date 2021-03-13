@@ -1,84 +1,72 @@
 <script>
+  //---[ IMPORT DES MODULES ]---
   import { gsap, Power4 } from "gsap";
+  import Router from "svelte-spa-router";
+  import { link } from "svelte-spa-router";
+  import active from "svelte-spa-router/active";
+  import { push } from "svelte-spa-router";
 
   //---[ IMPORT DES PAGES ]---
-  import Equipe from "./pages/Equipe.svelte";
-  import Accueil from "./pages/Accueil.svelte";
-  import Bsv from "./pages/Bsv.svelte";
-  import Administration from "./pages/Administration.svelte";
-  import Activites from "./pages/Activites.svelte";
-  import PlanningAnnuel from "./pages/Plannings/PlanningAnnuel.svelte";
-  import PlanningMensuel from "./pages/Plannings/PlanningMensuel.svelte";
+  import Equipe from "./routes/Equipe.svelte";
+  import Accueil from "./routes/Accueil.svelte";
+  import Bsv from "./routes/Bsv.svelte";
+  import Administration from "./routes/Administration.svelte";
+  import Activites from "./routes/Activites.svelte";
+  import Planning from "./routes/Planning.svelte";
 
   //---[ IMPORT DES COMPONENTS ]---
   import CompteurVisite from "./components/CompteurVisite.svelte";
   import InfoImportante from "./components/InfoImportante.svelte";
   import Loader from "./components/Loader.svelte";
 
-  //---[ IMPORT DE LA BASE DE DONNEES ]---
-  import { db } from "./utils/firestore.js";
+  //---[ DEFINITION DE LA LISTE DES PAGES ]---
+  const routes = {
+    "/": Accueil, //Page d'accueil
+
+    //"/voyage": Voyage, //Page Voyage
+
+    "/BSV": Bsv, //Page BSV
+
+    "/administration/:rubrique": Administration, //Page Administration + rubrique à afficher
+
+    "/activites/:activiteChoisie": Activites, //Page Activités + Activité à afficher
+
+    "/equipe/:categorie": Equipe, //Page equipe + categories à Afficher (Antennes...)
+
+    "/planning/:espaceTemps": Planning, //Page planning + espace de temps à Afficher (mensuel ou annuel)
+  };
 
   //---[ DEFINITION DES VARIABLES ]---
-  let pageSelected = ""; // Selecteur de page
-  let actualPage; // Variable de la page actuelle affichée
   let loadingEnded = false;
-  // Définition des variables pour la recherche des statuts et du réglement
-  let PannelVisible = "";
-  let adminChoix = "";
+  let pannelAffiche = "";
+  var nbClick = 0; // Gestion des click pour l'apparition disparition du pannel de selection
 
-  // Fonction de changement de page, qui fait disparaitre celle présente pour laisser apparaitre la nouvelle
-  function pageSwitch(nextPage) {
-    // Animation de disparition
-    gsap.to(actualPage, {
-      opacity: 0,
-      duration: 0.6,
-      ease: Power4.easeOut,
-      onComplete: () => {
-        pageSelected = nextPage;
-      },
-    });
-
-    gsap.to(actualPage, {
-      opacity: 1,
-      duration: 0.6,
-      delay: 0.6,
-      ease: Power4.easeOut,
-    });
+  // Foncontion mettant à jour le pannel du menu affiché
+  function pannelAffichage(pannelChoisi) {
+    pannelAffiche = pannelChoisi;
   }
-
-  // Gestion du changement de page pour l'administration
-  function redirectionAdmin(choix) {
-    PannelVisible = "";
-    pageSwitch("/Administration");
-    setTimeout(function () {
-      adminChoix = choix.toLowerCase();
-    }, 100);
-
-    adminPannelVisible = false;
-  }
-
-  // Gestion des click pour l'apparition disparition du pannel de selection
-  var nbClick = 0;
 
   document.addEventListener("click", (evt) => {
     var pannel;
 
     // Pannel récupérera le pannel affiché
-    if (PannelVisible == "admin") {
+    if (pannelAffiche == "admin") {
       pannel = document.getElementById("adminPannel");
-    } else if (PannelVisible == "divers") {
+    } else if (pannelAffiche == "divers") {
       pannel = document.getElementById("diversPannel");
-    } else if (PannelVisible == "planning") {
+    } else if (pannelAffiche == "planning") {
       pannel = document.getElementById("planningPannel");
     }
 
-    let targetElement = evt.target; // clicked element
+    let targetElement = evt.target; // element Cliqué
 
-    if (PannelVisible != "") {
+    if (pannelAffiche != "") {
       do {
         if (targetElement == pannel) {
-          // This is a click inside. Do nothing, just return.
-          PannelVisible = "";
+          //Si l'élément cliqué est un pannel, nous passon pannelAffiche à "" pour le faire disparaitre.
+          pannelAffiche = "";
+
+          // Puis nous remettons le compteur de clicks à 0 pour la prochaine gestion
           nbClick = 0;
           return;
         }
@@ -86,20 +74,21 @@
         targetElement = targetElement.parentNode;
       } while (targetElement);
 
-      // This is a click outside.
+      // Si le deuxième clic se fait à l'éxterieur du pannel, alors nous le faisons disparaitre en reinitialisant le compteur de clics
       if (nbClick == 1) {
-        PannelVisible = "";
+        pannelAffiche = "";
         nbClick = 0;
         return;
       }
 
+      // Lors du premier clic sur l'élément du menu il nous compte un clic. Ici nous incrémentons le compteur pour ne pas prendre compte de ce clic
       nbClick++;
     }
   });
 
+  // Timeout faisant apparaitre la page d'acceuil en fonction du loader
   setTimeout(() => {
     loadingEnded = true;
-    pageSelected = "/";
   }, 2500);
 </script>
 
@@ -107,93 +96,76 @@
 
 {#if loadingEnded}
   <header>
-    <img
-      src="./img/LSR_LOGO/LSR83_logo.png"
-      alt=""
-      id="headerLogo"
-      on:click={() => pageSwitch("/")}
-    />
-    <ul class="nav">
-      <li class="nav__link" on:click={() => pageSwitch("/Voyage")}>VOYAGE</li>
-      <li class="nav__link" on:click={() => pageSwitch("/Equipe")}>ÉQUIPE</li>
-      <li class="nav__link" on:click={() => pageSwitch("/Activites")}>
-        ACTIVITÉS
-      </li>
-      <li class="nav__link" on:click={() => pageSwitch("/BSV")}>BSV</li>
-      <li class="nav__link" on:click={() => (PannelVisible = "planning")}>
-        PLANNINGS
-      </li>
-      <li
-        class="nav__link"
-        on:click={() => {
-          PannelVisible = "admin";
-        }}
-      >
-        ADMINISTRATION
-      </li>
-      <li
-        class="nav__link"
-        on:click={() => {
-          PannelVisible = "divers";
-        }}
-      >
-        DIVERS
-      </li>
-    </ul>
-
-    <div
-      class={PannelVisible === "admin"
-        ? "adminPannel pannelVisible"
-        : "adminPannel hidden"}
-      id="adminPannel"
-    >
-      <p on:click={() => redirectionAdmin("Statuts")}>STATUTS</p>
-      <p on:click={() => redirectionAdmin("Reglement")}>REGLEMENT</p>
-      <p on:click={() => redirectionAdmin("Attestation")}>
-        ATTESTATION ASSURANCE
-      </p>
-    </div>
-    <div
-      class={PannelVisible === "divers"
-        ? "adminPannel pannelVisible "
-        : "adminPannel hidden"}
-      id="diversPannel"
-    >
-      <p on:click={() => redirectionAdmin("Statuts")}>PHOTOS</p>
-      <p on:click={() => redirectionAdmin("Reglement")}>ANNIVERSAIRES</p>
-    </div>
-    <div
-      class={PannelVisible === "planning"
-        ? "adminPannel pannelVisible "
-        : "adminPannel hidden"}
-      id="planningPannel"
-    >
-      <p on:click={() => pageSwitch("/PlanningAnnuel")}>ANNUEL</p>
-      <p on:click={() => pageSwitch("/PlanningMensuel")}>MENSUEL</p>
-    </div>
+    <a href="/" id="logoLink" use:link>
+      <img src="./img/LSR_LOGO/LSR83_logo.png" alt="" id="headerLogo" />
+    </a>
+    <nav>
+      <a class="links" href="/equipe/menu" use:link>ÉQUIPE</a>
+      <a class="links" href="/activites/menu" use:link> ACTIVITÉS </a>
+      <a class="links" href="/BSV" use:link>BSV</a>
+      <div class="navSection">
+        <p
+          class="links"
+          id="pannelPlanning"
+          on:click={() => pannelAffichage("planning")}
+        >
+          PLANNINGS
+        </p>
+        {#if pannelAffiche == "planning"}
+          <div class="pannel" id="planningPannel">
+            <a class="links" href="/planning/annuel" use:link> ANNUEL </a>
+            <a class="links" href="/planning/mensuel" use:link> MENSUEL </a>
+          </div>
+        {/if}
+      </div>
+      <div class="navSection">
+        <p
+          class="links"
+          id="pannelAdmin"
+          on:click={() => pannelAffichage("admin")}
+        >
+          ADMINISTRATION
+        </p>
+        {#if pannelAffiche == "admin"}
+          <div class="pannel" id="adminPannel">
+            <a class="links" href="/administration/statuts" use:link>
+              STATUTS
+            </a>
+            <a class="links" href="/administration/reglement" use:link>
+              RÉGLEMENT
+            </a>
+            <a class="links" href="/administration/attestation" use:link>
+              ATTESTATION
+            </a>
+          </div>
+        {/if}
+      </div>
+      <div class="navSection">
+        <p
+          class="links"
+          id="pannelDivers"
+          on:click={() => pannelAffichage("divers")}
+        >
+          DIVERS
+        </p>
+        {#if pannelAffiche == "divers"}
+          <div class="pannel" id="diversPannel">
+            <a class="links" href="/administration/statuts" use:link>
+              PHOTOS
+            </a>
+            <a class="links" href="/administration/reglement" use:link>
+              ANNIVERSAIRES
+            </a>
+          </div>
+        {/if}
+      </div>
+    </nav>
   </header>
 
   <InfoImportante />
 
-  <div class="container" bind:this={actualPage}>
-    {#if pageSelected === "/"}
-      <Accueil />
-    {:else if pageSelected === "/Equipe"}
-      <Equipe {db} />
-    {:else if pageSelected === "/Activites"}
-      <Activites {db} />
-    {:else if pageSelected === "/BSV"}
-      <Bsv />
-    {:else if pageSelected === "/PlanningAnnuel"}
-      <PlanningAnnuel {db} />
-    {:else if pageSelected === "/PlanningMensuel"}
-      <PlanningMensuel {db} />
-    {:else if pageSelected === "/Administration"}
-      <Administration textToShow={adminChoix} {db} />
-    {/if}
-    <div class:hidden={pageSelected != "/"}>
-      <CompteurVisite />
-    </div>
+  <div class="container">
+    <Router {routes} />
   </div>
 
   <div class="background backgroundColor" />
@@ -235,7 +207,7 @@
     z-index: 2;
   }
 
-  header .nav {
+  header nav {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -244,18 +216,25 @@
     width: 100vw;
   }
 
-  header .nav .nav__link {
+  a.links {
     color: #ffd700;
     text-decoration: none;
     font-weight: 600;
-    font-size: 2vh;
+    font-size: 2.3vh;
+    height: fit-content;
+    width: fit-content;
     cursor: pointer;
   }
 
-  header .adminPannel p {
-    margin: 7px 0;
-    font-size: 20px;
+  .links {
+    color: #ffd700;
+    text-decoration: none;
     font-weight: 600;
+    font-size: 2.3vh;
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+    width: fit-content;
     cursor: pointer;
   }
 
@@ -264,12 +243,34 @@
     cursor: pointer;
   }
 
-  header .pannelVisible {
-    visibility: visible;
+  .navSection {
+    position: relative;
+    height: fit-content;
+    width: fit-content;
   }
 
-  .hidden {
-    visibility: hidden;
+  .pannel {
+    position: absolute;
+    transform: translate(-50%, 15%);
+    left: 50%;
+    height: fit-content;
+    padding: 2vh 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #ffd700;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+  }
+
+  .pannel a {
+    color: #0066cc;
+  }
+
+  header a {
+    height: 8vh;
+    width: fit-content;
   }
 
   @media (min-width: 768px) {
@@ -277,43 +278,17 @@
       height: 8vh;
     }
 
-    header .nav {
+    header nav {
       width: 70%;
     }
 
-    header .nav .nav__link {
+    header .nav a {
       font-size: 1.3vw;
     }
 
-    header .adminPannel {
-      visibility: hidden;
-      background-color: #ffd700;
-      color: #0066cc;
-      position: absolute;
-      right: 10%;
-      top: 8vh;
-      z-index: 10;
-      width: 300px;
-      height: 150px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #diversPannel {
-      width: 200px;
-      height: 100px;
-    }
-
-    header .adminPannel p {
-      font-size: 1.2em;
-    }
-
-    header .pannelVisible {
-      visibility: visible;
+    header a {
+      height: 8vh;
+      width: fit-content;
     }
   }
 </style>

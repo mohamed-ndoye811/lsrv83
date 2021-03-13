@@ -1,9 +1,14 @@
 <script>
+  import { fade } from "svelte/transition";
   import { onMount } from "svelte";
   import { gsap, Expo } from "gsap";
   import ActivityPage from "./activites/ActivityPage.svelte";
   import activites from "../utils/activites.js";
-  export let db;
+  import { db } from "../utils/firestore";
+
+  import { push } from "svelte-spa-router";
+
+  export let params = {};
 
   onMount(() => {
     function preloadImages(array) {
@@ -50,15 +55,22 @@
   let pageActivite = "";
   let imageActivite;
 
+  $: if (params.activiteChoisie == "menu") {
+    pageActivite = "";
+  }
+
   function choixActivité(nomActivite, imageSrc = "") {
     pageActivite = nomActivite;
     imageActivite = imageSrc;
+    nomActivite != ""
+      ? push("/activites/activityDetails")
+      : push("/activites/menu");
   }
 </script>
 
-{#if pageActivite == ""}
-  <h1 id="activityTitle">ACTIVITÉS</h1>
-  <div class="container">
+{#if params.activiteChoisie == "menu" && pageActivite == ""}
+  <h1 id="activityTitle" in:fade={{ duration: 200 }}>ACTIVITÉS</h1>
+  <div class="container" in:fade={{ duration: 200 }}>
     {#each activites as activity}
       <div
         class="activityItem"
@@ -83,6 +95,7 @@
     margin: 20px 0 20px auto;
   }
   #activityTitle {
+    position: relative;
     margin: 1% auto;
     width: fit-content;
     font-size: 30px;

@@ -13,7 +13,7 @@
         ease: Expo.easeInOut,
         stagger: 0.15,
         duration: 0.8,
-        delay: 1,
+        delay: 2,
         onComplete: () => {
           gsap.to([".backgroundImg", ".loaderLogo"], {
             duration: 0.1,
@@ -29,7 +29,7 @@
           rotateZ: 20,
           ease: Expo.easeOut,
           stagger: 0.04,
-          delay: 1.4,
+          delay: 2.4,
         })
         .then(() => {
           gsap.to(".loader_Mot", {

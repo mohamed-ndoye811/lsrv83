@@ -19,6 +19,8 @@
   "dependencies": {
     "blast-text": "^2.0.0",
     "firebase": "^8.2.9",
-    "gsap": "^3.6.0"
+    "gsap": "^3.6.0",
+    "svelte-routing": "^1.5.0",
+    "svelte-spa-router": "^3.1.0"
   }
 }
