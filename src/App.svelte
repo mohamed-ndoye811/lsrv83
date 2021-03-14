@@ -3,6 +3,7 @@
   import { gsap, Power4 } from "gsap";
   import Router from "svelte-spa-router";
   import { link } from "svelte-spa-router";
+  import { location } from "svelte-spa-router";
   import active from "svelte-spa-router/active";
   import { push } from "svelte-spa-router";
 

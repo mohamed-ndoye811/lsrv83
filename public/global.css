@@ -85,15 +85,15 @@ button:focus {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 7px;
 }
 /* Track */
 ::-webkit-scrollbar-track {
   background-color: #809a6d;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ffd700;
-  border-radius: 5px;
+  border-radius: 7px;
 }
