@@ -96,7 +96,7 @@
   // Timeout faisant apparaitre la page d'acceuil en fonction du loader
   setTimeout(() => {
     loadingEnded = true;
-  }, 2500);
+  }, 3500);
 </script>
 
 <Loader />

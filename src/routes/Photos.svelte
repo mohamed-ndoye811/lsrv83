@@ -1,25 +1,19 @@
 <script>
   import Carousel from "@beyonk/svelte-carousel";
-
-  function importAll(r) {
-    return r.keys().map(r);
-  }
-
-  const images = importAll(require.context("./", false, /\.(png|jpe?g|svg)$/));
 </script>
 
 <div class="carouselContainer">
-  <Carousel perPage={3} loop={true}>
-    <div class="slide-content">Slide 1</div>
-    <div class="slide-content">Slide 2</div>
-    <div class="slide-content">Slide 3</div>
-    <div class="slide-content">Slide 4</div>
-  </Carousel>
+  <a href="./souvenirs/2009_05_08_Huveaune/index.html">Aquagym</a>
 </div>
 
 <style>
   .carouselContainer {
     width: 100%;
     height: 100%;
+  }
+
+  a {
+    color: #ffd700;
+    text-decoration: none;
   }
 </style>
