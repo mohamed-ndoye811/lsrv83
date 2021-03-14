@@ -66,7 +66,9 @@
     {/each}
   </h1>
 
-  <div class="loaderBackground" id="layer1" />
+  <div class="loaderBackground" id="layer1">
+    <img src="./img/Loader/loaderSliderBackground.jpg" alt="backgroundImg" />
+  </div>
   <div class="loaderBackground" id="layer2" />
   <div class="loaderBackground" id="layer3" />
 
@@ -107,6 +109,12 @@
   #layer1 {
     background-color: #ffda0a;
     z-index: 18;
+  }
+
+  #layer1 img {
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
   }
 
   #layer2 {

@@ -11,10 +11,11 @@
   });
 
   // Fonction pour ajuster l'affichage de la date
-  let xx = new Date(); //On crée un nouvel Élément Date
-  const jour = (timestamp) => {
-    // Celui-ci va nous permettre de passer la date qui est initialement en millisecondes, en vrai date afin de récupérer le jour, le mois etc...
-    xx.setTime(timestamp * 1000); // javascript timestamps are in milliseconds
+  const mois = (timestamp) => {
+    let dateActivite = new Date(); //On crée un nouvel Élément Date
+
+    // Celui-ci va nous permettre de passer la date qui est initialement en millisecondes, en vrai date afin de récupérer le mois, le mois etc...
+    dateActivite.setTime(timestamp * 1000); // javascript timestamps are in milliseconds
 
     let mois = [
       "Janvier",
@@ -31,7 +32,9 @@
       "Décembre",
     ];
 
-    return xx.getDate().toString() + " " + mois[xx.getMonth()]; // the Day
+    return (
+      dateActivite.getDate().toString() + " " + mois[dateActivite.getMonth()]
+    ); // the Day
   };
 </script>
 
@@ -43,9 +46,9 @@
     <div class="images">blabla</div>
     <div class="rightPane">
       <div class="dates">
-        {#each dates as date}
+        {#each dates.slice(0, 9) as date}
           {#if date.data().nom.toLowerCase() == activite.toLowerCase()}
-            <p>{jour(date.data().date)}</p>
+            <p>{mois(date.data().date)}</p>
           {/if}
         {/each}
       </div>
@@ -120,5 +123,27 @@
     background-color: #ffd700;
     color: #0066cc;
     border-radius: 15px;
+  }
+
+  .dates {
+    display: flex;
+    height: 80%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .dates p:nth-child(4n) {
+    flex-basis: 100%;
+  }
+
+  .dates p {
+    padding: 0;
+    font-size: 2.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    width: fit-content;
   }
 </style>

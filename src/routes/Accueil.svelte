@@ -1,6 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import { link } from "svelte-spa-router";
+  import CompteurVisite from "../components/CompteurVisite.svelte";
   let actuSelected = 1;
 </script>
 
@@ -145,14 +146,17 @@
     </div>
   </div>
 </div>
+<CompteurVisite />
 
 <style>
   .accueilContainer {
+    position: relative;
     height: fit-content;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     width: 100%;
+    height: 100%;
   }
 
   .homeInfo {
@@ -188,6 +192,7 @@
     align-self: flex-end;
     cursor: pointer;
     position: relative;
+    text-decoration: none;
     top: -20px;
   }
 
@@ -238,6 +243,8 @@
     background-color: #ffd700;
     color: #06c;
     width: 80%;
+    height: 100%;
+    position: relative;
   }
   .actu__image {
     border-radius: 10px 10px 0 0;
@@ -249,9 +256,11 @@
     background-size: cover;
   }
   .actu__selector {
+    position: absolute;
     width: 30%;
     height: 30px;
     left: 50%;
+    bottom: 25px;
     transform: translateX(-50%);
     display: flex;
     justify-content: space-evenly;
@@ -309,12 +318,14 @@
   }
   .actu__articleContainer {
     transform: translateX(-50%);
+    height: 45vh;
     display: flex;
     flex-direction: column;
   }
 
   @media only screen and (min-width: 768px) {
     .wrapper {
+      position: relative;
       display: flex;
       width: 100%;
       height: 80%;
@@ -323,8 +334,8 @@
     }
 
     .accueilContainer {
-      height: 100%;
       width: 60%;
+      height: 45vh;
       margin: 0;
       padding: 0;
       display: flex;
@@ -423,23 +434,26 @@
     .actu__selector {
       width: 30%;
       height: 30px;
-      position: relative;
+      position: fixed;
       left: 50%;
-      top: 3vh;
+      bottom: 10%;
       transform: translateX(-50%);
       display: flex;
+      align-items: center;
       justify-content: space-evenly;
     }
     .actu__selector__circle::before {
-      width: 1.5vh;
-      height: 1.5vh;
+      width: 15px;
+      height: 15px;
+      top: 0px;
     }
     .actu__selector__circle:hover {
       cursor: pointer;
     }
     .actu__selector__circle--active::before {
-      width: 1.5vh;
-      height: 1.5vh;
+      width: 15px;
+      height: 15px;
+      top: 0px;
     }
     .actu__separateur::before {
       top: -5px;
@@ -449,17 +463,18 @@
       margin: 0;
     }
     .actu__texte {
-      font-size: 2.4vh;
+      font-size: 1.3vw;
       font-weight: 600;
       text-align: justify;
       position: relative;
-      top: -25px;
+      top: -5px;
+      margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     .actu__boutonPlus {
-      font-size: 2.5vh;
-      margin-top: -45px;
+      font-size: 1.5vw;
+      margin: 0;
       font-style: italic;
       position: relative;
       align-self: flex-end;
@@ -467,12 +482,14 @@
     }
     .actu__articleContainer {
       width: 85%;
+      height: 45vh;
       position: relative;
       left: 50%;
       top: 3%;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
     }
   }
 </style>

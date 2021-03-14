@@ -1,9 +1,8 @@
 <script>
+  import { gsap, Expo } from "gsap";
   import { onMount } from "svelte";
 
   let compteur;
-
-  function updateVisitCount() {}
 
   onMount(() => {
     fetch(
@@ -12,7 +11,20 @@
       .then((res) => res.json())
       .then((res) => {
         compteurVisites = res.value;
-      });
+      })
+      .then(
+        gsap.fromTo(
+          compteur,
+          {
+            y: "100%",
+          },
+          {
+            duration: 1.2,
+            y: 0,
+            ease: Expo.easeOut,
+          }
+        )
+      );
   });
 
   //---[ COMPTEUR DE VISITES ]---
@@ -43,9 +55,9 @@
     overflow: hidden;
     width: 10%;
     height: 4%;
-    position: absolute;
-    bottom: 0;
+    position: fixed;
     right: 12.5%;
+    bottom: 0;
     border-radius: 0.8vw 0.8vw 0 0;
     display: flex;
     align-items: center;

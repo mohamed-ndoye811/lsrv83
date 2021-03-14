@@ -79,7 +79,7 @@ button:focus {
   cursor: pointer;
 }
 
-.bouton :hover {
+.bouton:hover {
   background-color: #e2c000;
 }
 

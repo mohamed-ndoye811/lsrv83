@@ -65,7 +65,7 @@
     <h1>MARS</h1>
 
     {#each Array(7) as _}
-      <p on:click={() => (showDetails = true)}>LUNDI 4 - RANDONÉE</p>
+      <p on:click={() => (affichageDetails = true)}>LUNDI 4 - RANDONÉE</p>
     {/each}
   </div>
 

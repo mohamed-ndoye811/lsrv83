@@ -13,6 +13,8 @@
   import Administration from "./routes/Administration.svelte";
   import Activites from "./routes/Activites.svelte";
   import Planning from "./routes/Planning.svelte";
+  import Anniversaire from "./routes/Anniversaire.svelte";
+  import Photos from "./routes/Photos.svelte";
 
   //---[ IMPORT DES COMPONENTS ]---
   import CompteurVisite from "./components/CompteurVisite.svelte";
@@ -34,6 +36,11 @@
     "/equipe/:categorie": Equipe, //Page equipe + categories à Afficher (Antennes...)
 
     "/planning/:espaceTemps": Planning, //Page planning + espace de temps à Afficher (mensuel ou annuel)
+
+    "/anniversaires": Anniversaire, // Page anniversaires
+
+    "/Photos": Photos, //Page photos souvenirs
+    "/Photos/*": Photos,
   };
 
   //---[ DEFINITION DES VARIABLES ]---
@@ -150,12 +157,8 @@
         </p>
         {#if pannelAffiche == "divers"}
           <div class="pannel" id="diversPannel">
-            <a class="links" href="/administration/statuts" use:link>
-              PHOTOS
-            </a>
-            <a class="links" href="/administration/reglement" use:link>
-              ANNIVERSAIRES
-            </a>
+            <a class="links" href="/photos" use:link> PHOTOS </a>
+            <a class="links" href="/anniversaires" use:link> ANNIVERSAIRES </a>
           </div>
         {/if}
       </div>
@@ -193,6 +196,7 @@
     background-color: #0066cc;
   }
   .container {
+    position: relative;
     max-width: 75%;
     height: 100%;
     margin: 0 auto;
