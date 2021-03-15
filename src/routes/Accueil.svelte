@@ -240,7 +240,6 @@
     color: #06c;
     width: 80%;
     height: 100%;
-    position: relative;
   }
   .actu__image {
     border-radius: 10px 10px 0 0;
@@ -406,12 +405,9 @@
     .actu {
       background-color: #ffd700;
       color: #06c;
-      right: 0;
-      top: 0px;
       border-radius: 2%;
       max-width: 35%;
       height: 100%;
-      align-self: flex-end;
     }
     .actu__image {
       border-radius: 10px 10px 0 0;
@@ -490,6 +486,9 @@
       display: flex;
       flex-direction: column;
       margin-top: 15px;
+      padding: 0 10px;
+      height: 85vh;
+      overflow-y: auto;
     }
 
     .homeInfo {
@@ -530,10 +529,99 @@
       top: -10px;
     }
     .collegues__liste__item a {
-      font-size: 1em;
+      font-size: 0.8em;
+      padding: 5px;
     }
     .collegues__liste__item p {
+      font-size: 0.8em;
+    }
+
+    .partenaires {
+      list-style: none;
+      width: 100%;
+      align-items: center;
+      padding: 0;
+    }
+    .partenaires__image {
+      width: fit-content;
+      margin: 0 auto;
+    }
+    .partenaires__image img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+    .partenaires__image:not(:nth-child(1)) {
+      margin-top: 25px;
+    }
+
+    #logoLaCadierenne {
+      max-width: 250px;
+    }
+
+    .actu {
+      width: 100%;
+      position: relative;
+      top: 80%;
+      border-radius: 10px;
+    }
+
+    .actu__image {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+      height: 45%;
+      overflow: hidden;
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .actu__selector {
+      width: 30%;
+      height: 30px;
+      position: fixed;
+      left: 50%;
+      bottom: 15%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    .actu__selector__circle::before {
+      width: 12px;
+      height: 12px;
+      top: 0px;
+    }
+    .actu__selector__circle--active::before {
+      width: 12px;
+      height: 12px;
+      top: 0px;
+    }
+    .actu__separateur::before {
+      top: -12px;
+      height: 3px;
+    }
+    .actu__titre {
+      font-size: 3.5vh;
+      margin: 0;
+    }
+    .actu__texte {
       font-size: 1em;
+    }
+    .actu__boutonPlus {
+      font-size: 1.2em;
+      margin-top: -25px;
+    }
+    .actu__articleContainer {
+      width: 85%;
+      height: 45vh;
+      position: relative;
+      left: 50%;
+      top: 3%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
   }
 </style>

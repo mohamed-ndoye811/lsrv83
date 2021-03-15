@@ -46,4 +46,17 @@
     letter-spacing: 1px;
     cursor: default;
   }
+
+  @media (max-width: 460px) {
+    iframe {
+      height: 85vh;
+      width: 100%;
+    }
+    .selectionContainer p {
+      font-size: 1em;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: default;
+    }
+  }
 </style>
