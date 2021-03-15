@@ -8,6 +8,9 @@ module.exports = {
   entry: {
     "build/bundle": ["./src/main.js"],
   },
+  experiments: {
+    topLevelAwait: true,
+  },
   resolve: {
     alias: {
       svelte: path.dirname(require.resolve("svelte/package.json")),

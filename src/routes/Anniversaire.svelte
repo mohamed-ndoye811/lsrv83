@@ -1,8 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { db } from "../utils/firestore";
-
-  let anniversaires = [];
+  import { anniversaires } from "../utils/firestore";
 
   let mois = [
     "Janvier",
@@ -23,11 +21,7 @@
   let moisActuel = dateActuelle.getMonth() + 1;
   let moisTexte = mois[dateActuelle.getMonth()];
 
-  onMount(() => {
-    db.collection("adherents").onSnapshot((data) => {
-      anniversaires = data.docs;
-    });
-  });
+  onMount(() => {});
 
   // Cette fonction sert à classer les dates dans l'ordre croissant
   function compare(a, b) {
@@ -44,12 +38,17 @@
 <div class="anniversaireContainer">
   <h1>ANNIVERSAIRES DU MOIS DE {moisTexte}</h1>
   <div class="listContainer">
-    {#each anniversaires.sort(compare) as date}
+    {#each anniversaires as date}
       <div class="dateAnniversaire">
         <!--Nous n'affichons que les dates anniversaire du mois en cours-->
-        {#if date.data().dateNaissance.slice(3, 5) == moisActuel}
-          <p>{date.data().nomPrenom}</p>
-          <p>{date.data().dateNaissance.slice(0, 2) + " " + moisTexte}</p>
+        {#if date.dateNaissance.slice(3, 5) == moisActuel}
+          <p>
+            {date.nomPrenom.trim(" ").split(" ").slice(-1) +
+              " " +
+              date.nomPrenom.trim(" ").split(" ")[0][1] +
+              "."}
+          </p>
+          <p>{date.dateNaissance.slice(0, 2) + " " + moisTexte}</p>
         {/if}
       </div>
     {/each}
@@ -63,6 +62,7 @@
     width: fit-content;
     font-size: 3em;
     text-transform: uppercase;
+    text-align: center;
   }
 
   .anniversaireContainer {
@@ -78,7 +78,7 @@
   }
 
   .dateAnniversaire {
-    font-size: 2.5em;
+    font-size: 1.5em;
     font-weight: 600;
     display: flex;
     width: 100%;
@@ -91,6 +91,16 @@
   }
 
   .dateAnniversaire p {
-    margin: 25px;
+    margin: 5px 25px 25px 25px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    h1 {
+      font-size: 1.2em;
+    }
+
+    .dateAnniversaire {
+      font-size: 1em;
+    }
   }
 </style>

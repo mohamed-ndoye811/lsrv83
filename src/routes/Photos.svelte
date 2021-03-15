@@ -13,7 +13,7 @@
     <tr>
           <td height="24" align="center" border="1" >AG</td>
           <td height="24" align="center" border="1" >Un moment très sympathique
-                     <a href="/souvenirs/2018???/mywebalbum/index.html" >(photos)</a></td>
+                     <a href="./souvenirs/2018???/mywebalbum/index.html" >(photos)</a></td>
           <td height="24" border="1" >Un moment calme</td>
     </tr>
     --->
@@ -23,7 +23,7 @@
       <td height="24" align="center" border="1">Les légionnaires</td>
       <td height="24" align="center" border="1"
         >Un endroit très instructif
-        <a href="/souvenirs/2017_legion/mywebalbum/index.html">(photos)</a></td
+        <a href="./souvenirs/2017_legion/mywebalbum/index.html">(photos)</a></td
       >
       <td height="24" border="1">On apprend toujours</td>
     </tr>
@@ -33,7 +33,7 @@
       <td height="24" align="center" border="1">Une ile de délice</td>
       <td height="24" align="center" border="1"
         >Des lieux toujours accueillants.
-        <a href="/souvenirs/2017_sicile/mywebalbum/index.html">(photos)</a></td
+        <a href="./souvenirs/2017_sicile/mywebalbum/index.html">(photos)</a></td
       >
       <td height="24" border="1"
         >Ravis de retrouver des lieux aussi accueillants</td
@@ -45,7 +45,7 @@
       <td height="24" align="center" border="1">Une journée très agréable</td>
       <td height="24" align="center" border="1"
         >Un coin qui nous est familier.
-        <a href="/souvenirs/2017_TaA/mywebalbum/index.html">(photos)</a></td
+        <a href="./souvenirs/2017_TaA/mywebalbum/index.html">(photos)</a></td
       >
       <td height="24" border="1">Une journée de détente</td>
     </tr>
@@ -57,7 +57,7 @@
       >
       <td height="24" align="center" border="1"
         >Un lieu qui nous est accueillant.
-        <a href="/souvenirs/2017_font_ocre/mywebalbum/index.html">(photos)</a
+        <a href="./souvenirs/2017_font_ocre/mywebalbum/index.html">(photos)</a
         ></td
       >
       <td height="24" border="1"
@@ -72,7 +72,7 @@
       >
       <td height="24" align="center" border="1"
         >une usine surprenante paysage.
-        <a href="/souvenirs/2017_04_27_amphitria/mywebalbum/index.html"
+        <a href="./souvenirs/2017_04_27_amphitria/mywebalbum/index.html"
           >(photos)</a
         ></td
       >
@@ -85,7 +85,8 @@
       <td height="24" align="center" border="1">Un très bon méchoui</td>
       <td height="24" align="center" border="1"
         >Notre nouveau resto très respectable
-        <a href="/souvenirs/2017_mechoui/mywebalbum/index.html">(photos)</a></td
+        <a href="./souvenirs/2017_mechoui/mywebalbum/index.html">(photos)</a
+        ></td
       >
       <td height="24" border="1">Petit repas grand moment</td>
     </tr>
@@ -97,7 +98,7 @@
       >
       <td height="24" align="center" border="1"
         >un paysage
-        <a href="/souvenirs/2017_marseille/mywebalbum/index.html">(photos)</a
+        <a href="./souvenirs/2017_marseille/mywebalbum/index.html">(photos)</a
         ></td
       >
       <td height="24" border="1">Une sortie très intéressante</td>
@@ -112,7 +113,7 @@
       >
       <td height="24" align="center" border="1"
         >Un public ravi de cette sortie dans le vieux Marseille
-        <a href="/souvenirs/2017_marseille/mywebalbum/index.html">(photos)</a
+        <a href="./souvenirs/2017_marseille/mywebalbum/index.html">(photos)</a
         ></td
       >
       <td height="24" border="1">Une sortie très intéressante</td>
@@ -123,7 +124,7 @@
       <td height="24" align="center" border="1">Assemblée Générale de 2016</td>
       <td height="24" align="center" border="1"
         >78 adhérents se regroupent devant le bureau
-        <a href="/souvenirs/2017_02_AG_2016/mywebalbum/index.html">(photos)</a
+        <a href="./souvenirs/2017_02_AG_2016/mywebalbum/index.html">(photos)</a
         ></td
       >
       <td height="24" border="1"
@@ -137,7 +138,7 @@
       <td height="24" align="center" border="1">La galette des rois </td>
       <td height="24" align="center" border="1"
         >Quelques adhérents se retrouvent autour de tables appétissantes !
-        <a href="/souvenirs/2017_rois/mywebalbum/index.html">(photos)</a></td
+        <a href="./souvenirs/2017_rois/mywebalbum/index.html">(photos)</a></td
       >
       <td height="24" border="1"
         >Un bon moment de plaisir agrémenté par une partie de la troupe du
@@ -156,7 +157,7 @@
       <td height="24" align="center" border="1">Le loto </td>
       <td height="24" align="center" border="1"
         >La moitié des adhérents se retrouvent pour un loto riche !
-        <a href="/souvenirs/2016_loto/mywebalbum/index.html">(photos)</a></td
+        <a href="./souvenirs/2016_loto/mywebalbum/index.html">(photos)</a></td
       >
       <td height="24" border="1">Un grand moment de plaisir</td>
     </tr>
@@ -167,7 +168,7 @@
       </td>
       <td height="24" align="center" border="1"
         >Un nouveau petit moment avec 'nos' artistes
-        <a href="/souvenirs/2016_pitchoun_tiatre/mywebalbum/index.html"
+        <a href="./souvenirs/2016_pitchoun_tiatre/mywebalbum/index.html"
           >(photos)</a
         ></td
       >
@@ -179,7 +180,7 @@
       <td height="24" align="center" border="1">lundi 14 novembre </td>
       <td height="24" align="center" border="1"
         >Festivité des joueurs de boules
-        <a href="/souvenirs/2016_11_concours_boules/mywebalbum/index.html"
+        <a href="./souvenirs/2016_11_concours_boules/mywebalbum/index.html"
           >(photos)</a
         ></td
       >
@@ -189,7 +190,7 @@
     <tr>
           <td height="24" align="center" border="1" >vendredi 25 mars </td>
           <td height="24" align="center" border="1" >Dans le cadre des festivités de Toulon
-                      <a href="/souvenirs/2016_03_25_bacchus/mywebalbum/index.html" >(quelques photos)</a></td>
+                      <a href="./souvenirs/2016_03_25_bacchus/mywebalbum/index.html" >(quelques photos)</a></td>
           <td height="24" border="1" >Une visite de Toulon en petit train</td>
     </tr>
     --------------------->
@@ -198,7 +199,7 @@
       <td height="24" align="center" border="1">jeudi 25 février </td>
       <td height="24" align="center" border="1"
         >Diapo sur notre activité Tir à l'Arc
-        <a href="/souvenirs/2016_02_25_TaA/mywebalbum/index.html"
+        <a href="./souvenirs/2016_02_25_TaA/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -210,7 +211,7 @@
       <td height="24" align="center" border="1">jeudi 25 février </td>
       <td height="24" align="center" border="1"
         >Le village des tortues...
-        <a href="/souvenirs/2016_02_25_tortues/mywebalbum/index.html"
+        <a href="./souvenirs/2016_02_25_tortues/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -222,7 +223,7 @@
       <td height="24" align="center" border="1">samedi 6 février</td>
       <td height="24" align="center" border="1"
         >AG dans un nouveau cadre
-        <a href="/souvenirs/2016_02_06_AG/mywebalbum/index.html"
+        <a href="./souvenirs/2016_02_06_AG/mywebalbum/index.html"
           >(quelques photos)</a
         >
       </td>
@@ -234,7 +235,7 @@
       <td height="24" align="center" border="1">jeudi 28 janvier</td>
       <td height="24" align="center" border="1"
         >Visite guidée des chantiers de La Seyne.
-        <a href="/souvenirs/2016_01_28_chantiers/mywebalbum/index.html"
+        <a href="./souvenirs/2016_01_28_chantiers/mywebalbum/index.html"
           >(quelques photos)</a
         >
       </td>
@@ -245,7 +246,7 @@
       <td height="24" align="center" border="1">dimanche 24 janvier</td>
       <td height="24" align="center" border="1"
         >La journée de la truffe à Aups
-        <a href="/souvenirs/2016_01_25_truffes/mywebalbum/index.html"
+        <a href="./souvenirs/2016_01_25_truffes/mywebalbum/index.html"
           >(quelques photos)</a
         >
       </td>
@@ -287,7 +288,7 @@
       >
       <td height="24" align="center" border="1"
         >Les accro. de la piscine vous souhaitent de joyeuses fêtes
-        <a href="/souvenirs/2015_aquagym_noel/mywebalbum/index.html"
+        <a href="./souvenirs/2015_aquagym_noel/mywebalbum/index.html"
           >Bonne année !!!</a
         >
       </td>
@@ -303,7 +304,7 @@
       >
       <td height="24" align="center" border="1"
         >téléthon le 4 à La Seyne et le 5 à La Valette<a
-          href="/souvenirs/2015_telethon/mywebalbum/index.html"
+          href="./souvenirs/2015_telethon/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -316,7 +317,7 @@
       <td height="24" align="center" border="1">jeudi 26 novembre</td>
       <td height="24" align="center" border="1"
         >Visite intéressante de LA savonnerie de notre région<a
-          href="/souvenirs/2015_11_26_savonnerie/mywebalbum/index.html"
+          href="./souvenirs/2015_11_26_savonnerie/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -329,7 +330,7 @@
       <td height="24" align="center" border="1">jeudi 24 septembre</td>
       <td height="24" align="center" border="1"
         >On reprend le cours de nos occupation en commençant par un méchouï<a
-          href="/souvenirs/2015_09_04_mechoui/mywebalbum/index.html"
+          href="./souvenirs/2015_09_04_mechoui/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -343,7 +344,7 @@
       <td height="24" align="center" border="1">jeudi 2 septembre</td>
       <td height="24" align="center" border="1"
         >Visite du fort de Brégançon<a
-          href="/souvenirs/2015_09_02_bregancon/mywebalbum/index.html"
+          href="./souvenirs/2015_09_02_bregancon/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -355,7 +356,7 @@
       <td height="24" align="center" border="1">jeudi 25 août</td>
       <td height="24" align="center" border="1"
         >sortie pique-nique et concours de boules<a
-          href="/souvenirs/2015_08_anastasie/mywebalbum/index.html"
+          href="./souvenirs/2015_08_anastasie/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -369,7 +370,7 @@
       <td height="24" align="center" border="1">jeudi 23 juillet</td>
       <td height="24" align="center" border="1"
         >Promenade dans le haut Var : callas et Bargemon<a
-          href="/souvenirs/2015_07_23_calas/mywebalbum/index.html"
+          href="./souvenirs/2015_07_23_calas/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -381,7 +382,7 @@
       <td height="24" align="center" border="1">jeudi 25 juin</td>
       <td height="24" align="center" border="1"
         >jeudi 'culturel' une visite à la coopérative "la clapière"<a
-          href="/souvenirs/2015_06_25_clapiere/mywebalbum/index.html"
+          href="./souvenirs/2015_06_25_clapiere/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -393,7 +394,7 @@
       <td height="24" align="center" border="1">lundi 22 juin</td>
       <td height="24" align="center" border="1"
         >Derniers jeux de boules<a
-          href="/souvenirs/2015_06_22_boules/mywebalbum/index.html"
+          href="./souvenirs/2015_06_22_boules/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -404,7 +405,7 @@
       <td height="24" align="center" border="1">jeudi 16 juin</td>
       <td height="24" align="center" border="1"
         >Dernieres flèches tirées<a
-          href="/souvenirs/2015_06_18_TaA/mywebalbum/index.html"
+          href="./souvenirs/2015_06_18_TaA/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -417,7 +418,7 @@
       <td height="24" align="center" border="1">8 juin</td>
       <td height="24" align="center" border="1"
         >Concours de bowling<a
-          href="/souvenirs/2015_06_08_bowling/mywebalbum/index.html"
+          href="./souvenirs/2015_06_08_bowling/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -430,7 +431,7 @@
       <td height="24" align="center" border="1">du mardi 19 au lundi 25 mai</td>
       <td height="24" align="center" border="1"
         >Excellente excursion en Italie<a
-          href="/souvenirs/2015_italie/italie.html">(quelques photos)</a
+          href="./souvenirs/2015_italie/italie.html">(quelques photos)</a
         ></td
       >
       <td height="24" border="1"
@@ -443,7 +444,7 @@
       <td height="24" align="center" border="1">4 juin</td>
       <td height="24" align="center" border="1"
         >Le pique-nique à Font du Thon<a
-          href="/souvenirs/2015_05_04_FdT/Fdt.html">(quelques photos)</a
+          href="./souvenirs/2015_05_04_FdT/Fdt.html">(quelques photos)</a
         ></td
       >
       <td height="24" border="1"
@@ -456,7 +457,7 @@
       <td height="24" align="center" border="1">27 mai</td>
       <td height="24" align="center" border="1"
         >Sortie rando avec LSR GRAND AVIGNON<a
-          href="/souvenirs/2015_05_avignon/2015_avignon.html"
+          href="./souvenirs/2015_05_avignon/2015_avignon.html"
           >(quelques photos)</a
         ></td
       >
@@ -467,7 +468,7 @@
       <td height="24" align="center" border="1">23 avril</td>
       <td height="24" align="center" border="1"
         >Le repas coquillage au restaurant Grand-Baie<a
-          href="/souvenirs/2015_04_23_grand_baie/GB.htm">(quelques photos)</a
+          href="./souvenirs/2015_04_23_grand_baie/GB.htm">(quelques photos)</a
         ></td
       >
       <td height="24" border="1"
@@ -480,7 +481,7 @@
       <td height="24" align="center" border="1">7 février</td>
       <td height="24" align="center" border="1"
         >Assemblée générale élective et repas Corse !<a
-          href="/souvenirs/2015_02_07_AG/mywebalbum/index.html"
+          href="./souvenirs/2015_02_07_AG/mywebalbum/index.html"
           >(quelques photos)</a
         ></td
       >
@@ -495,7 +496,7 @@
       <td height="24" align="center" border="1"
         >notre très traditionelle galette des rois avec animation de chants sur
         FERRAT et BRASSENS<a
-          href="/souvenirs/2015_01_29_rois/mywebalbum/index.html"
+          href="./souvenirs/2015_01_29_rois/mywebalbum/index.html"
           target="_blank">(quelques photos)</a
         ></td
       >
@@ -509,7 +510,7 @@
       <td height="24" align="center" border="1">10 janvier</td>
       <td height="24" align="center" border="1"
         >Nous avons tenu à manifester notre horreur devant cet évènement..<a
-          href="/souvenirs/2015_01_10_charlie/mywebalbum/index.html"
+          href="./souvenirs/2015_01_10_charlie/mywebalbum/index.html"
           target="_blank">(quelques photos)</a
         ></td
       >
@@ -530,7 +531,7 @@
       <td height="24" align="center" border="1">11 décembre</td>
       <td height="24" align="center" border="1"
         >Cette année le loto présentait de très beaux et nombreux lots <a
-          href="/souvenirs/2014_12_11_loto/mywebalbum/index.html"
+          href="./souvenirs/2014_12_11_loto/mywebalbum/index.html"
           target="_blank">(voir le diaporama)</a
         ></td
       >
@@ -547,7 +548,7 @@
       <td height="24" align="center" border="1"
         >Malgré un temps exécrable le téléthon a eut lieu et environ 300€ ont
         été donné à la mairie de La valette<a
-          href="/souvenirs/2014_12_06_telethon/mywebalbum/index.html"
+          href="./souvenirs/2014_12_06_telethon/mywebalbum/index.html"
           target="_blank">(voir le diaporama)</a
         ></td
       >
@@ -563,7 +564,7 @@
       <td height="24" align="center" border="1">11 septembre</td>
       <td height="24" align="center" border="1"
         >le méchoui devenu traditionnel à l'Hacienda <a
-          href="/souvenirs/2014_09_11_mechoui/mywebalbum/index.html"
+          href="./souvenirs/2014_09_11_mechoui/mywebalbum/index.html"
           target="_blank">(voir le diaporama)</a
         ></td
       >
@@ -575,7 +576,7 @@
       <td height="24" align="center" border="1">2 au 4 septembre </td>
       <td height="24" align="center" border="1"
         >sortie à la (re)découverte de Jean FERRAT (<a
-          href="/souvenirs/2014_09_02_ferrat/Ferrat.htm"
+          href="./souvenirs/2014_09_02_ferrat/Ferrat.htm"
           target="_blank">Rapport de Danièle LECA</a
         >)</td
       >
@@ -589,7 +590,7 @@
       <td height="24" align="center" border="1">3 août</td>
       <td height="24" align="center" border="1"
         >sortie en co-voiturage à Cotignac <a
-          href="/souvenirs/2014_08_Cotignac/Cotignac.htm"
+          href="./souvenirs/2014_08_Cotignac/Cotignac.htm"
           target="_blank">(Petit rapport de Christiane FEDE)</a
         ></td
       >
@@ -603,7 +604,7 @@
       <td height="24" align="center" border="1">16 juillet </td>
       <td height="24" align="center" border="1"
         >premenade en 'petit train' et visite guidée de Brignoles <a
-          href="/souvenirs/2014_07_train/mywebalbum/index.html"
+          href="./souvenirs/2014_07_train/mywebalbum/index.html"
           >(voir le diaporama)</a
         ></td
       >
@@ -618,7 +619,7 @@
       <td height="24" align="center" border="1">23 juin </td>
       <td height="24" align="center" border="1"
         >Concours boules <a
-          href="/souvenirs/2014_06_boules/mywebalbum/index.html"
+          href="./souvenirs/2014_06_boules/mywebalbum/index.html"
           >(voir le diaporama)</a
         ></td
       >
@@ -649,7 +650,7 @@
       <td height="24" align="center" border="1"
         >Visite de La Seyne Beaux-Arts : Nos amis Pierre Desharbes et Monique
         Boulleau y exposent<a
-          href="/souvenirs/2014_07_expo_beaux_arts/mywebalbum/index.html"
+          href="./souvenirs/2014_07_expo_beaux_arts/mywebalbum/index.html"
           >(voir le diaporama)</a
         ></td
       >
@@ -664,7 +665,7 @@
       <td height="24" align="center" border="1">5 juin </td>
       <td height="24" align="center" border="1"
         >Dernière grillade à la Font-du-Thon<a
-          href="/souvenirs/2014_06_fontduthon/mywebalbum/index.html"
+          href="./souvenirs/2014_06_fontduthon/mywebalbum/index.html"
           >(quelques photo ...)</a
         ></td
       >
@@ -678,7 +679,7 @@
     <tr>
       <td height="24" align="center" border="1">19 au 27 mai </td>
       <td height="24" align="center" border="1"
-        >Voyage en Croatie <a href="/souvenirs/2014_05_croatie/La_Croatie.htm"
+        >Voyage en Croatie <a href="./souvenirs/2014_05_croatie/La_Croatie.htm"
           >Récit de Danièle LECA</a
         >
       </td>
@@ -690,7 +691,7 @@
       <td height="24" align="center" border="1">15 avril </td>
       <td height="24" align="center" border="1"
         >Le canal des arrosants<a
-          href="/souvenirs/2014_04_22_arrosants/mywebalbum/index.html"
+          href="./souvenirs/2014_04_22_arrosants/mywebalbum/index.html"
           >(voir le diaporama)</a
         ></td
       >
@@ -703,7 +704,7 @@
       <td height="24" align="center" border="1">3 avril </td>
       <td height="24" align="center" border="1"
         >Repas coquillage<a
-          href="/souvenirs/2014_03_04_coquillages/mywebalbum/index.html"
+          href="./souvenirs/2014_03_04_coquillages/mywebalbum/index.html"
           >(voir le diaporama)</a
         ></td
       >
@@ -717,7 +718,7 @@
       <td height="24" align="center" border="1">13 mars </td>
       <td height="24" align="center" border="1"
         >concours gâteaux<a
-          href="/souvenirs/2014_03_13_gateaux/mywebalbum/index.html"
+          href="./souvenirs/2014_03_13_gateaux/mywebalbum/index.html"
           >(voir le diaporama)</a
         ></td
       >
@@ -731,7 +732,7 @@
       <td height="24" align="center" border="1">22 février</td>
       <td height="24" align="center" border="1"
         >Assemblée Générale <a
-          href="/souvenirs/2014_02_%20AG/mywebalbum/index.html"
+          href="./souvenirs/2014_02_%20AG/mywebalbum/index.html"
           >(voir le diaporama)</a
         ></td
       >
@@ -743,7 +744,7 @@
       <td height="24" align="center" border="1">9 janvier</td>
       <td height="24" align="center" border="1"
         >Notre traditionelle galette des rois <a
-          href="/souvenirs/2014_galette_rois/2014_galette.htm"
+          href="./souvenirs/2014_galette_rois/2014_galette.htm"
           target="_blank">(le compte rendu de Mireille A</a
         >)
       </td>
@@ -756,7 +757,7 @@
       <td height="24" align="center" border="1">26 au 31 janvier</td>
       <td height="24" align="center" border="1"
         >Une sortie raquettes réussie <a
-          href="/souvenirs/2014_01_arvieux/Arvieux.htm"
+          href="./souvenirs/2014_01_arvieux/Arvieux.htm"
           target="_blank">(le compte rendu des Novelli)</a
         ></td
       >
@@ -783,9 +784,9 @@
       <td height="24" align="center" border="1">18 novembre</td>
       <td height="24" align="center" border="1"
         >Là aussi visite très instructive au MUCEM (<a
-          href="/souvenirs/2013_MUCEM/mywebalbum/index.html"
+          href="./souvenirs/2013_MUCEM/mywebalbum/index.html"
           >voir le diaporama</a
-        >) (<a href="/souvenirs/2013_MUCEM/MUCEM_LECA.htm" target="_blank"
+        >) (<a href="./souvenirs/2013_MUCEM/MUCEM_LECA.htm" target="_blank"
           >résumé de Danielle LECA</a
         >)
       </td>
@@ -798,7 +799,7 @@
       <td height="24" align="center" border="1">5 novembre</td>
       <td height="24" align="center" border="1"
         >A la place d'une rando une visite instructive de La cadière(<a
-          href="/souvenirs/2013_11_05_la_cadiere/mywebalbum/index.html"
+          href="./souvenirs/2013_11_05_la_cadiere/mywebalbum/index.html"
           >voir le diaporama</a
         >)</td
       >
@@ -812,7 +813,7 @@
       <td height="24" align="center" border="1">28 octobre</td>
       <td height="24" align="center" border="1"
         >une fois n'est pas coutume : (<a
-          href="/souvenirs/2013_10_cartes/mywebalbum/index.html"
+          href="./souvenirs/2013_10_cartes/mywebalbum/index.html"
           >regardez les participants aux jeux de cartes</a
         >)</td
       >
@@ -822,7 +823,7 @@
       <td height="24" align="center" border="1">13 octobre</td>
       <td height="24" align="center" border="1"
         >un pique nique dans un nouvel endroit (<a
-          href="/souvenirs/2013_10_13_janas/mywebalbum/index.html"
+          href="./souvenirs/2013_10_13_janas/mywebalbum/index.html"
           >Voir le diaporama</a
         >)</td
       >
@@ -832,7 +833,7 @@
       <td height="24" align="center" border="1">12 septembre</td>
       <td height="24" align="center" border="1"
         >Les affaires reprennent : le méchoui à l'Hacienda (<a
-          href="/souvenirs/2013_mechoui/méchoui.html"
+          href="./souvenirs/2013_mechoui/méchoui.html"
           target="_blank">Voir le diaporama</a
         >)</td
       >
@@ -842,7 +843,7 @@
       <td height="24" align="center" border="1">14 août</td>
       <td height="24" align="center" border="1"
         >Visites dans la haut Var ..Tourves ; Saint Maximin (<a
-          href="/souvenirs/2013_Tourves/Tourves.htm"
+          href="./souvenirs/2013_Tourves/Tourves.htm"
           target="_blank">Voir le compte rendu</a
         >)</td
       >
@@ -855,7 +856,7 @@
       <td height="24" align="center" border="1">16 juillet </td>
       <td height="24" align="center" border="1"
         >Escapade aux Baux de Provence (<a
-          href="/souvenirs/2013_07_16_les_baux1/compte-rendu.htm"
+          href="./souvenirs/2013_07_16_les_baux1/compte-rendu.htm"
           target="_blank">Voir le compte rendu</a
         >)</td
       >
@@ -866,7 +867,7 @@
       <td height="24" align="center" border="1">du 2 au 6 juin </td>
       <td height="24" align="center" border="1"
         >Sortie BSV à Morgat (<a
-          href="/souvenirs/2013_05_morgat/BSV_Morgat.htm"
+          href="./souvenirs/2013_05_morgat/BSV_Morgat.htm"
           target="_blank">Voir le compte rendu</a
         >)</td
       >
@@ -878,7 +879,7 @@
       <td height="24" align="center" border="1">27 juin </td>
       <td height="24" align="center" border="1"
         >Le traditionnel 'repas traiteur' (paella) à Sollies-Toucas (<a
-          href="/souvenirs/2013_06_paella/mywebalbum/index.html"
+          href="./souvenirs/2013_06_paella/mywebalbum/index.html"
           >Voir le diaporama</a
         >)</td
       >
@@ -887,7 +888,7 @@
       <td height="24" align="center" border="1">21 juin </td>
       <td height="24" align="center" border="1"
         >Une nouvelle activité en essai : le Yoga (<a
-          href="/souvenirs/2013_06_yoga/mywebalbum/index.html"
+          href="./souvenirs/2013_06_yoga/mywebalbum/index.html"
           >Premier, et dernier ? diaporama</a
         >)</td
       >
@@ -899,7 +900,7 @@
       <td height="24" align="center" border="1">24 juin </td>
       <td height="24" align="center" border="1"
         >Le traditionnel concours deboules à La Verne (<a
-          href="/souvenirs/2013_06_24_boules/mywebalbum/index.htm"
+          href="./souvenirs/2013_06_24_boules/mywebalbum/index.htm"
           >Voir le diaporama</a
         >)</td
       >
@@ -909,7 +910,7 @@
       <td height="24" align="center" border="1">20 juin </td>
       <td height="24" align="center" border="1"
         >Le traditionnel concours de tir à l'arc (<a
-          href="/souvenirs/2013_06_20_TaA/mywebalbum/index.htm"
+          href="./souvenirs/2013_06_20_TaA/mywebalbum/index.htm"
           >Voir le diaporama</a
         >)</td
       >
@@ -921,7 +922,7 @@
       <td height="24" align="center" border="1">17 juin </td>
       <td height="24" align="center" border="1"
         >Le traditionnel concours de bowling (<a
-          href="/souvenirs/2013_06_17_concours_bowling/mywebalbum/index.htm"
+          href="./souvenirs/2013_06_17_concours_bowling/mywebalbum/index.htm"
           >Voir le diaporama</a
         >)</td
       >
@@ -931,7 +932,7 @@
       <td height="24" align="center" border="1">du 3 au 8 juin </td>
       <td height="24" align="center" border="1"
         >Séjour rando à Rechastel (La bréole)(<a
-          href="/souvenirs/2013_rechastel/CR_jourdain.htm"
+          href="./souvenirs/2013_rechastel/CR_jourdain.htm"
           >Voir le compte rendu et ses diapos</a
         >)</td
       >
@@ -942,7 +943,7 @@
       <td height="24" align="center" border="1">23 mai </td>
       <td height="24" align="center" border="1"
         >Le traditionnel pique-nique/concours de boules de Sainte Anastasie (<a
-          href="/souvenirs/2013_05_23_anastasie/mywebalbum/index.htm"
+          href="./souvenirs/2013_05_23_anastasie/mywebalbum/index.htm"
           >Voir le diaporama</a
         >)</td
       >
@@ -954,7 +955,7 @@
       <td height="24" align="center" border="1">14 mai </td>
       <td height="24" align="center" border="1"
         >Dans le cadre d'une rando de mardi, visite des Salins d'Hyères. (<a
-          href="/souvenirs/2013_05_14_salin/mywebalbum/index.php"
+          href="./souvenirs/2013_05_14_salin/mywebalbum/index.php"
           >Voir le diaporama</a
         >)</td
       >
@@ -964,7 +965,7 @@
       <td height="24" align="center" border="1">14 mars </td>
       <td height="24" align="center" border="1"
         >Concours de gâteaux à Sollies-Toucas <a
-          href="/souvenirs/2013_03_14_gateaux/mywebalbum/index.html"
+          href="./souvenirs/2013_03_14_gateaux/mywebalbum/index.html"
           >(les photos)</a
         >
       </td>
@@ -976,8 +977,9 @@
     <tr>
       <td height="24" align="center" border="1">13 février </td>
       <td height="24" align="center" border="1"
-        >Assemblée Générale <a href="/souvenirs/2013_AG/ag.html" target="_blank"
-          >(les photos)</a
+        >Assemblée Générale <a
+          href="./souvenirs/2013_AG/ag.html"
+          target="_blank">(les photos)</a
         >
       </td>
       <td height="24" border="1"
@@ -989,7 +991,7 @@
       <td height="24" align="center" border="1">21 au 25 janvier </td>
       <td height="24" align="center" border="1"
         >Sortie raquettes à Les Estables <a
-          href="/souvenirs/2013_Estables/Estables.htm">(les photos)</a
+          href="./souvenirs/2013_Estables/Estables.htm">(les photos)</a
         >
       </td>
       <td height="24" border="1"
@@ -1001,7 +1003,7 @@
       <td height="24" align="center" border="1">10 janvier </td>
       <td height="24" align="center" border="1"
         >Galette des rois. <a
-          href="/souvenirs/2013_galette/mywebalbum/index.html">Les photos</a
+          href="./souvenirs/2013_galette/mywebalbum/index.html">Les photos</a
         ></td
       >
       <td height="24" border="1">Reprise des activités. Tout va bien ! </td>
@@ -1017,7 +1019,7 @@
       <td height="24" align="center" border="1"
         >Participation de notre assoc. au téléthon à La Valette. Peu de monde
         mais beaucoup de bonnes volontés(<a
-          href="/souvenirs/2012_telethon/mywebalbum/index.html"
+          href="./souvenirs/2012_telethon/mywebalbum/index.html"
           >quelques photos</a
         >)
       </td>
@@ -1030,7 +1032,7 @@
       <td height="24" align="center" border="1">20 novembre </td>
       <td height="24" align="center" border="1"
         >Visite du Muséum du Las(<a
-          href="/souvenirs/2012_11_21_museum/museum.htm"
+          href="./souvenirs/2012_11_21_museum/museum.htm"
           target="_blank">Voir lecompte rendu de Gérard Jourdain</a
         >)
       </td>
@@ -1042,7 +1044,7 @@
       </td>
       <td height="24" align="center" border="1"
         >Croisière autour de la Méditerranée (<a
-          href="/souvenirs/2012_10_tour_de_mediterranee/croisiere_en_mediterranee.htm"
+          href="./souvenirs/2012_10_tour_de_mediterranee/croisiere_en_mediterranee.htm"
           target="_blank">Voir lecompte rendu de Danièle L. et Mireille A.</a
         >)
       </td>
@@ -1055,7 +1057,7 @@
       <td height="24" align="center" border="1">11 octobre</td>
       <td height="24" align="center" border="1"
         >Sortie culturo-culinaire ou culino-culturelle ?? (<a
-          href="/souvenirs/2012_10_11_THOUZON/Thouzon.htm"
+          href="./souvenirs/2012_10_11_THOUZON/Thouzon.htm"
           target="_blank">Voir les photos</a
         >)
       </td>
@@ -1096,7 +1098,7 @@
       <td height="24" align="center" border="1">6 juin </td>
       <td height="24" align="center" border="1"
         >Repas Corse par traiteur et grand concours de boules (<a
-          href="/souvenirs/2012_06_concours_boules/mywebalbum/index.html"
+          href="./souvenirs/2012_06_concours_boules/mywebalbum/index.html"
           target="_blank">voir les photos</a
         >)</td
       >
@@ -1123,7 +1125,7 @@
       <td height="24" align="center" border="1">24 avril</td>
       <td height="24" align="center" border="1"
         >Visite guidée de la maison des 4 frères (<a
-          href="/souvenirs/2012_04_24_4freres/mywebalbum/index.html"
+          href="./souvenirs/2012_04_24_4freres/mywebalbum/index.html"
           target="_blank">voir les photos</a
         >)</td
       >
@@ -1135,7 +1137,7 @@
       <td height="24" align="center" border="1"
         >Assemblée générale, rendue un peu houleuse par la réélection des
         membres du conseil d'administration (<a
-          href="/souvenirs/2012%20AG/mywebalbum/index.html"
+          href="./souvenirs/2012%20AG/mywebalbum/index.html"
           target="_blank">les photos</a
         >)
       </td>
@@ -1145,7 +1147,7 @@
       <td height="24" align="center" border="1">12 janvier </td>
       <td height="24" align="center" border="1"
         >Galette des rois. <a
-          href="/souvenirs/2012_01_12_les_rois/mywebalbum/index.html"
+          href="./souvenirs/2012_01_12_les_rois/mywebalbum/index.html"
           target="_blank">Les photos</a
         >
       </td>
@@ -1171,7 +1173,7 @@
           le loto.
         </div>
         Dernière activité de l'année (<a
-          href="/souvenirs/2012_12_18_loto/loto/index.html">voir les photos</a
+          href="./souvenirs/2012_12_18_loto/loto/index.html">voir les photos</a
         >)
       </td>
       <td height="24" border="1"
@@ -1183,7 +1185,7 @@
       <td height="24" align="center" border="1">8 et 9 octobre </td>
       <td height="24" align="center" border="1"
         >LSR83 à réorganisé une exposition. (<a
-          href="/souvenirs/2011_10_expo/expo_2011.htm"
+          href="./souvenirs/2011_10_expo/expo_2011.htm"
           target="_blank">En voici un petit compte-rendu</a
         >)</td
       >
@@ -1263,7 +1265,7 @@
       <td height="24" align="center" border="1">du 12 au 18 juin</td>
       <td height="24" align="center" border="1"
         >Séjour randonnées à Lou Riouclar (<a
-          href="/souvenirs/2011_06_lou_riouclar/riouclar1.html"
+          href="./souvenirs/2011_06_lou_riouclar/riouclar1.html"
         >
           voir les photos</a
         >)</td
@@ -1276,7 +1278,7 @@
       <td height="24" align="center" border="1">6 juin </td>
       <td height="24" align="center" border="1"
         >concours de bowling (<a
-          href="/souvenirs/2011_concours_bowling/bowling.html"
+          href="./souvenirs/2011_concours_bowling/bowling.html"
           >voir les photos</a
         >)</td
       >
@@ -1288,7 +1290,7 @@
       <td height="24" align="center" border="1">1er juin </td>
       <td height="24" align="center" border="1"
         >pique-nique à Sainte Anastasie (<a
-          href="/souvenirs/2011_06_01_ste_anastasie/anastasie.html"
+          href="./souvenirs/2011_06_01_ste_anastasie/anastasie.html"
           >voir les photos</a
         >)</td
       >
@@ -1313,7 +1315,7 @@
       <td height="24" align="center" border="1">18 avril</td>
       <td height="24" align="center" border="1"
         >grillades à Sollies_Toucas <a
-          href="/souvenirs/2011_font_du_thon/fontaine.html"
+          href="./souvenirs/2011_font_du_thon/fontaine.html"
           target="_blank"
         >
           les photos</a
@@ -1328,7 +1330,7 @@
       <td height="24" align="center" border="1">13 avril</td>
       <td height="24" align="center" border="1"
         >Sortie découverte au château de sauvan <a
-          href="/souvenirs/2011_sauvan/2011sauvan.html"
+          href="./souvenirs/2011_sauvan/2011sauvan.html"
           target="_blank"
           >les photos
         </a></td
@@ -1351,7 +1353,7 @@
       <td height="24" align="center" border="1">7 au 10 février </td>
       <td height="24" align="center" border="1"
         >Séjour raquette à Praz sur Arly. <a
-          href="/souvenirs/Praz_Arly/raquettes_praz.htm">Le compte-rendu</a
+          href="./souvenirs/Praz_Arly/raquettes_praz.htm">Le compte-rendu</a
         ></td
       >
       <td height="24" border="1">Souvenirs d'une excellente sortie</td>
@@ -1415,7 +1417,7 @@
         >19 octobre visite de la mine de cuivre de la Caronne</td
       >
       <td height="24" align="center" border="1"
-        ><a href="/souvenirs/appel_diaporama_mine_garonne.php" target="_blank"
+        ><a href="./souvenirs/appel_diaporama_mine_garonne.php" target="_blank"
           >Les photos</a
         ></td
       >
@@ -1490,7 +1492,7 @@
       <td height="24" align="center" border="1">20 mai à Sainte Anastasie </td>
       <td height="24" align="center" border="1"
         ><a
-          href="/souvenirs/2010_mai_anastasie/mywebalbum/index.html"
+          href="./souvenirs/2010_mai_anastasie/mywebalbum/index.html"
           target="_blank">Les photos</a
         ></td
       >
@@ -1502,7 +1504,7 @@
       <td height="24" align="center" border="1">26 avril à la dominante</td>
       <td height="24" align="center" border="1"
         ><a
-          href="/souvenirs/2010_mai_Dominante/mywebalbum/index.html"
+          href="./souvenirs/2010_mai_Dominante/mywebalbum/index.html"
           target="_blank">Les photos</a
         ></td
       >

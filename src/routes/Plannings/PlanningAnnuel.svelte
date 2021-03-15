@@ -11,10 +11,10 @@
     jours avant le départ.<br /><br />
 
     Les personnes participant aux voyages et non adhérents (famille, amis)
-    doivent signer une decharge<br /><br />
+    doivent signer une décharge<br /><br />
 
     Pour des raisons de commodités il n'est plus possible d'attendre les
-    participants au delà de 5 minutes.<br /><br />
+    participants au-delà de 5 minutes.<br /><br />
 
     Notre association reçoit, de la mairie de Toulon, quelques invitations pour
     des spectacles à l'opéra vu le nombre restreint de places (5 !) attribuées

@@ -16,3 +16,44 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 export const db = firebase.firestore();
+
+//---[ FONCTION ANNIVERSAIRE ]---
+
+var anniversaires = [];
+
+const citiesRef = db.collection("adherents");
+const snapshot = await citiesRef.where("dateNaissance", "!=", "").get();
+if (snapshot.empty) {
+  console.log("No matching documents.");
+}
+
+snapshot.forEach((doc) => {
+  anniversaires.push(doc.data());
+});
+
+anniversaires.forEach((anniversaire) => {
+  if (anniversaire.dateNaissance.startsWith("a")) {
+    var templateParams = {
+      name: anniversaire.nomPrenom.split(" ").slice(-1).join(" "), // returns "Panakkal",
+      email: "ndoyemd@outlook.fr",
+    };
+
+    emailjs
+      .send(
+        "service_372foy7",
+        "template_esbvazo",
+        templateParams,
+        "user_wLxdF6iNzWGc5Z43gXKiZ"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+  }
+});
+
+export { anniversaires };

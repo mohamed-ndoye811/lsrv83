@@ -1,9 +1,7 @@
 <script>
   //---[ IMPORT DES MODULES ]---
-  import { gsap, Power4 } from "gsap";
   import Router from "svelte-spa-router";
   import { link } from "svelte-spa-router";
-  import { location } from "svelte-spa-router";
   import active from "svelte-spa-router/active";
   import { push } from "svelte-spa-router";
 
@@ -18,7 +16,6 @@
   import Photos from "./routes/Photos.svelte";
 
   //---[ IMPORT DES COMPONENTS ]---
-  import CompteurVisite from "./components/CompteurVisite.svelte";
   import InfoImportante from "./components/InfoImportante.svelte";
   import Loader from "./components/Loader.svelte";
 
@@ -45,9 +42,20 @@
   };
 
   //---[ DEFINITION DES VARIABLES ]---
-  let loadingEnded = false;
+  let loadingEnded = true;
   let pannelAffiche = "";
   var nbClick = 0; // Gestion des click pour l'apparition disparition du pannel de selection
+
+  const date = new Date();
+
+  import { init } from "emailjs-com";
+
+  const today =
+    date.getDate().toString() + " " + (date.getMonth() + 1).toString();
+
+  (function () {
+    init("user_wLxdF6iNzWGc5Z43gXKiZ");
+  })();
 
   // Foncontion mettant à jour le pannel du menu affiché
   function pannelAffichage(pannelChoisi) {
@@ -95,12 +103,12 @@
   });
 
   // Timeout faisant apparaitre la page d'acceuil en fonction du loader
-  setTimeout(() => {
+  /*setTimeout(() => {
     loadingEnded = true;
-  }, 3500);
+  }, 3500);*/
 </script>
 
-<Loader />
+<!--<Loader />-->
 
 {#if loadingEnded}
   <header>
@@ -294,6 +302,12 @@
     header a {
       height: 8vh;
       width: fit-content;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .container {
+      max-width: 85%;
     }
   }
 </style>

@@ -43,4 +43,10 @@
       transform: translate(-100%, 0);
     }
   }
+
+  @media only screen and (max-width: 400px) {
+    .infoImportante__texte {
+      font-size: 1.2em;
+    }
+  }
 </style>

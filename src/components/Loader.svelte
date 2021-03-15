@@ -138,6 +138,5 @@
     overflow: hidden;
     z-index: 20;
     color: #125da8;
-    text-shadow: ;
   }
 </style>
