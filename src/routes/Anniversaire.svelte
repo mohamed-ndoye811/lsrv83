@@ -96,7 +96,7 @@
 
   @media only screen and (max-width: 600px) {
     h1 {
-      font-size: 1.2em;
+      font-size: 1em;
     }
 
     .dateAnniversaire {
