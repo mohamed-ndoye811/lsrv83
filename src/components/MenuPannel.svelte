@@ -222,6 +222,7 @@
     position: fixed;
     background-color: #ffd700;
     z-index: 5;
+    user-select: none;
   }
 
   nav {
