@@ -111,4 +111,16 @@ button:focus {
   ::-webkit-scrollbar-thumb {
     border-radius: 4px;
   }
+
+  .bouton {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8em;
+    background-color: #ffd700;
+    border-radius: 23px;
+    padding: 10px;
+    text-shadow: none;
+    cursor: pointer;
+  }
 }

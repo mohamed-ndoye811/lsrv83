@@ -91,6 +91,7 @@
   .backgroundImage {
     opacity: 0.2;
     filter: blur(2px);
+    object-fit: cover;
   }
   .backgroundColor {
     background-color: #0066cc;

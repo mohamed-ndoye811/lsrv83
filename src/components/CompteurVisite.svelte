@@ -5,9 +5,7 @@
   let compteur;
 
   onMount(() => {
-    fetch(
-      "https://api.countapi.xyz/update/LSR83000VisitCount/nombreVisites?amount=1"
-    )
+    fetch("https://api.countapi.xyz/update/LSR83000VisitCount/nombreVisites?amount=1")
       .then((res) => res.json())
       .then((res) => {
         compteurVisites = res.value;
@@ -65,5 +63,15 @@
     font-weight: 600;
     font-style: italic;
     font-size: 1vw;
+  }
+
+  @media (max-width: 460px) {
+    .visitCount {
+      width: 30%;
+      height: 25px;
+      right: 7.5%;
+      border-radius: 7px 7px 0 0;
+      font-size: 0.8em;
+    }
   }
 </style>

@@ -12,20 +12,16 @@
       <span class="homeInfo__separateur" />
       <p class="homeInfo__texte">
         <b><i>Loisir et Solidarité des Retraités de TOULON et du VAR</i></b>
-        est une association loi 1901 dont le but est de permettre aux personnes en
-        pré-retraite ou en retraite de réaliser leurs aspirations de loisirs culturels,
-        sportifs. Pour cela nous vous proposons des activités très diversifiées afin
-        d'intéresser le plus grand nombre de nos adhérents. Nous nous promettons,
-        également, d'agir, aussi souvent que cela se peut, par solidarité dans le
-        cadre de la cité et de la nation et de nous opposer à tout ce qui induit
-        inégalités et exclusion, il ne faut pas oublier que notre LSR, toutes les
-        LSR, sont une émanation de la CGT . Pour ces raisons nous soutenons toutes
-        les actions qui contribuent à améliorer le pouvoir d'achat, la santé, et
+        est une association loi 1901 dont le but est de permettre aux personnes en pré-retraite ou en
+        retraite de réaliser leurs aspirations de loisirs culturels, sportifs. Pour cela nous vous proposons
+        des activités très diversifiées afin d'intéresser le plus grand nombre de nos adhérents. Nous
+        nous promettons, également, d'agir, aussi souvent que cela se peut, par solidarité dans le cadre
+        de la cité et de la nation et de nous opposer à tout ce qui induit inégalités et exclusion, il
+        ne faut pas oublier que notre LSR, toutes les LSR, sont une émanation de la CGT . Pour ces raisons
+        nous soutenons toutes les actions qui contribuent à améliorer le pouvoir d'achat, la santé, et
         la protection sociale.
       </p>
-      <a href="/equipe/antennes" class="homeInfo__bouton bouton" use:link>
-        NOUS REJOINDRE
-      </a>
+      <a href="/equipe/antennes" class="homeInfo__bouton bouton" use:link> NOUS REJOINDRE </a>
     </div>
 
     <div class="collegues">
@@ -38,9 +34,7 @@
             <a target="_blank" href="http://www.lsrfede.fr">LA FÉDÉRATION</a>
           </td>
           <td class="collegues__liste__item">
-            <a target="_blank" href="http://www.cda-blog-asso.com/lsr"
-              >LSR DU MORBIHAN</a
-            >
+            <a target="_blank" href="http://www.cda-blog-asso.com/lsr">LSR DU MORBIHAN</a>
           </td>
           <td class="collegues__liste__item">
             <a target="_blank" href="http://ambro649.free.fr">LSR AIR FRANCE</a>
@@ -55,9 +49,7 @@
             <a target="_blank" href="http://www.lsr-ratp.org">LSR RATP</a>
           </td>
           <td class="collegues__liste__item">
-            <a
-              target="_blank"
-              href="http://lsrmarseille.fr/spip.php/accueil/index.html"
+            <a target="_blank" href="http://lsrmarseille.fr/spip.php/accueil/index.html"
               >LSR MARSEILLE</a
             >
           </td>
@@ -78,12 +70,7 @@
 
     <ul class="partenaires">
       <li class="partenaires__image">
-        <img
-          src="./img/Partenaires/var.png"
-          alt="blabla"
-          id="logoVar"
-          srcset=""
-        />
+        <img src="./img/Partenaires/var.png" alt="blabla" id="logoVar" srcset="" />
       </li>
       <li class="partenaires__image">
         <img src="./img/Partenaires/PACA.png" alt="blabla" srcset="" />
@@ -111,19 +98,14 @@
 
   <div class="actu">
     <!-- svelte-ignore a11y-img-redundant-alt -->
-    <img
-      class="actu__image"
-      src="./img/actu/images/image_1.jpg"
-      alt="image Manifestation LSR"
-    />
+    <img class="actu__image" src="./img/actu/images/image_1.jpg" alt="image Manifestation LSR" />
     <div class="actu__articleContainer">
       <h3 class="actu__titre">TITRE ACTUALITÉ</h3>
       <span class="actu__separateur" />
       <p class="actu__texte">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum
-        tincidunt tortor quis lobortis. Nam gravida aliquet diam id ultricies.
-        Nulla gravida metus eget nunc placerat sollicitudin.Maecenas nibh
-        lectus, efficitur a tempor in, porttitor at lacus….
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum tincidunt tortor
+        quis lobortis. Nam gravida aliquet diam id ultricies. Nulla gravida metus eget nunc placerat
+        sollicitudin.Maecenas nibh lectus, efficitur a tempor in, porttitor at lacus….
       </p>
       <p class="actu__boutonPlus">EN SAVOIR +</p>
       <div class="actu__selector">
@@ -490,6 +472,37 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .accueilContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .homeInfo {
+      width: 100%;
+    }
+    .homeInfo__titre {
+      font-size: 1.5em;
+    }
+    .homeInfo__separateur::before {
+      width: 25%;
+      height: 3px;
+      position: relative;
+      top: -10px;
+    }
+    .homeInfo__texte {
+      position: relative;
+      top: -20px;
+      font-size: 1em;
+      font-weight: 500;
+    }
+    .homeInfo__bouton {
+      font-size: 0.7em;
+      margin-top: -20px;
     }
   }
 </style>
