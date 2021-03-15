@@ -98,27 +98,27 @@
       <a
         href={"/equipe/" + pannel.lien}
         class={params.categorie === pannel.lien || params.categorie == "menu"
-          ? "option affichee"
-          : "option hidden"}
+          ? "categorie affichee"
+          : "categorie hidden"}
         use:link
       >
-        <p class="option__titre">
+        <p class="categorie__titre">
           {pannel.titre}
         </p>
-        <div class="option__ouverture">+</div>
+        <div class="categorie__ouverture">+</div>
       </a>
     {:else}
       <a
         href={"/equipe/menu"}
         class={params.categorie === pannel.lien || params.categorie == "menu"
-          ? "option affichee"
-          : "option hidden"}
+          ? "categorie affichee"
+          : "categorie hidden"}
         use:link
       >
-        <p class="option__titre">
+        <p class="categorie__titre">
           {pannel.titre}
         </p>
-        <div class="option__ouverture">-</div>
+        <div class="categorie__ouverture">-</div>
       </a>
     {/if}
   {/each}
@@ -202,7 +202,7 @@
     justify-content: flex-start;
     overflow-y: hidden;
   }
-  .option {
+  .categorie {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -216,7 +216,7 @@
     color: #ffd700;
   }
 
-  .option__titre {
+  .categorie__titre {
     margin: 0;
   }
 
@@ -304,6 +304,36 @@
 
     .responsabilite {
       width: 450px;
+    }
+  }
+
+  @media (max-width: 460px) {
+    #titrePage {
+      margin: 20px auto;
+      font-size: 1.5em;
+    }
+
+    .categorie {
+      font-size: 1.2em;
+    }
+
+    td {
+      padding: 3.5em 0.7em;
+    }
+
+    .membreEquipe {
+      font-size: 0.2em;
+    }
+
+    .nomPrenom .prenom {
+      margin-left: 5px;
+    }
+
+    .fonction {
+      font-size: 5px;
+      padding: 3px 10px;
+      position: relative;
+      top: 5px;
     }
   }
 </style>

@@ -103,25 +103,6 @@
     margin: 0 auto;
   }
 
-  @media (min-width: 768px) {
-    header #headerLogo {
-      height: 8vh;
-    }
-
-    header nav {
-      width: 70%;
-    }
-
-    header .nav a {
-      font-size: 1.3vw;
-    }
-
-    header a {
-      height: 8vh;
-      width: fit-content;
-    }
-  }
-
   @media only screen and (max-width: 480px) {
     .container {
       max-width: 85%;

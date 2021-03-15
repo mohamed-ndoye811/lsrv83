@@ -71,15 +71,17 @@
 {#if params.activiteChoisie == "menu" && pageActivite == ""}
   <h1 id="activityTitle" in:fade={{ duration: 200 }}>ACTIVITÉS</h1>
   <div class="container" in:fade={{ duration: 200 }}>
-    {#each activites as activity}
-      <div
-        class="activityItem"
-        on:click={() => choixActivité(activity.nom, activity.imageSrc)}
-      >
-        <img src={activity.imageSrc} alt={"image " + activity.nom} />
-        <p>{activity.nom}</p>
-      </div>
-    {/each}
+    <div class="activityList">
+      {#each activites as activity}
+        <div
+          class="activityItem"
+          on:click={() => choixActivité(activity.nom, activity.imageSrc)}
+        >
+          <img src={activity.imageSrc} alt={"image " + activity.nom} />
+          <p>{activity.nom}</p>
+        </div>
+      {/each}
+    </div>
   </div>
 {:else}
   <ActivityPage activite={pageActivite} activiteImage={imageActivite} {db} />
@@ -101,14 +103,15 @@
     font-size: 30px;
   }
   .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     height: 75%;
     width: 100%;
   }
+  .activityList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .activityItem {
-    aspect-ratio: 9/16;
     height: 24vh;
     width: 20vw;
     display: flex;
@@ -142,5 +145,50 @@
   .activityItem:hover img {
     filter: blur(3px);
     opacity: 0.6;
+  }
+
+  @media (max-width: 460px) {
+    #activityTitle {
+      margin: 10px auto;
+      font-size: 1.5em;
+    }
+    .container {
+      height: 80vh;
+      width: 100%;
+      overflow: hidden auto;
+    }
+    .activityList {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    .activityItem {
+      height: 35%;
+      width: 100%;
+    }
+
+    .activityItem:not(:nth-child(1)) {
+      margin-top: 10px;
+    }
+
+    .activityItem p {
+      position: absolute;
+      font-size: 1.5em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition-duration: 0.4s;
+      text-align: center;
+      opacity: 1;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    }
+    .activityItem img {
+      height: 100%;
+      width: 100%;
+      transition-duration: 0.4s;
+      filter: blur(3px);
+      opacity: 0.6;
+    }
   }
 </style>

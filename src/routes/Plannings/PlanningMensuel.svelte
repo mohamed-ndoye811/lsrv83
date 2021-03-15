@@ -73,7 +73,7 @@
     <h1>AVRIL</h1>
 
     {#each Array(7) as _}
-      <p on:click={() => (showDetails = true)}>LUNDI 4 - RANDONÉE</p>
+      <p on:click={() => (affichageDetails = true)}>LUNDI 4 - RANDONÉE</p>
     {/each}
   </div>
 </div>
@@ -86,38 +86,51 @@
 {/if}
 
 <style>
-  @media (min-width: 768px) {
+  .container {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 50px;
+  }
+  .monthContainer {
+    padding: 5px;
+    border-radius: 15px;
+    height: 75vh;
+    width: 35%;
+  }
+  .monthContainer h1 {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .monthContainer p {
+    margin-top: 6vh;
+    font-weight: 600;
+    font-size: 1.3vw;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .monthContainer p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .monthContainer:nth-child(even) {
+    background-color: #ffd700;
+    color: #06c;
+  }
+
+  @media (max-width: 460px) {
     .container {
-      margin: 0;
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      top: 50px;
+      flex-direction: column;
+      height: 80vh;
+      overflow: hidden scroll;
     }
     .monthContainer {
-      padding: 5px;
-      border-radius: 15px;
-      height: 75vh;
-      width: 35%;
-    }
-    .monthContainer h1 {
-      margin-bottom: 50px;
-      text-align: center;
+      width: 95%;
+      height: fit-content;
     }
     .monthContainer p {
-      margin-top: 6vh;
-      font-weight: 600;
-      font-size: 1.3vw;
-      text-transform: uppercase;
-      text-align: center;
-    }
-    .monthContainer p:hover {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    .monthContainer:nth-child(even) {
-      background-color: #ffd700;
-      color: #06c;
+      font-size: 1.2em;
     }
   }
 </style>

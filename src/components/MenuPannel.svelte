@@ -3,6 +3,7 @@
   import { link } from "svelte-spa-router";
   import { gsap, Expo } from "gsap";
   export let menuShown;
+  export let menuPannelToggle;
 
   // your script goes here
   let pannelAffiche = "";
@@ -10,6 +11,11 @@
   // Foncontion mettant à jour le pannel du menu affiché
   function pannelAffichage(pannelChoisi) {
     pannelAffiche = pannelChoisi;
+  }
+
+  // Fonction qui cache le pannel menu lors d'une redirection
+  function redirection() {
+    menuShown = false;
   }
 
   let nbClick = 0;
@@ -79,36 +85,122 @@
 
 <div class="menuPannelContainer">
   <nav>
-    <a class="links" href="/equipe/menu" use:link>ÉQUIPE</a>
-    <a class="links" href="/activites/menu" use:link> ACTIVITÉS </a>
-    <a class="links" href="/BSV" use:link>BSV</a>
+    <a
+      class="links"
+      href="/equipe/menu"
+      on:click={() => menuPannelToggle(false)}
+      use:link
+    >
+      ÉQUIPE
+    </a>
+    <a
+      class="links"
+      href="/activites/menu"
+      on:click={() => menuPannelToggle(false)}
+      use:link
+    >
+      ACTIVITÉS
+    </a>
+    <a
+      class="links"
+      href="/BSV"
+      on:click={() => menuPannelToggle(false)}
+      use:link
+    >
+      BSV
+    </a>
     <div class="navSection">
-      <p class="links" id="pannelPlanning" on:click={() => pannelAffichage("planning")}>
+      <p
+        class="links"
+        id="pannelPlanning"
+        on:click={() => pannelAffichage("planning")}
+      >
         PLANNINGS
       </p>
       {#if pannelAffiche == "planning"}
         <div class="pannel" id="planningPannel">
-          <a class="links" href="/planning/annuel" use:link> ANNUEL </a>
-          <a class="links" href="/planning/mensuel" use:link> MENSUEL </a>
+          <a
+            class="links"
+            href="/planning/annuel"
+            on:click={() => menuPannelToggle(false)}
+            use:link
+          >
+            ANNUEL
+          </a>
+          <a
+            class="links"
+            href="/planning/mensuel"
+            on:click={() => menuPannelToggle(false)}
+            use:link
+          >
+            MENSUEL
+          </a>
         </div>
       {/if}
     </div>
     <div class="navSection">
-      <p class="links" id="pannelAdmin" on:click={() => pannelAffichage("admin")}>ADMINISTRATION</p>
+      <p
+        class="links"
+        id="pannelAdmin"
+        on:click={() => pannelAffichage("admin")}
+      >
+        ADMINISTRATION
+      </p>
       {#if pannelAffiche == "admin"}
         <div class="pannel" id="adminPannel">
-          <a class="links" href="/administration/statuts" use:link> STATUTS </a>
-          <a class="links" href="/administration/reglement" use:link> RÉGLEMENT </a>
-          <a class="links" href="/administration/attestation" use:link> ATTESTATION </a>
+          <a
+            class="links"
+            href="/administration/statuts"
+            on:click={() => menuPannelToggle(false)}
+            use:link
+          >
+            STATUTS
+          </a>
+          <a
+            class="links"
+            href="/administration/reglement"
+            on:click={() => menuPannelToggle(false)}
+            use:link
+          >
+            RÉGLEMENT
+          </a>
+          <a
+            class="links"
+            href="/administration/attestation"
+            on:click={() => menuPannelToggle(false)}
+            use:link
+          >
+            ATTESTATION
+          </a>
         </div>
       {/if}
     </div>
     <div class="navSection">
-      <p class="links" id="pannelDivers" on:click={() => pannelAffichage("divers")}>DIVERS</p>
+      <p
+        class="links"
+        id="pannelDivers"
+        on:click={() => pannelAffichage("divers")}
+      >
+        DIVERS
+      </p>
       {#if pannelAffiche == "divers"}
         <div class="pannel" id="diversPannel">
-          <a class="links" href="/photos" use:link> PHOTOS </a>
-          <a class="links" href="/anniversaires" use:link> ANNIVERSAIRES </a>
+          <a
+            class="links"
+            href="/photos"
+            on:click={() => menuPannelToggle(false)}
+            use:link
+          >
+            PHOTOS
+          </a>
+          <a
+            class="links"
+            href="/anniversaires"
+            on:click={() => menuPannelToggle(false)}
+            use:link
+          >
+            ANNIVERSAIRES
+          </a>
         </div>
       {/if}
     </div>

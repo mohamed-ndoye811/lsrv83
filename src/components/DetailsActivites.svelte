@@ -63,4 +63,16 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
+
+  @media (max-width: 460px) {
+    .detailsPannel {
+      height: 40%;
+      width: 80%;
+      font-size: 1.2em;
+      border-radius: 10px;
+    }
+    .textContainer {
+      height: 80%;
+    }
+  }
 </style>

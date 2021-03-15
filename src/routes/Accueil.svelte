@@ -8,24 +8,28 @@
 <div class="wrapper" in:fade={{ duration: 200 }}>
   <div class="accueilContainer">
     <div class="homeInfo">
-      <h3 class="homeInfo__titre">QUI SOMMES NOUS?</h3>
+      <h3 class="titre">QUI SOMMES NOUS?</h3>
       <span class="homeInfo__separateur" />
       <p class="homeInfo__texte">
         <b><i>Loisir et Solidarité des Retraités de TOULON et du VAR</i></b>
-        est une association loi 1901 dont le but est de permettre aux personnes en pré-retraite ou en
-        retraite de réaliser leurs aspirations de loisirs culturels, sportifs. Pour cela nous vous proposons
-        des activités très diversifiées afin d'intéresser le plus grand nombre de nos adhérents. Nous
-        nous promettons, également, d'agir, aussi souvent que cela se peut, par solidarité dans le cadre
-        de la cité et de la nation et de nous opposer à tout ce qui induit inégalités et exclusion, il
-        ne faut pas oublier que notre LSR, toutes les LSR, sont une émanation de la CGT . Pour ces raisons
-        nous soutenons toutes les actions qui contribuent à améliorer le pouvoir d'achat, la santé, et
+        est une association loi 1901 dont le but est de permettre aux personnes en
+        pré-retraite ou en retraite de réaliser leurs aspirations de loisirs culturels,
+        sportifs. Pour cela nous vous proposons des activités très diversifiées afin
+        d'intéresser le plus grand nombre de nos adhérents. Nous nous promettons,
+        également, d'agir, aussi souvent que cela se peut, par solidarité dans le
+        cadre de la cité et de la nation et de nous opposer à tout ce qui induit
+        inégalités et exclusion, il ne faut pas oublier que notre LSR, toutes les
+        LSR, sont une émanation de la CGT . Pour ces raisons nous soutenons toutes
+        les actions qui contribuent à améliorer le pouvoir d'achat, la santé, et
         la protection sociale.
       </p>
-      <a href="/equipe/antennes" class="homeInfo__bouton bouton" use:link> NOUS REJOINDRE </a>
+      <a href="/equipe/antennes" class="homeInfo__bouton bouton" use:link>
+        NOUS REJOINDRE
+      </a>
     </div>
 
     <div class="collegues">
-      <h3 class="collegues__titre">VISITEZ NOS COLLÈGUES</h3>
+      <h3 class="titre">VISITEZ NOS COLLÈGUES</h3>
       <span class="collegues__separateur" />
 
       <table class="collegues__liste">
@@ -34,7 +38,9 @@
             <a target="_blank" href="http://www.lsrfede.fr">LA FÉDÉRATION</a>
           </td>
           <td class="collegues__liste__item">
-            <a target="_blank" href="http://www.cda-blog-asso.com/lsr">LSR DU MORBIHAN</a>
+            <a target="_blank" href="http://www.cda-blog-asso.com/lsr"
+              >LSR DU MORBIHAN</a
+            >
           </td>
           <td class="collegues__liste__item">
             <a target="_blank" href="http://ambro649.free.fr">LSR AIR FRANCE</a>
@@ -49,7 +55,9 @@
             <a target="_blank" href="http://www.lsr-ratp.org">LSR RATP</a>
           </td>
           <td class="collegues__liste__item">
-            <a target="_blank" href="http://lsrmarseille.fr/spip.php/accueil/index.html"
+            <a
+              target="_blank"
+              href="http://lsrmarseille.fr/spip.php/accueil/index.html"
               >LSR MARSEILLE</a
             >
           </td>
@@ -70,7 +78,12 @@
 
     <ul class="partenaires">
       <li class="partenaires__image">
-        <img src="./img/Partenaires/var.png" alt="blabla" id="logoVar" srcset="" />
+        <img
+          src="./img/Partenaires/var.png"
+          alt="blabla"
+          id="logoVar"
+          srcset=""
+        />
       </li>
       <li class="partenaires__image">
         <img src="./img/Partenaires/PACA.png" alt="blabla" srcset="" />
@@ -98,14 +111,19 @@
 
   <div class="actu">
     <!-- svelte-ignore a11y-img-redundant-alt -->
-    <img class="actu__image" src="./img/actu/images/image_1.jpg" alt="image Manifestation LSR" />
+    <img
+      class="actu__image"
+      src="./img/actu/images/image_1.jpg"
+      alt="image Manifestation LSR"
+    />
     <div class="actu__articleContainer">
       <h3 class="actu__titre">TITRE ACTUALITÉ</h3>
       <span class="actu__separateur" />
       <p class="actu__texte">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum tincidunt tortor
-        quis lobortis. Nam gravida aliquet diam id ultricies. Nulla gravida metus eget nunc placerat
-        sollicitudin.Maecenas nibh lectus, efficitur a tempor in, porttitor at lacus….
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum
+        tincidunt tortor quis lobortis. Nam gravida aliquet diam id ultricies.
+        Nulla gravida metus eget nunc placerat sollicitudin.Maecenas nibh
+        lectus, efficitur a tempor in, porttitor at lacus….
       </p>
       <p class="actu__boutonPlus">EN SAVOIR +</p>
       <div class="actu__selector">
@@ -146,7 +164,7 @@
     flex-direction: column;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
   }
-  .homeInfo__titre {
+  .titre {
     font-size: 3.1vw;
     padding: 0;
     margin: 0;
@@ -182,10 +200,6 @@
     position: relative;
     width: 100%;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
-  }
-  .collegues__titre {
-    font-size: 3.2vw;
-    margin: 0;
   }
   .collegues__separateur::before {
     content: "";
@@ -328,7 +342,7 @@
     .homeInfo {
       width: 100%;
     }
-    .homeInfo__titre {
+    .titre {
       font-size: 2vw;
     }
     .homeInfo__separateur::before {
@@ -350,10 +364,6 @@
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
       position: relative;
       top: -2.5%;
-    }
-    .collegues__titre {
-      font-size: 2vw;
-      margin: 0;
     }
     .collegues__separateur::before {
       content: "";
@@ -476,16 +486,16 @@
   }
 
   @media (max-width: 460px) {
-    .accueilContainer {
+    .wrapper {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      margin-top: 15px;
     }
 
     .homeInfo {
       width: 100%;
     }
-    .homeInfo__titre {
+    .titre {
       font-size: 1.5em;
     }
     .homeInfo__separateur::before {
@@ -503,6 +513,27 @@
     .homeInfo__bouton {
       font-size: 0.7em;
       margin-top: -20px;
+    }
+
+    .collegues__separateur::before {
+      content: "";
+      display: inline-block;
+      background-color: #ffd700;
+      width: 25%;
+      height: 3px;
+      position: relative;
+      top: -10px;
+    }
+    .collegues__liste {
+      width: 100%;
+      position: relative;
+      top: -10px;
+    }
+    .collegues__liste__item a {
+      font-size: 1em;
+    }
+    .collegues__liste__item p {
+      font-size: 1em;
     }
   }
 </style>

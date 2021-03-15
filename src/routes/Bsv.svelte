@@ -13,8 +13,8 @@
   });
 </script>
 
+<h1 id="titrePage">BSV (Bourse Solidarité Vacances)</h1>
 <div class="bsvContainer">
-  <h1 id="titrePage">BSV (Bourse Solidarité Vacances)</h1>
   <div class="bsvTexte">
     <div class="bsvInfo">
       Droit aux vacances pour tous avec LSR et BSV et SENIORS EN VACANCES c'est
@@ -74,6 +74,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
   }
   .bsvTexte {
     display: flex;
@@ -100,5 +101,37 @@
     font-size: 2.5vh;
     font-weight: 600;
     text-align: justify;
+  }
+
+  @media (max-width: 460px) {
+    #titrePage {
+      margin: 5px auto;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    .bsvContainer {
+      height: 75vh;
+      width: 100%;
+      justify-content: space-between;
+      overflow: hidden auto;
+    }
+    .bsvTexte {
+      flex-direction: column;
+      height: fit-content;
+      width: 100%;
+    }
+    .bsvInfo {
+      width: 100%;
+      height: fit-content;
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+    .inscriptionInfo {
+      width: 90%;
+      height: fit-content;
+      padding: 15px;
+      font-size: 1.2em;
+      text-align: justify;
+    }
   }
 </style>

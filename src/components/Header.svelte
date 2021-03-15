@@ -5,12 +5,16 @@
   // your script goes here
   let pannelAffiche = "";
   let menuShown = false;
+  function menuPannelToggle(toggled) {
+    menuShown = toggled;
+  }
 
   // Foncontion mettant à jour le pannel du menu affiché
   function pannelAffichage(pannelChoisi) {
     pannelAffiche = pannelChoisi;
   }
 
+  let nbClick = 0;
   document.addEventListener("click", (evt) => {
     var pannel;
 
@@ -53,7 +57,7 @@
 </script>
 
 <header>
-  <a href="/" id="logoLink" use:link>
+  <a href="/" id="logoLink" on:click={() => menuPannelToggle(false)} use:link>
     <img src="./img/LSR_LOGO/LSR83_logo.png" alt="" id="headerLogo" />
   </a>
   <nav class="nav_pc">
@@ -61,7 +65,11 @@
     <a class="links" href="/activites/menu" use:link> ACTIVITÉS </a>
     <a class="links" href="/BSV" use:link>BSV</a>
     <div class="navSection">
-      <p class="links" id="pannelPlanning" on:click={() => pannelAffichage("planning")}>
+      <p
+        class="links"
+        id="pannelPlanning"
+        on:click={() => pannelAffichage("planning")}
+      >
         PLANNINGS
       </p>
       {#if pannelAffiche == "planning"}
@@ -72,17 +80,33 @@
       {/if}
     </div>
     <div class="navSection">
-      <p class="links" id="pannelAdmin" on:click={() => pannelAffichage("admin")}>ADMINISTRATION</p>
+      <p
+        class="links"
+        id="pannelAdmin"
+        on:click={() => pannelAffichage("admin")}
+      >
+        ADMINISTRATION
+      </p>
       {#if pannelAffiche == "admin"}
         <div class="pannel" id="adminPannel">
           <a class="links" href="/administration/statuts" use:link> STATUTS </a>
-          <a class="links" href="/administration/reglement" use:link> RÉGLEMENT </a>
-          <a class="links" href="/administration/attestation" use:link> ATTESTATION </a>
+          <a class="links" href="/administration/reglement" use:link>
+            RÉGLEMENT
+          </a>
+          <a class="links" href="/administration/attestation" use:link>
+            ATTESTATION
+          </a>
         </div>
       {/if}
     </div>
     <div class="navSection">
-      <p class="links" id="pannelDivers" on:click={() => pannelAffichage("divers")}>DIVERS</p>
+      <p
+        class="links"
+        id="pannelDivers"
+        on:click={() => pannelAffichage("divers")}
+      >
+        DIVERS
+      </p>
       {#if pannelAffiche == "divers"}
         <div class="pannel" id="diversPannel">
           <a class="links" href="/photos" use:link> PHOTOS </a>
@@ -96,7 +120,7 @@
   </div>
 </header>
 
-<MenuPannel {menuShown} {pannelAffiche} />
+<MenuPannel {menuPannelToggle} {menuShown} {pannelAffiche} />
 
 <style>
   header {
