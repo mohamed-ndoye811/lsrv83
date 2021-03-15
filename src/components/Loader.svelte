@@ -97,7 +97,6 @@
     width: 100%;
     position: fixed;
     z-index: 10;
-    color: #0066cc;
   }
 
   .loaderBackground {
@@ -114,7 +113,6 @@
   #layer1 img {
     height: 100%;
     width: 100%;
-    opacity: 0.2;
   }
 
   #layer2 {
@@ -139,5 +137,7 @@
     display: flex;
     overflow: hidden;
     z-index: 20;
+    color: #125da8;
+    text-shadow: ;
   }
 </style>
