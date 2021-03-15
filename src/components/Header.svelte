@@ -211,6 +211,7 @@
   .nav_smartphone {
     position: absolute;
     right: 0;
+    user-select: none;
   }
 
   .menuBouton {
