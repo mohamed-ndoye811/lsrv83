@@ -27,6 +27,7 @@
     align-items: center;
     z-index: 1;
   }
+
   .infoImportante__texte {
     cursor: default;
     font-size: 1.25vw;
@@ -44,9 +45,13 @@
     }
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 460px) {
+    .infoImportante {
+      height: 25px;
+    }
+
     .infoImportante__texte {
-      font-size: 1.2em;
+      font-size: 0.8em;
     }
   }
 </style>
