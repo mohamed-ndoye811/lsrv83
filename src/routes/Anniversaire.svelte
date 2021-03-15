@@ -94,7 +94,7 @@
     margin: 5px 25px 25px 25px;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 600px) {
     h1 {
       font-size: 1.2em;
     }
