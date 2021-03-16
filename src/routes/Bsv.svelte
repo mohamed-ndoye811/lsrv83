@@ -69,6 +69,7 @@
   #titrePage {
     margin: 1% auto;
     font-size: 4vh;
+    text-align: center;
   }
   .bsvContainer {
     display: flex;
