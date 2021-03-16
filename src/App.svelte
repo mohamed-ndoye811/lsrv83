@@ -106,6 +106,7 @@
   @media only screen and (max-width: 480px) {
     .container {
       max-width: 85%;
+      height: 70vh;
     }
   }
 </style>
