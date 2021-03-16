@@ -212,9 +212,6 @@
     position: absolute;
     right: 0;
     user-select: none;
-  }
-
-  .menuBouton {
     visibility: hidden;
   }
 
@@ -238,8 +235,11 @@
       position: absolute;
     }
 
-    .menuBouton {
+    .nav_smartphone {
       visibility: visible;
+    }
+
+    .menuBouton {
       padding: 0;
       margin: 0;
       text-transform: uppercase;

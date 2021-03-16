@@ -42,20 +42,24 @@
               >LSR DU MORBIHAN</a
             >
           </td>
+
           <td class="collegues__liste__item">
-            <a target="_blank" href="http://ambro649.free.fr">LSR AIR FRANCE</a>
+            <a target="_blank" href="http://www.lsrgrandavignon.fr/">
+              LSR GRAND AVIGNON</a
+            >
           </td>
         </tr>
 
         <tr>
           <td class="collegues__liste__item">
-            <a target="_blank" href="http://lsr21dijon.org">LSR DIJON</a>
-          </td>
-          <td class="collegues__liste__item">
             <a target="_blank" href="http://www.lsr-ratp.org">LSR RATP</a>
           </td>
           <td class="collegues__liste__item">
             <a target="_blank" href="http://lsrmarseille.fr/">LSR MARSEILLE</a>
+          </td>
+
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://www.lsr05.fr/">LSR 05 SUD</a>
           </td>
         </tr>
         <tr>
@@ -81,14 +85,6 @@
             >
               LSR NICE</a
             >
-          </td>
-          <td class="collegues__liste__item">
-            <a target="_blank" href="http://www.lsrgrandavignon.fr/">
-              LSR GRAND AVIGNON</a
-            >
-          </td>
-          <td class="collegues__liste__item">
-            <a target="_blank" href="http://www.lsr05.fr/">LSR 05 SUD</a>
           </td>
         </tr>
       </table>
