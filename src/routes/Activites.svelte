@@ -10,46 +10,13 @@
 
   export let params = {};
 
-  onMount(() => {
-    function preloadImages(array) {
-      if (!preloadImages.list) {
-        preloadImages.list = [];
-      }
-      var list = preloadImages.list;
-      for (var i = 0; i < array.length; i++) {
-        var img = new Image();
-        img.onload = function () {
-          var index = list.indexOf(this);
-          if (index !== -1) {
-            // remove image from the array once it's loaded
-            // for memory consumption reasons
-            list.splice(index, 1);
-          }
-        };
-        list.push(img);
-        img.src = array[i];
-      }
-
-      gsap.from(".activityItem", {
-        y: 100,
-        duration: 0.8,
-        opacity: 0,
-        ease: Expo.easeOut,
-        stagger: 0.05,
-        delay: 0.2,
-      });
-    }
-
-    preloadImages([
-      "./img/activites/zenith.jpg",
-      "./img/activites/yoga.jpg",
-      "./img/activites/aquagym.jpg",
-      "./img/activites/patchwork.jpg",
-      "./img/activites/jeux_de_societe.jpg",
-      "./img/activites/rando.jpg",
-      "./img/activites/bowling.jpg",
-      "./img/activites/petanque.jpg",
-    ]);
+  gsap.from(".activityItem", {
+    y: 100,
+    duration: 0.8,
+    opacity: 0,
+    ease: Expo.easeOut,
+    stagger: 0.05,
+    delay: 0.2,
   });
 
   let pageActivite = "";
@@ -123,6 +90,7 @@
   }
   .activityItem p {
     position: absolute;
+    left: -50%;
     font-size: 2vw;
     text-transform: uppercase;
     font-weight: 600;
@@ -174,19 +142,8 @@
     }
 
     .activityItem p {
-      font-size: 1.5em;
-      text-transform: uppercase;
-      font-weight: 600;
-      transition-duration: 0.4s;
-      text-align: center;
       opacity: 1;
       text-shadow: 0 0 10px rgba(0, 0, 0, 1);
-    }
-    .activityItem img {
-      height: 100%;
-      width: 100%;
-      transition-duration: 0.4s;
-      opacity: 0.6;
     }
   }
 </style>
