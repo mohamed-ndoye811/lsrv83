@@ -139,4 +139,23 @@
     z-index: 20;
     color: #125da8;
   }
+  @media (max-width: 460px) {
+    .loaderLogo {
+      position: absolute;
+      width: 200px;
+      height: 125px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #layer1 img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    #loader_Texte {
+      font-size: 1em;
+    }
+  }
 </style>

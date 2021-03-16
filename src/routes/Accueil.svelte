@@ -55,11 +55,7 @@
             <a target="_blank" href="http://www.lsr-ratp.org">LSR RATP</a>
           </td>
           <td class="collegues__liste__item">
-            <a
-              target="_blank"
-              href="http://lsrmarseille.fr/spip.php/accueil/index.html"
-              >LSR MARSEILLE</a
-            >
+            <a target="_blank" href="http://lsrmarseille.fr/">LSR MARSEILLE</a>
           </td>
         </tr>
         <tr>
@@ -67,10 +63,32 @@
             <p>LSR AUBAGNE</p>
           </td>
           <td class="collegues__liste__item">
-            <p>LSR LA CIOTAT</p>
+            <a target="_blank" href="http://lsrdelaciotat.over-blog.com/"
+              >LSR LA CIOTAT</a
+            >
           </td>
           <td class="collegues__liste__item">
-            <p>LSR PTT VAR</p>
+            <a target="_blank" href="https://lsrpttvar.jimdofree.com/"
+              >LSR PTT VAR</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td class="collegues__liste__item">
+            <a
+              target="_blank"
+              href="https://www.facebook.com/loisirssolidaritecheminots/"
+            >
+              LSR NICE</a
+            >
+          </td>
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://www.lsrgrandavignon.fr/">
+              LSR GRAND AVIGNON</a
+            >
+          </td>
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://www.lsr05.fr/">LSR 05 SUD</a>
           </td>
         </tr>
       </table>
@@ -451,7 +469,7 @@
       margin: 0;
     }
     .actu__texte {
-      font-size: 1.3vw;
+      font-size: 1.2vw;
       font-weight: 600;
       text-align: justify;
       position: relative;
@@ -461,7 +479,7 @@
       text-overflow: ellipsis;
     }
     .actu__boutonPlus {
-      font-size: 1.5vw;
+      font-size: 1.3vw;
       margin: 0;
       font-style: italic;
       position: relative;
@@ -487,7 +505,7 @@
       flex-direction: column;
       margin-top: 15px;
       padding: 0 10px;
-      height: 85vh;
+      height: 80vh;
       overflow-y: auto;
     }
 
@@ -562,7 +580,8 @@
     .actu {
       width: 100%;
       position: relative;
-      top: 80%;
+      top: 85%;
+      margin-top: 50px;
       border-radius: 10px;
     }
 

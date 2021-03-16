@@ -75,14 +75,20 @@
   }
   .infoPlanningAnnuel {
     background-color: #ffd700;
-    width: 40%;
+    width: 35%;
     height: 93%;
     border-radius: 20px;
     color: #06c;
     padding: 20px 30px 30px 30px;
-    font-size: 2.1vh;
+    font-size: 1.12em;
     font-weight: 600;
     text-align: justify;
+  }
+
+  @media (min-width: 1645px) {
+    .infoPlanningAnnuel {
+      font-size: 1.3em;
+    }
   }
 
   @media (max-width: 460px) {

@@ -60,7 +60,7 @@
   }, 3500);*/
 </script>
 
-<!--<Loader />-->
+<Loader />
 
 {#if loadingEnded}
   <Header />

@@ -52,7 +52,10 @@
           {/if}
         {/each}
       </div>
-      <div class="contact">test</div>
+      <div class="contact">
+        <div class="contact__image">Photo</div>
+        <div class="contact__texte">texte</div>
+      </div>
     </div>
   </div>
 </div>
@@ -119,10 +122,22 @@
   }
 
   .contact {
-    height: 15%;
+    height: 20%;
     background-color: #ffd700;
     color: #0066cc;
     border-radius: 15px;
+    display: flex;
+  }
+
+  .contact__image {
+    height: 100%;
+    width: 15%;
+    background-color: red;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .contact__texte {
+    width: auto;
   }
 
   .dates {
@@ -134,10 +149,6 @@
     flex-wrap: wrap;
   }
 
-  .dates p:nth-child(4n) {
-    flex-basis: 100%;
-  }
-
   .dates p {
     padding: 0;
     font-size: 2.7em;
@@ -145,5 +156,72 @@
     text-transform: uppercase;
     margin: 0;
     width: fit-content;
+  }
+
+  @media (max-width: 460px) {
+    h1 {
+      font-size: 2em;
+    }
+
+    .container {
+      height: 73vh;
+      overflow: hidden auto;
+      padding: 0 5px;
+    }
+
+    .pageContent {
+      flex-direction: column-reverse;
+      height: fit-content;
+    }
+
+    .rightPane {
+      height: 50vh;
+      width: 100%;
+    }
+
+    .dates {
+      align-items: center;
+      justify-content: space-between;
+      height: fit-content;
+      flex-direction: column;
+    }
+
+    .dates p {
+      font-size: 1.7em;
+      margin: 15px 0;
+    }
+
+    .dates p:nth-child(4n) {
+      width: fit-content;
+    }
+
+    .contact__image {
+      height: 100%;
+      width: 25%;
+      background-color: red;
+      border-radius: 10px 0 0 10px;
+    }
+
+    .contact {
+      border-radius: 10px;
+      height: 20%;
+      display: flex;
+    }
+
+    .contact__texte {
+      width: auto;
+    }
+
+    .images {
+      width: 100%;
+      height: 550px;
+      margin-top: 35px;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .dates p:nth-child(4n) {
+      flex-basis: 100%;
+    }
   }
 </style>

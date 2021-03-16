@@ -41,7 +41,7 @@
     transform: translateX(-50%);
   }
   .selectionContainer p {
-    font-size: 2vw;
+    font-size: 1.5em;
     font-weight: 600;
     letter-spacing: 1px;
     cursor: default;
