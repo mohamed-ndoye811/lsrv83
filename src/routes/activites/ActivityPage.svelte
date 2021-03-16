@@ -164,7 +164,7 @@
     }
 
     .container {
-      height: 73vh;
+      height: 70vh;
       overflow: hidden auto;
       padding: 0 5px;
     }

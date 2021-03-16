@@ -174,7 +174,6 @@
     }
 
     .activityItem p {
-      position: absolute;
       font-size: 1.5em;
       text-transform: uppercase;
       font-weight: 600;
@@ -187,7 +186,6 @@
       height: 100%;
       width: 100%;
       transition-duration: 0.4s;
-      filter: blur(3px);
       opacity: 0.6;
     }
   }
