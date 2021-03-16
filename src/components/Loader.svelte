@@ -137,7 +137,7 @@
     display: flex;
     overflow: hidden;
     z-index: 20;
-    color: #125da8;
+    color: #a0caf3;
   }
   @media (max-width: 460px) {
     .loaderLogo {
