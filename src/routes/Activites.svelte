@@ -83,6 +83,7 @@
     width: 20vw;
     display: flex;
     justify-content: center;
+    position: relative;
     align-items: center;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.2);
@@ -90,11 +91,10 @@
   }
   .activityItem p {
     position: absolute;
-    left: -50%;
     font-size: 2vw;
     text-transform: uppercase;
     font-weight: 600;
-    opacity: 0;
+    opacity: 1;
     transition-duration: 0.4s;
     text-align: center;
   }
@@ -142,8 +142,14 @@
     }
 
     .activityItem p {
+      font-size: 1.4em;
       opacity: 1;
       text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    }
+
+    .activityItem img {
+      filter: blur(3px);
+      opacity: 0.6;
     }
   }
 </style>

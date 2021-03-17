@@ -21,16 +21,18 @@ export const db = firebase.firestore();
 
 var anniversaires = [];
 
-const citiesRef = db.collection("adherents");
-const snapshot = await citiesRef.where("dateNaissance", "!=", "").get();
-if (snapshot.empty) {
+const dbAdherents = db.collection("adherents");
+const adgerents = await dbAdherents.where("dateNaissance", "!=", "").get();
+
+if (adgerents.empty) {
   console.log("No matching documents.");
 }
 
-snapshot.forEach((doc) => {
+adgerents.forEach((doc) => {
   anniversaires.push(doc.data());
 });
 
+// Exports des dates d'anniversire associés aux Nom Prénom
 anniversaires.forEach((anniversaire) => {
   if (anniversaire.dateNaissance.startsWith("a")) {
     var templateParams = {
@@ -40,10 +42,10 @@ anniversaires.forEach((anniversaire) => {
 
     emailjs
       .send(
-        "service_372foy7",
-        "template_esbvazo",
+        "service_3oelnz8",
+        "template_gledkk2",
         templateParams,
-        "user_wLxdF6iNzWGc5Z43gXKiZ"
+        "user_n3Xl5mraHxRkxF4aO1hxR"
       )
       .then(
         function (response) {
@@ -56,4 +58,17 @@ anniversaires.forEach((anniversaire) => {
   }
 });
 
-export { anniversaires };
+//---[ RÉCUPÉRATION MEMBRES ÉQUIPE ]---
+
+var listeEquipe = [];
+
+const dbEquipe = db.collection("equipe");
+const equipe = await dbEquipe.where("Categorie", "!=", "").get();
+
+equipe.forEach((doc) => {
+  listeEquipe.push(doc.data());
+});
+
+//--- EXPORT DES DONNEES
+
+export { anniversaires, listeEquipe };

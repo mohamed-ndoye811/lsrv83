@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
   import { link } from "svelte-spa-router";
   import { fade } from "svelte/transition";
-  import { db } from "../utils/firestore";
+  import { listeEquipe } from "../utils/firestore";
 
   // Récupère les paramètres passées dans le lien
   export let params = {};
@@ -32,7 +32,6 @@
   ];
 
   var sectionAffichee = "";
-  let membreEquipe = [];
 
   $: if (params.categorie != "menu") {
     sectionAffichee = equipe.find(
@@ -82,13 +81,7 @@
     }
   }
 
-  let listeEquipe = [];
-
-  onMount(() => {
-    db.collection("equipe").onSnapshot((data) => {
-      listeEquipe = data.docs;
-    });
-  });
+  onMount(() => {});
 </script>
 
 <div class="container" in:fade={{ duration: 200 }}>
@@ -127,20 +120,18 @@
     <div class="equipeContainer">
       <table align="center">
         {#each listeEquipe as membreEquipe, i}
-          {#if membreEquipe
-            .data()
-            .Categorie.toLowerCase() == sectionAffichee.toLowerCase()}
+          {#if membreEquipe.Categorie.toLowerCase() == sectionAffichee.toLowerCase()}
             <tr class="membreEquipe" bind:this={membreEquipe[i]}>
               <td class="firstSlot">
                 <div class="nomPrenom">
-                  <p class="nom">{membreEquipe.data().Nom}</p>
-                  <p class="prenom">{membreEquipe.data().Prenom}</p>
+                  <p class="nom">{membreEquipe.Nom}</p>
+                  <p class="prenom">{membreEquipe.Prenom}</p>
                 </div>
-                {#if !!membreEquipe.data().Fonction || !!membreEquipe.data().Ville}
+                {#if !!membreEquipe.Fonction || !!membreEquipe.Ville}
                   <span class="fonction"
                     >{sectionAffichee == "Conseil d'administration"
-                      ? membreEquipe.data().Fonction
-                      : membreEquipe.data().Ville}</span
+                      ? membreEquipe.Fonction
+                      : membreEquipe.Ville}</span
                   >
                 {/if}
               </td>
@@ -148,24 +139,24 @@
               {#if // On vérifie si on a sélectionné le conseil d'administration ou les responsables d'activité
               sectionAffichee == "Conseil d'administration" || sectionAffichee == "Responsables d'Activité"}
                 <td class="responsabilite">
-                  {membreEquipe.data().Responsabilite}
+                  {membreEquipe.Responsabilite}
                 </td>
               {/if}
 
               <td class="telephones">
-                <div class="fixe">{membreEquipe.data().Fixe}</div>
-                <div class="portable">{membreEquipe.data().Portable}</div>
+                <div class="fixe">{membreEquipe.Fixe}</div>
+                <div class="portable">{membreEquipe.Portable}</div>
               </td>
 
-              <td class="mail">{membreEquipe.data().Mail}</td>
+              <td class="mail">{membreEquipe.Mail}</td>
 
               {#if // On vérifie si on a sélectionné le conseil d'administration ou les responsables d'activité
               sectionAffichee == "Les antennes"}
                 <td class="lieuAntenne">
-                  {membreEquipe.data().Lieu}
+                  {membreEquipe.Lieu}
                 </td>
                 <td class="dateAntenne">
-                  {membreEquipe.data().Dates}
+                  {membreEquipe.Dates}
                 </td>
               {/if}
             </tr>
@@ -254,6 +245,7 @@
     margin: 0;
     text-align: center;
     width: 500px;
+    white-space: nowrap;
   }
 
   .fonction {
@@ -283,7 +275,8 @@
 
   table {
     height: fit-content;
-    width: 100%;
+    width: fit-content;
+    overflow-x: auto;
     vertical-align: middle;
     border-collapse: collapse;
   }
@@ -322,7 +315,7 @@
     }
 
     .membreEquipe {
-      font-size: 0.2em;
+      font-size: 0.5em;
     }
 
     .nomPrenom .prenom {
@@ -334,6 +327,33 @@
       padding: 3px 10px;
       position: relative;
       top: 5px;
+    }
+
+    .responsabilite {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    .telephones {
+      width: fit-content;
+      padding: 0;
+      font-size: 0.4em;
+    }
+
+    .equipeContainer {
+      overflow-x: auto;
+    }
+
+    .lieuAntenne {
+      width: 500px;
+      font-size: 0.8em;
+    }
+
+    .dateAntenne {
+      width: 500px;
+
+      line-break: normal;
+      font-size: 0.8em;
     }
   }
 </style>

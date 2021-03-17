@@ -10,31 +10,31 @@
     });
   });
 
+  let mois = [
+    "Janvier",
+    "Février",
+    "Mars",
+    "Avril",
+    "Mai",
+    "Juin",
+    "Juillet",
+    "Août",
+    "Septembre",
+    "Octobre",
+    "Novembre",
+    "Décembre",
+  ];
+
   // Fonction pour ajuster l'affichage de la date
-  const mois = (timestamp) => {
+  const timeToMois = (timestamp) => {
     let dateActivite = new Date(); //On crée un nouvel Élément Date
 
     // Celui-ci va nous permettre de passer la date qui est initialement en millisecondes, en vrai date afin de récupérer le mois, le mois etc...
     dateActivite.setTime(timestamp * 1000); // javascript timestamps are in milliseconds
 
-    let mois = [
-      "Janvier",
-      "Février",
-      "Mars",
-      "Avril",
-      "Mai",
-      "Juin",
-      "Juillet",
-      "Août",
-      "Septembre",
-      "Octobre",
-      "Novembre",
-      "Décembre",
-    ];
-
     return (
       dateActivite.getDate().toString() + " " + mois[dateActivite.getMonth()]
-    ); // the Day
+    ); // Le mois
   };
 </script>
 
@@ -46,14 +46,16 @@
     <div class="images">blabla</div>
     <div class="rightPane">
       <div class="dates">
-        {#each dates.slice(0, 9) as date}
+        {#each dates.slice(0, 9) as date, index}
           {#if date.data().nom.toLowerCase() == activite.toLowerCase()}
-            <p>{mois(date.data().date)}</p>
+            <p>{timeToMois(date.data().date)}</p>
+            {#if index > 1 && index % 3 == 0}
+              <div class="break" />
+            {/if}
           {/if}
         {/each}
       </div>
       <div class="contact">
-        <div class="contact__image">Photo</div>
         <div class="contact__texte">texte</div>
       </div>
     </div>
@@ -129,13 +131,6 @@
     display: flex;
   }
 
-  .contact__image {
-    height: 100%;
-    width: 15%;
-    background-color: red;
-    border-radius: 10px 0 0 10px;
-  }
-
   .contact__texte {
     width: auto;
   }
@@ -156,6 +151,10 @@
     text-transform: uppercase;
     margin: 0;
     width: fit-content;
+  }
+  .break {
+    flex-basis: 100%;
+    height: 0px;
   }
 
   @media (max-width: 460px) {
@@ -195,13 +194,6 @@
       width: fit-content;
     }
 
-    .contact__image {
-      height: 100%;
-      width: 25%;
-      background-color: red;
-      border-radius: 10px 0 0 10px;
-    }
-
     .contact {
       border-radius: 10px;
       height: 20%;
@@ -220,8 +212,5 @@
   }
 
   @media (min-width: 800px) {
-    .dates p:nth-child(4n) {
-      flex-basis: 100%;
-    }
   }
 </style>

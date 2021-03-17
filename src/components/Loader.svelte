@@ -69,8 +69,8 @@
   <div class="loaderBackground" id="layer1">
     <img src="./img/Loader/loaderSliderBackground.jpg" alt="backgroundImg" />
   </div>
-  <div class="loaderBackground" id="layer2" />
-  <div class="loaderBackground" id="layer3" />
+  <!--<div class="loaderBackground" id="layer2" />
+  <div class="loaderBackground" id="layer3" />-->
 
   <img src="./img/LSR_LOGO/LSR83_logo.png" alt="" class="loaderLogo" />
   <img src="./img/Loader/Loaderimg.jpg" class="backgroundImg" alt="la Verne" />
@@ -115,16 +115,6 @@
     width: 100%;
   }
 
-  #layer2 {
-    background-color: #f0a402;
-    z-index: 17;
-  }
-
-  #layer3 {
-    background-color: #da6201;
-    z-index: 16;
-  }
-
   #loader_Texte {
     margin: 0;
     position: fixed;
@@ -137,7 +127,7 @@
     display: flex;
     overflow: hidden;
     z-index: 20;
-    color: #a0caf3;
+    color: #044381;
   }
   @media (max-width: 460px) {
     .loaderLogo {

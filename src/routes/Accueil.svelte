@@ -37,6 +37,19 @@
           <td class="collegues__liste__item">
             <a target="_blank" href="http://www.lsrfede.fr">LA FÉDÉRATION</a>
           </td>
+
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://lsrmarseille.fr/">LSR MARSEILLE</a>
+          </td>
+
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://lsrdelaciotat.over-blog.com/"
+              >LSR LA CIOTAT</a
+            >
+          </td>
+        </tr>
+
+        <tr>
           <td class="collegues__liste__item">
             <a target="_blank" href="http://www.cda-blog-asso.com/lsr"
               >LSR DU MORBIHAN</a
@@ -44,18 +57,12 @@
           </td>
 
           <td class="collegues__liste__item">
-            <a target="_blank" href="http://www.lsrgrandavignon.fr/">
-              LSR GRAND AVIGNON</a
+            <a
+              target="_blank"
+              href="https://www.facebook.com/loisirssolidaritecheminots/"
             >
-          </td>
-        </tr>
-
-        <tr>
-          <td class="collegues__liste__item">
-            <a target="_blank" href="http://www.lsr-ratp.org">LSR RATP</a>
-          </td>
-          <td class="collegues__liste__item">
-            <a target="_blank" href="http://lsrmarseille.fr/">LSR MARSEILLE</a>
+              LSR NICE</a
+            >
           </td>
 
           <td class="collegues__liste__item">
@@ -67,24 +74,20 @@
             <p>LSR AUBAGNE</p>
           </td>
           <td class="collegues__liste__item">
-            <a target="_blank" href="http://lsrdelaciotat.over-blog.com/"
-              >LSR LA CIOTAT</a
-            >
-          </td>
-          <td class="collegues__liste__item">
             <a target="_blank" href="https://lsrpttvar.jimdofree.com/"
               >LSR PTT VAR</a
+            >
+          </td>
+
+          <td class="collegues__liste__item">
+            <a target="_blank" href="http://www.lsrgrandavignon.fr/">
+              LSR GRAND AVIGNON</a
             >
           </td>
         </tr>
         <tr>
           <td class="collegues__liste__item">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/loisirssolidaritecheminots/"
-            >
-              LSR NICE</a
-            >
+            <a target="_blank" href="http://www.lsr-ratp.org">LSR RATP</a>
           </td>
         </tr>
       </table>

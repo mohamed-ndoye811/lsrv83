@@ -1798,4 +1798,10 @@
     color: #ffd700;
     text-decoration: underline;
   }
+
+  @media (max-width: 460px) {
+    table {
+      font-size: 0.6em;
+    }
+  }
 </style>

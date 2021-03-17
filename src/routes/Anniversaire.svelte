@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import { anniversaires } from "../utils/firestore";
 
   let mois = [
@@ -20,8 +19,6 @@
   let dateActuelle = new Date();
   let moisActuel = dateActuelle.getMonth() + 1;
   let moisTexte = mois[dateActuelle.getMonth()];
-
-  onMount(() => {});
 
   // Cette fonction sert à classer les dates dans l'ordre croissant
   function compare(a, b) {
