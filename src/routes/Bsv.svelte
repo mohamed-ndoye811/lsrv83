@@ -57,10 +57,11 @@
       SENIORS EN VACANCES<br /> Ne pas être imposable (ligne 14 de la feuille)
       Adresser la photocopie de la feuille d’imposition à la TRESORIERE LSR 83.<br
       /><br />
-      La destination du séjour 2021 BSV attribué à LSR 83 est :<br /> BISCAROSSE
-      (40) Village VTF <i>du 05 au 12 juin 2021</i><br /><br /> Le séjour est fixé
-      à 260€ tout compris. Pour les adhérents qui souhaitent se rendre dans le séjour
-      en voiture le prix du séjour sera ramené à 230€ par personne.
+      La destination du séjour 2021 BSV attribué à LSR 83 est :<br />
+      <b><i>BISCAROSSE (40) Village VTF </i></b><i>du 05 au 12 juin 2021</i><br
+      /><br /> Le séjour est fixé à 260€ tout compris. Pour les adhérents qui souhaitent
+      se rendre dans le séjour en voiture le prix du séjour sera ramené à 230€ par
+      personne.
     </div>
   </div>
 </div>
@@ -102,6 +103,11 @@
     font-size: 2.5vh;
     font-weight: 600;
     text-align: justify;
+  }
+
+  b {
+    font-size: 1.2em;
+    text-decoration: underline;
   }
 
   @media (max-width: 460px) {
