@@ -148,4 +148,10 @@
       font-size: 1em;
     }
   }
+
+  @media (max-width: 361px) {
+    #loader_Texte {
+      font-size: 0.8em;
+    }
+  }
 </style>

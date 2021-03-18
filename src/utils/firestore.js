@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+const cronJob = require("cron").CronJob;
 
 import "firebase/firestore";
 
@@ -32,31 +33,46 @@ adgerents.forEach((doc) => {
   anniversaires.push(doc.data());
 });
 
-// Exports des dates d'anniversire associés aux Nom Prénom
-anniversaires.forEach((anniversaire) => {
-  if (anniversaire.dateNaissance.startsWith("a")) {
-    var templateParams = {
-      name: anniversaire.nomPrenom.split(" ").slice(-1).join(" "), // returns "Panakkal",
-      email: "ndoyemd@outlook.fr",
-    };
+const date = new Date();
+const dateJour = date.getDate().toString() + "/" + date.getMonth().toString();
 
-    emailjs
-      .send(
-        "service_3oelnz8",
-        "template_gledkk2",
-        templateParams,
-        "user_n3Xl5mraHxRkxF4aO1hxR"
-      )
-      .then(
-        function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        function (error) {
-          console.log("FAILED...", error);
-        }
-      );
-  }
-});
+// Fonction qui va se lancer tout les jours à 8h
+const job = new cronJob(
+  "0 8 * * *",
+  () => {
+    // Exports des dates d'anniversire associés aux Nom Prénom
+    anniversaires.forEach((anniversaire) => {
+      if (anniversaire.dateNaissance.startsWith(dateJour)) {
+        // On regarde les dates d'anniversaire de tout le monde et si la date correspond au jour on envoi le mail
+        var templateParams = {
+          name: anniversaire.nomPrenom.split(" ").slice(-1).join(" "), // Récupère le prenom,
+          email: "ndoyemd@outlook.fr",
+        };
+
+        emailjs
+          .send(
+            "service_3oelnz8",
+            "template_gledkk2",
+            templateParams,
+            "user_n3Xl5mraHxRkxF4aO1hxR"
+          )
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+      }
+    });
+  },
+  undefined,
+  true,
+  "Europe/Paris"
+);
+
+job.start(); // Va se lancer tout les jours
 
 //---[ RÉCUPÉRATION MEMBRES ÉQUIPE ]---
 
@@ -69,6 +85,28 @@ equipe.forEach((doc) => {
   listeEquipe.push(doc.data());
 });
 
+//---[ RÉCUPÉRATION ACTIVITÉS ]---
+
+var listeActivites = [];
+
+const dbActivites = db.collection("activites");
+const activites = await dbActivites.where("date", "!=", "").get();
+
+activites.forEach((doc) => {
+  listeActivites.push(doc.data());
+});
+
+//---[ RÉCUPÉRATION ACTUS ]---
+
+var listeActus = [];
+
+const dbActualites = db.collection("actualites");
+const actus = await dbActualites.where("titre", "!=", "").get();
+
+actus.forEach((doc) => {
+  listeActus.push(doc.data());
+});
+
 //--- EXPORT DES DONNEES
 
-export { anniversaires, listeEquipe };
+export { anniversaires, listeEquipe, listeActivites, listeActus };

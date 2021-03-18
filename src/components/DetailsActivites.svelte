@@ -1,14 +1,21 @@
 <script>
   document.getElementById("darkenScreen").style.visibility = "visible";
 
-  export let typeActivite = "vebeb";
+  export let typeActivite = "";
+  export let actuTitre = "";
+  export let actu = "";
 </script>
 
 <div class="detailsPannel" on:click>
   <div class="reliefPannel" />
   <div class="backgroundPannel" />
   <div class="textContainer">
-    <p><strong>Activitée:</strong> {typeActivite}</p>
+    {#if typeActivite != ""}
+      <p><strong>Activitée:</strong> {typeActivite}</p>
+    {/if}
+    {#if actuTitre != "" && actu != ""}
+      <p><strong>{actuTitre}</strong> <br /><br />{actu}</p>
+    {/if}
   </div>
 </div>
 

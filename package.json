@@ -22,9 +22,11 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "blast-text": "^2.0.0",
+    "cron": "^1.8.2",
     "emailjs-com": "^2.6.4",
     "firebase": "^8.2.9",
     "gsap": "^3.6.0",
+    "node-schedule": "^2.0.0",
     "svelte-routing": "^1.5.0",
     "svelte-spa-router": "^3.1.0"
   }

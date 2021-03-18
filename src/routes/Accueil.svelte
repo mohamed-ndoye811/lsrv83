@@ -1,8 +1,15 @@
 <script>
+  //---[ IMPORT MODULES ]---
   import { fade } from "svelte/transition";
   import { link } from "svelte-spa-router";
+  import { listeActus } from "../utils/firestore";
+
+  //---[ IMPOR COMPOSANTS ]--
   import CompteurVisite from "../components/CompteurVisite.svelte";
-  let actuSelected = 1;
+  import DetailsActivites from "./../components/DetailsActivites.svelte";
+
+  let actuSelected = 0;
+  let affichageDetails = false;
 </script>
 
 <div class="wrapper" in:fade={{ duration: 200 }}>
@@ -134,35 +141,33 @@
       alt="image Manifestation LSR"
     />
     <div class="actu__articleContainer">
-      <h3 class="actu__titre">TITRE ACTUALITÉ</h3>
+      <h3 class="actu__titre">{listeActus[actuSelected].titre}</h3>
       <span class="actu__separateur" />
       <p class="actu__texte">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum
-        tincidunt tortor quis lobortis. Nam gravida aliquet diam id ultricies.
-        Nulla gravida metus eget nunc placerat sollicitudin.Maecenas nibh
-        lectus, efficitur a tempor in, porttitor at lacus….
+        {listeActus[actuSelected].article}
       </p>
-      <p class="actu__boutonPlus">EN SAVOIR +</p>
+      <p class="actu__boutonPlus" on:click={() => (affichageDetails = true)}>
+        EN SAVOIR +
+      </p>
       <div class="actu__selector">
-        <span
-          class="actu__selector__circle"
-          class:actu__selector__circle--active={actuSelected === 1}
-          on:click={() => (actuSelected = 1)}
-        />
-        <span
-          class="actu__selector__circle"
-          class:actu__selector__circle--active={actuSelected === 2}
-          on:click={() => (actuSelected = 2)}
-        />
-        <span
-          class="actu__selector__circle"
-          class:actu__selector__circle--active={actuSelected === 3}
-          on:click={() => (actuSelected = 3)}
-        />
+        {#each listeActus as actu, index}
+          <span
+            class="actu__selector__circle"
+            class:actu__selector__circle--active={actuSelected === index}
+            on:click={() => (actuSelected = index)}
+          />
+        {/each}
       </div>
     </div>
   </div>
 </div>
+{#if affichageDetails == true}
+  <DetailsActivites
+    actuTitre={listeActus[actuSelected].titre}
+    actu={listeActus[actuSelected].article}
+    on:click={() => (affichageDetails = false)}
+  />
+{/if}
 <CompteurVisite />
 
 <style>
@@ -470,6 +475,7 @@
     .actu__texte {
       font-size: 1.2vw;
       font-weight: 600;
+      height: 25vh;
       text-align: justify;
       position: relative;
       top: -5px;
@@ -580,7 +586,7 @@
       width: 100%;
       position: relative;
       top: 85%;
-      margin-top: 50px;
+      margin-top: 70px;
       border-radius: 10px;
     }
 
@@ -625,6 +631,7 @@
     }
     .actu__texte {
       font-size: 1em;
+      height: 22vh;
     }
     .actu__boutonPlus {
       font-size: 1.2em;
