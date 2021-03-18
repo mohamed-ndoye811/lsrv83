@@ -52,7 +52,21 @@
   </div>
 {:else}
   <ActivityPage activite={pageActivite} activiteImage={imageActivite} {db} />
-  <div class="bouton" on:click={() => choixActivité("")}>RETOUR</div>
+  <div class="boutons">
+    {#if pageActivite.toLowerCase() == "yoga" || pageActivite.toLowerCase() == "patchwork" || pageActivite.toLowerCase() == "aquagym"}
+      <a
+        class="bouton"
+        href={"./img/activites/circulaires/" +
+          pageActivite.toLowerCase() +
+          "/" +
+          pageActivite.toLowerCase() +
+          ".jpg"}
+        target="_blank"
+        id="btnCirculaire">VOIR CIRCULAIRE</a
+      >
+    {/if}
+    <div class="bouton" on:click={() => choixActivité("")}>RETOUR</div>
+  </div>
 {/if}
 
 <style>
@@ -62,6 +76,17 @@
     text-align: center;
     border-radius: 25px;
     margin: 20px 0 20px auto;
+  }
+  #btnCirculaire {
+    width: fit-content;
+    margin-right: 5px;
+    text-decoration: none;
+  }
+
+  .boutons {
+    position: absolute;
+    right: 0;
+    display: flex;
   }
   #activityTitle {
     position: relative;
@@ -94,7 +119,7 @@
     font-size: 2vw;
     text-transform: uppercase;
     font-weight: 600;
-    opacity: 1;
+    opacity: 0;
     transition-duration: 0.4s;
     text-align: center;
   }

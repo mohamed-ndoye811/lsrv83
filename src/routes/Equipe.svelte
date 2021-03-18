@@ -148,7 +148,11 @@
                 <div class="portable">{membreEquipe.Portable}</div>
               </td>
 
-              <td class="mail">{membreEquipe.Mail}</td>
+              <td class="mail"
+                ><a href={"mailto:" + membreEquipe.Mail}>
+                  {membreEquipe.Mail}</a
+                ></td
+              >
 
               {#if // On vérifie si on a sélectionné le conseil d'administration ou les responsables d'activité
               sectionAffichee == "Les antennes"}
@@ -163,6 +167,18 @@
           {/if}
         {/each}
       </table>
+
+      {#if // On vérifie si on a sélectionné le conseil d'administration ou les responsables d'activité
+      sectionAffichee == "Les antennes"}
+        <p class="texteAntenne">
+          Les différentes antennes sont à votre disposition pour enregistrer vos
+          désirs de participation Elles sont habilitées pour prendre vos
+          réglements en chèque ou en espèces. Elles sont également habilitées à
+          enregistrer vos demandes d'adhésion. Cette année nous demanderons
+          20&euro; qu'il faut accompagner d'une photo d'identité. Vous êtes les
+          bienvenus et toutes nos activités vous attendent
+        </p>
+      {/if}
     </div>
   {/if}
 </div>
@@ -178,6 +194,16 @@
 
     line-break: normal;
     font-size: 0.8em;
+  }
+
+  .texteAntenne {
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+
+  a {
+    color: #ffd700;
+    text-decoration: none;
   }
 
   #titrePage {

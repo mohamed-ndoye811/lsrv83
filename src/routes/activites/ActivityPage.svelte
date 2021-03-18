@@ -2,7 +2,11 @@
   export let activite, activiteImage, db;
   import { onMount } from "svelte";
 
+  activite = activite.toLowerCase();
+
   let dates = [];
+
+  "./img/activites/" + activite + "";
 
   onMount(() => {
     db.collection("activites").onSnapshot((data) => {
@@ -43,11 +47,16 @@
 <h1>{activite}</h1>
 <div class="container">
   <div class="pageContent">
-    <div class="images">blabla</div>
+    <div class="images">
+      <img
+        src={"./img/activites/" + activite + "/" + activite + ".gif"}
+        alt=""
+      />
+    </div>
     <div class="rightPane">
       <div class="dates">
         {#each dates.slice(0, 9) as date, index}
-          {#if date.data().nom.toLowerCase() == activite.toLowerCase()}
+          {#if date.data().nom.toLowerCase() == activite}
             <p>{timeToMois(date.data().date)}</p>
             {#if index > 1 && index % 3 == 0}
               <div class="break" />
@@ -105,6 +114,13 @@
     width: 22.5vw;
     height: 100%;
     border-radius: 15px;
+  }
+
+  .images img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
   }
 
   .pageContent {
